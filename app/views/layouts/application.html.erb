@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= titre %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <% if notice %>
+      <p class="notice"><%= notice %></p>
+  <% end %>
+
+  <% if notice %>
+      <p class="alert"><%= alert %></p>
+  <% end %>
+
+
+    <%= yield %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>

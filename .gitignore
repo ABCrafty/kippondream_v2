@@ -1,0 +1,9 @@
+
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+vendor
+config/environments/*
+config/database.yml
+config/secrets.yml
