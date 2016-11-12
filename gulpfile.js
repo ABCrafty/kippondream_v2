@@ -25,7 +25,7 @@ gulp.task('default', ['css', 'sass', 'js'], function() {
 gulp.task('css', function() {
     console.log("Ma tâche pour la CSS");
     //1 gulp.src () => chercher un ou plusieurs fichiers sources
-    return gulp.src('./app/assets/stylesheets/application.css') //src = source de fichier(s)
+    return gulp.src('./app/assets/stylesheets/application.css.scss.scss') //src = source de fichier(s)
     .pipe(minifyCss()) // compresser ma CSS par le module gulp-minify-css
     .pipe(concat('kd.css'))
     .pipe(size())

@@ -1,0 +1,12 @@
+/*
+ *= require normalize-css
+ *= require fontawesome
+ *= require sass/main
+  *= require_self
+ */
+
+@import './sass/partials/variables';
+@import './sass/partials/mixins';
+@import './sass/partials/buttons';
+@import './sass/partials/form';
+@import './sass/partials/menu';
