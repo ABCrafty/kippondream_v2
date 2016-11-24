@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @magazine.titre %>
+</p>
+
+<p>
+  <strong>Thumbnail:</strong>
+  <%= @magazine.thumbnail %>
+</p>
+
+<p>
+  <strong>Scans :</strong>
+  <% @magazine.pages.each do |m| %>
+    <li><%= m.image.url %></li>
+<% end %>
+</p>
+
+<%= link_to 'Edit', edit_magazine_path(@magazine) %> |
+<%= link_to 'Back', magazines_path %>

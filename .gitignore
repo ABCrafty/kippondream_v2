@@ -7,3 +7,4 @@ vendor
 config/environments/*
 config/database.yml
 config/secrets.yml
+public/uploads
