@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class PagesUploader < CarrierWave::Uploader::Base
+class PageUploader < CarrierWave::Uploader::Base
 
   storage :file
 

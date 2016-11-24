@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>Titre:</strong>
@@ -7,13 +7,13 @@
 
 <p>
   <strong>Thumbnail:</strong>
-  <%= @magazine.thumbnail %>
+  <%= image_tag @magazine.thumbnail, size: '100x100' %>
 </p>
 
 <p>
   <strong>Scans :</strong>
   <% @magazine.pages.each do |m| %>
-    <li><%= m.image.url %></li>
+    <%= image_tag m.image.url, size: '100x100' %>
 <% end %>
 </p>
 

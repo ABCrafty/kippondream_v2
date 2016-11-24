@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Titre:</strong>
@@ -7,13 +6,13 @@
 
 <p>
   <strong>Thumbnail:</strong>
-  <%= @manga.thumbnail %>
+  <%= image_tag @manga.thumbnail, size: '100x100' %>
 </p>
 
 <p>
   <strong>Scans :</strong>
   <% @manga.scans.each do |m| %>
-    <li><%= m.image.url %></li>
+    <%= image_tag m.image.url, size: '100x100' %>
   <% end %>
 </p>
 
