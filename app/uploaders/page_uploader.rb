@@ -1,11 +1,11 @@
 # encoding: utf-8
 
-class ScansUploader < CarrierWave::Uploader::Base
+class PagesUploader < CarrierWave::Uploader::Base
 
   storage :file
 
   def store_dir
-    "uploads/mangas/#{model.manga.id}"
+    "uploads/magazines/#{model.magazine.id}"
   end
 
 
