@@ -11,7 +11,5 @@ class Mailer < ActionMailer::Base
     mail(to: @to, from: @from, subject: 'Nouveau contact depuis le site !') do |f|
       f.html
     end
-
   end
-
 end
