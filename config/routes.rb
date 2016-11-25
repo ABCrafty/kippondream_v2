@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :carousels
+  end
+  devise_for :users
   resources :scans
   resources :magazines
   resources :pages
@@ -10,4 +14,9 @@ Rails.application.routes.draw do
   post '/contact', to: 'contacts#create', as: :contacts
 
   root to: 'home#index'
+
+
+  get '/admin' => 'admin#index', as: :admin_root
+
+
 end

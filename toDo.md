@@ -6,17 +6,17 @@
 - les auteurs peuvent modifier le contenu des chapitres des différents mangas et leur présentation seulement
 - les auteurs peuvent créer des articles et personnaliser le contenu, modifiable
 - le backoffice contient plusieurs pages sur chaque zone personnalisable (type wordpress) :
-    le header: upload d'images en fond d'écran dans le carousel
-    le footer: à déterminer
-    la page d'accueil : la présentation du projet
-    la page mags : upload des magazines, créer un titre, une description, la couverture, et les pages
-    la page auteurs : présentation de chaque auteur personnalisable, récupérer les mangas liés aux auteurs pour
+   - le header: upload d'images en fond d'écran dans le carousel
+   - le footer: à déterminer
+   - la page d'accueil : la présentation du projet
+   - la page mags : upload des magazines, créer un titre, une description, la couverture, et les pages
+   - la page auteurs : présentation de chaque auteur personnalisable, récupérer les mangas liés aux auteurs pour
                       afficher en présentation brève
-    la page manga : upload des chapitres, couverture, description, pouvoir relier les mangas à un auteur,
+   - la page manga : upload des chapitres, couverture, description, pouvoir relier les mangas à un auteur,
                     il sera envoyé dans sa présentation en page auteurs
-    la page blog : créer un article, y associer du texte, une image, vidéo.. Galerie d'images possible ?
+   - la page blog : créer un article, y associer du texte, une image, vidéo.. Galerie d'images possible ?
                    liste des articles, possibilité de les modifier, supprimer..
-    la page boutique : ajouter un produit, le décrire, mettre une image de présentation, fixer prix, liste des produits modifiable
+   - la page boutique : ajouter un produit, le décrire, mettre une image de présentation, fixer prix, liste des produits modifiable
 
 
 - en cliquant sur le bouton se connecter, un pop up pour se logger apparaît
