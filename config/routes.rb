@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    resources :pages
+  end
+  namespace :admin do
+    resources :magazines
+  end
+  namespace :admin do
+    resources :scans
+  end
+  namespace :admin do
+    resources :mangas
+  end
+  namespace :admin do
     resources :carousels
   end
   devise_for :users
-  resources :scans
-  resources :magazines
-  resources :pages
-  resources :mangas
 
   # Partie contact
   get '/contact', to: 'contacts#new', as: :new_contact

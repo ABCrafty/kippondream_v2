@@ -5,7 +5,7 @@ class PageUploader < CarrierWave::Uploader::Base
   storage :file
 
   def store_dir
-    "uploads/magazines/#{model.magazine.id}"
+    "uploads/magazines/#{model.admin_magazine.id}"
   end
 
 

@@ -51,6 +51,7 @@
     ~ à droite, les indicators seront des li dns une ul, le contenu s'adapte à la li active
     ~ à droite de l'ul, les boutons pour faire défiler la liste de haut en bas, les li s'affichent 6 par 6 (à changer si besoin)
     ~ à chaque publication d'un nouveau numéro il est envoyé dans le carousel (sert d'historique)
+- La possibilité au staff d'indiquer la progression dans la création du magazine (échelle de 0 à 10 sur l'écriture, la correction, etc)
 
 #PAGE AUTEURS
 
@@ -62,6 +63,8 @@
 
 - une liste des mangas publiés, accès à la lecture en ligne à travers des boutons. Contenu personnalisable
     ~ il y a une description brève du manga, la couv principale (du manga, pas des chapitres), et les boutons vers la lecture (liste déroulante ?)
+- Les lecteurs peuvent indiquer s'ils ont envie (ou pas) que le manga qu'ils sont en train de lire sorte en format papier. Si 100 personnes sont d'accord, 
+une notif apparait dans la partie admin
 
 # PAGE DES CHAPITRES
 - la lecture en ligne, une image par page, on passe à la suivante en cliquant sur le bouton suivant ?

@@ -1,5 +1,7 @@
 class Admin::CarouselsController < ApplicationController
-  before_action :set_admin_carousel, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_admin_carousel, only: [:show, :edit, :destroy]
+
 
   # GET /admin/carousels
   def index
