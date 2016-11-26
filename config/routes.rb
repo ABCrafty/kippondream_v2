@@ -1,21 +1,20 @@
 Rails.application.routes.draw do
 
+  get 'user/new'
+
+  get 'user/create'
+
   namespace :admin do
     resources :pages
-  end
-  namespace :admin do
     resources :magazines
-  end
-  namespace :admin do
     resources :scans
-  end
-  namespace :admin do
     resources :mangas
-  end
-  namespace :admin do
     resources :carousels
   end
+
   devise_for :users
+
+  resources :user, :controller => 'user'
 
   # Partie contact
   get '/contact', to: 'contacts#new', as: :new_contact
