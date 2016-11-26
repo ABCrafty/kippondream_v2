@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Scans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_scans.each do |admin_scan| %>
+      <tr>
+        <td><%= admin_scan.image %></td>
+        <td><%= link_to 'Show', admin_scan %></td>
+        <td><%= link_to 'Edit', edit_admin_scan_path(admin_scan) %></td>
+        <td><%= link_to 'Destroy', admin_scan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Scan', new_admin_scan_path %>

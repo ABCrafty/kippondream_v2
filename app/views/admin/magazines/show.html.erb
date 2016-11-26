@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @admin_magazine.titre %>
+</p>
+
+<p>
+  <strong>Thumbnail:</strong>
+  <%= image_tag @admin_magazine.thumbnail, size: '100x100' %>
+</p>
+
+<p>
+  <strong>Pages:</strong>
+  <% @admin_magazine.admin_pages.each do |page| %>
+    <%= image_tag page.image, size: '100x100' %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_admin_magazine_path(@admin_magazine) %> |
+<%= link_to 'Back', admin_magazines_path %>
