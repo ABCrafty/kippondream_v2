@@ -15,6 +15,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'friendly_id'
 gem 'mail'
+gem 'wysiwyg-rails'
 
 
 group :development, :test do

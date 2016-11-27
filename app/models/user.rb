@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   attr_accessor :login
 
+  has_many :admin_articles, :class_name => 'Admin::Article'
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

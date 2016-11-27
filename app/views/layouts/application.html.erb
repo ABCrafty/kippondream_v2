@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %> <%= action_name %>">
   <% if notice %>
       <p class="notice"><%= notice %></p>
   <% end %>
@@ -29,7 +29,9 @@
       </li>
   <% end %>
 
+  <% if current_user %>
   <%= current_user.role %>
+  <% end %>
 
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
