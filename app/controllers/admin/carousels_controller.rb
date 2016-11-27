@@ -37,4 +37,13 @@ class Admin::CarouselsController < ApplicationController
     def admin_carousel_params
       params.require(:admin_carousel).permit(:image)
     end
+
+=begin
+    def check_role
+      if current_user.role == 'Dieu'
+        redirect_to admin_root_path, notice: 'GTFO NOOB'
+      end
+    end
+=end
+
 end

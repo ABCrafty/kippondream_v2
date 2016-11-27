@@ -21,13 +21,16 @@
 
   <% if user_signed_in? %>
       <li>
-        <%= link_to 'Administration', admin_root_path %> | <%= link_to('Deconnexion', destroy_user_session_path, :method => :delete) %>
+        <%= link_to 'Administration', admin_root_path %> | <%= link_to 'Profil', current_user %> <%= link_to('Deconnexion', destroy_user_session_path, :method => :delete) %>
       </li>
   <% else %>
       <li>
         <%= link_to('Connexion', new_user_session_path)  %>
       </li>
   <% end %>
+
+  <%= current_user.role %>
+
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
