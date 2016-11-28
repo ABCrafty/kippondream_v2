@@ -1,12 +1,12 @@
 #Liste des trucs à faire
 
 1). inscription, droits, backoffice
-- le staff doit pouvoir créer des utilisateurs comme auteurs
+- le staff doit pouvoir créer des utilisateurs comme auteurs (fait)
 - le staff peut modifier l'ensemble du contenu du site à sa guise
 - les auteurs peuvent modifier le contenu des chapitres des différents mangas et leur présentation seulement
 - les auteurs peuvent créer des articles et personnaliser le contenu, modifiable
 - le backoffice contient plusieurs pages sur chaque zone personnalisable (type wordpress) :
-   - le header: upload d'images en fond d'écran dans le carousel
+   - le header: upload d'images en fond d'écran dans le carousel (fait)
    - le footer: à déterminer
    - la page d'accueil : la présentation du projet
    - la page mags : upload des magazines, créer un titre, une description, la couverture, et les pages

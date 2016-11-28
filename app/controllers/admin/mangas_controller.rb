@@ -18,6 +18,7 @@ class Admin::MangasController < ApplicationController
 
   def create
     @admin_manga = Admin::Manga.new(admin_manga_params)
+    @admin_manga.user = current_user
     if @admin_manga.save
       if params[:images]
         params[:images].each { |image|

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Titre:</strong>
   <%= @admin_article.titre %>
@@ -7,7 +5,7 @@
 
 <p>
   <strong>Contenu:</strong>
-  <%= @admin_article.contenu %>
+  <%= simple_format(@admin_article.contenu) %>
 </p>
 
 <p>
