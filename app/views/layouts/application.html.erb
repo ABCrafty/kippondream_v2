@@ -12,9 +12,30 @@
       <p class="notice"><%= notice %></p>
   <% end %>
 
-  <% if notice %>
+  <% if alert %>
       <p class="alert"><%= alert %></p>
   <% end %>
+
+  <header>
+    <nav>
+      <ul>
+        <li>Magazines</li>
+        <li>Séries</li>
+        <li>Blog</li>
+      </ul>
+      <div>
+        <img src="" alt="Kippon Dream">
+      </div>
+      <ul>
+        <li>Membres</li>
+        <li>Contact</li>
+        <li>Boutique</li>
+      </ul>
+    </nav>
+
+    <h1>Le webzine de prépublication de bandes-dessinées</h1>
+    <button type="button">Lire nos magazines</button>
+  </header>
 
 
     <%= yield %>

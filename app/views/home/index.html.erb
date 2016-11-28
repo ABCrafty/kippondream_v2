@@ -1,13 +1,37 @@
-<h1>Home#index</h1>
-<button type="button" name="button">Bouton</button>
+<section class="actus">
+  <div class="actu1">
+    <img src="" alt="">
+    <p>blabla</p>
+    <button>Lire la suite <i></i></button>
+  </div>
 
-<%= link_to 'Magazine', admin_magazines_path %>
-<%= link_to 'Manga', admin_mangas_url %>
-<%= link_to 'Contact', Contact %>
+  <div class="actu2">
+    <img src="" alt="">
+    <p>blabla</p>
+    <button>Lire la suite <i></i></button>
+  </div>
 
-<br clear="all" />
+  <div class="actu3">
+    <img src="" alt="">
+    <p>blabla</p>
+    <button>Lire la suite <i></i></button>
+  </div>
 
-<% @diapos.each do |i| %>
-  <%= i %><br />
-<% end %>
+  <div class="actu-bloc">
+    <p>Pour les autres articles c'est par ici !</p>
+    <%= link_to 'Blog', blog_path %>
+  </div>
+</section> <!-- .actus -->
 
+<section class="mag-apercu">
+  <img src="" alt="">
+  <p>Description du dernier mag</p>
+  <div class="lienNouveauNum">
+    <p>N'attendez plus pour découvrir notre nouveau numéro !</p>
+    <a href="">Lire le dernier mag</a>
+  </div>
+</section> <!-- .mag-apercu -->
+
+<section class="presentation-asso">
+
+</section> <!-- .presentation-asso -->

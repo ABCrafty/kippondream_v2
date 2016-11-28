@@ -4,7 +4,13 @@ class HomeController < ApplicationController
     @diapos = Dir.glob('public/uploads/carousel/*')
   end
 
+
   def cgu
 
   end
+
+  def blog
+    
+  end
+
 end
