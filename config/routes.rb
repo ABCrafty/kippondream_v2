@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   get 'user/new'
 
   get 'user/create'
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
   post '/contact', to: 'contacts#create', as: :contacts
 
   root to: 'home#index'
-  get '/blog' => 'home#index', as: :blog
+  get '/blog' => 'home#blog', as: :blog
 
   get '/admin' => 'admin#index', as: :admin_root
 

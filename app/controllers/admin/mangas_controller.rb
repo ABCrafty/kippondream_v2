@@ -2,6 +2,8 @@ class Admin::MangasController < ApplicationController
   before_action :authenticate_user!
   before_action :set_admin_manga, only: [:show, :edit, :update, :destroy]
 
+  layout 'admin'
+
   def index
     @admin_mangas = Admin::Manga.all
   end

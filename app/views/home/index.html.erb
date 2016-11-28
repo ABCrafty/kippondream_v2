@@ -1,18 +1,27 @@
+<div class="test">
+<% @diapos.each do |d| %>
+    <%= image_tag d.image, size: '100x100' %>
+<% end %>
+</div>
+
+<blockquote>@articles.last(3).each do |a|</blockquote>
+
 <section class="actus">
-  <div class="actu1">
-    <img src="" alt="">
-    <p>blabla</p>
-    <button>Lire la suite <i></i></button>
-  </div>
+    <div class="actu1">
+      <!--<img src="" alt="">-->
+      <p>blabla</p> a.contenu
+      <button>Lire la suite <i></i></button>
+    </div>
+
 
   <div class="actu2">
-    <img src="" alt="">
+    <!--<img src="" alt="">-->
     <p>blabla</p>
     <button>Lire la suite <i></i></button>
   </div>
 
   <div class="actu3">
-    <img src="" alt="">
+    <!--<img src="" alt="">-->
     <p>blabla</p>
     <button>Lire la suite <i></i></button>
   </div>

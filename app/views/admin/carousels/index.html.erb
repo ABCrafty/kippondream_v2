@@ -4,10 +4,10 @@
 <%= render 'form', admin_carousel: @admin_carousel %>
 <br />
 
-<% @admin_carousels.each do |admin_carousel| %>
+<% @admin_carousels.each do |c| %>
 
-<%= image_tag admin_carousel.image, size: '100x100' %>
-<%= link_to 'Destroy', admin_carousel, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= image_tag c.image, size: '100x100' %>
+<%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% end %>
 

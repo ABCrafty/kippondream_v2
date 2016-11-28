@@ -15,7 +15,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'friendly_id'
 gem 'mail'
-gem 'wysiwyg-rails'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'mini_magick'
 
 
 group :development, :test do

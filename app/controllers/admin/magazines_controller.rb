@@ -2,6 +2,8 @@ class Admin::MagazinesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_admin_magazine, only: [:show, :edit, :update, :destroy]
 
+  layout 'admin'
+
   # GET /admin/magazines
   def index
     @admin_magazines = Admin::Magazine.all

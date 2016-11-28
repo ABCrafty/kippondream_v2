@@ -3,6 +3,7 @@ class Admin::CarouselsController < ApplicationController
   # before_action :check_role, only: :index
   before_action :set_admin_carousel, only: [:show, :edit, :destroy]
 
+  layout 'admin'
 
   # GET /admin/carousels
   def index

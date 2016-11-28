@@ -1,6 +1,8 @@
 class Admin::ArticlesController < ApplicationController
   before_action :set_admin_article, only: [:show, :edit, :update, :destroy]
 
+  layout 'admin'
+
   # GET /admin/articles
   def index
     @admin_articles = Admin::Article.all
