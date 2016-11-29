@@ -5,5 +5,28 @@
 @import './partials/menu';
 
 body {
-  //background: $green;
+  font-size: 16px;
+  line-height: 1.5;
+
+  h1,h2,h3,h4,h5,h6 {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+header {
+  h1 {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  div.header-button {
+    text-align: center;
+    margin: 3rem 0;
+    img {
+      width: 20%;
+      margin-right: 2.5rem;
+    }
+  }
+
 }

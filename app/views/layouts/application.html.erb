@@ -23,8 +23,8 @@
         <li>Séries</li>
         <li>Blog</li>
       </ul>
-      <div>
-        <img src="" alt="Kippon Dream">
+      <div class="header-logo">
+        <%= link_to image_tag('KD.png',:class=> 'header-logo', alt: 'Logo menu kippon Dream'), '/', :class => 'index-lien' %>
       </div>
       <ul>
         <li>Membres</li>
@@ -34,7 +34,11 @@
     </nav>
 
     <h1>Le webzine de prépublication de bandes-dessinées</h1>
-    <button type="button">Lire nos magazines</button>
+    <div class="header-button">
+      <a href="https://www.mangadraft.com/magazine/74-kippon-dream">
+        <%= image_tag("lecture_webzine.png", alt: "bouton lecture magazines") %>
+      </a>
+    </div>
   </header>
 
 
