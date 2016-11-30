@@ -6,16 +6,9 @@ $(document).ready(function () {
         });
     }
 
-    var $slides = $('[data-slides]');
-    var images = $slides.data('slides');
-    var count = images.length;
-    var slideshow = function() {
-        $slides
-            .css('background', 'url("' + images[Math.floor(Math.random() * count)] + '")')
-            .show(0, function() {
-                setTimeout(slideshow, 5000);
-            });
-    };
-
-    slideshow();
+    $("header").backstretch([
+        "/uploads/magazines/1/do_it.jpg",
+        "/uploads/magazines/1/Happy_Souriant.jpg",
+        "/uploads/magazines/1/do_it.jpg"
+    ], {duration: 4000});
 }); // fermeture jquery

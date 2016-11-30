@@ -1,2 +1,3 @@
 asset 'fontawesome'
 asset 'normalize-css'
+asset 'jquery-backstretch'
