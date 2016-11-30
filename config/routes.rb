@@ -1,31 +1,32 @@
 Rails.application.routes.draw do
 
-  mount Ckeditor::Engine => '/ckeditor'
-  get 'user/new'
+  resources :pejis
+  #Index de tout le site
+  root to: 'home#index'
 
-  get 'user/create'
-
+  #Partie admin
   namespace :admin do
-    resources :pages
-    resources :magazines
-    resources :scans
-    resources :mangas
     resources :carousels
-    resources :articles
   end
+  get '/admin' => 'admin#index', as: :admin_root
 
-  devise_for :users
-
-  resources :user, :controller => 'user'
+  #Différentes pages disponibles
+  resources :pages
+  resources :magazines
+  resources :mangas
+  resources :blog
 
   # Partie contact
   get '/contact', to: 'contacts#new', as: :new_contact
   post '/contact', to: 'contacts#create', as: :contacts
 
-  root to: 'home#index'
-  get '/blog' => 'home#blog', as: :blog
+  #Login + paramétrage des membres de KD
+  devise_for :users
+  get 'user/new'
+  get 'user/create'
+  resources :user, :controller => 'user'
 
-  get '/admin' => 'admin#index', as: :admin_root
-
+  #Permet de faire fonctionner CKEditor
+  mount Ckeditor::Engine => '/ckeditor'
 
 end

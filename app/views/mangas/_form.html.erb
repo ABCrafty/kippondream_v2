@@ -1,0 +1,21 @@
+<%= form_for(manga) do |f| %>
+
+  <div class="field">
+    <%= f.label :titre %>
+    <%= f.text_field :titre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apercu %>
+    <%= f.file_field :apercu %>
+  </div>
+
+  <div class="field">
+    <label for="images[]">Multi Upload</label>
+    <%= file_field_tag 'images[]', type: :file, multiple: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

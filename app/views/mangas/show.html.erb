@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+  <%= @manga.titre %>
+</h3>
+
+  <%= image_tag @manga.apercu, size: '200x200' %>
+<br />
+<% @manga.pejis.each do |p| %>
+<%= image_tag p.image, size: '100x100' %>
+    <%= link_to 'Supprimer', p, :method => :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<br />
+<%= link_to 'Edit', edit_manga_path(@manga) %> |
+<%= link_to 'Back', mangas_path %>

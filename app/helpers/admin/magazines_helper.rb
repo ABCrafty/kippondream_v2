@@ -1,2 +1,0 @@
-module Admin::MagazinesHelper
-end

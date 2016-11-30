@@ -4,19 +4,19 @@
 <% end %>
 </div>
 
-<blockquote>@articles.last(3).each do |a|</blockquote>
-
 <section class="actus">
+  <% @blogs.last(3).each do |b| %>
     <div class="actu">
+      <p><strong><%= b.titre %></strong></p>
       <!--<img src="" alt="">-->
-      <p>blabla</p> a.contenu
-      <button>Lire la suite <i></i></button>
+      <p><%= truncate(strip_tags(b.contenu), :length => 50, :separator => ' ') %></p>
+      <%= link_to 'Lire la suite', b %>
     </div>
-
+  <% end %>
 
   <div class="actu-bloc">
     <p>Pour les autres articles c'est par ici !</p>
-    <%= link_to 'Blog', blog_path %>
+    <%= link_to 'Blog', Blog %>
   </div>
 </section> <!-- .actus -->
 
@@ -30,7 +30,7 @@
 </section> <!-- .mag-apercu -->
 
 <section class="presentation-asso">
-  <div presentation-texte>
+  <div class="presentation-texte">
     <h2>A propos du projet, qu'est-ce que le Kippon Dream ?</h2>
 
     <p>Le Kippon Dream est un webzine de prépublication francophone de bandes-dessinées style manga

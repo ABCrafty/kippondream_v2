@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pejis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Manga</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pejis.each do |peji| %>
+      <tr>
+        <td><%= peji.image %></td>
+        <td><%= peji.manga_id %></td>
+        <td><%= link_to 'Show', peji %></td>
+        <td><%= link_to 'Edit', edit_peji_path(peji) %></td>
+        <td><%= link_to 'Destroy', peji, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Peji', new_peji_path %>

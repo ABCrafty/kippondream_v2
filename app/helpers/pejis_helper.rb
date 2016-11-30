@@ -1,0 +1,2 @@
+module PejisHelper
+end

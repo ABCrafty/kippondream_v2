@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @peji.image %>
+</p>
+
+<p>
+  <strong>Manga:</strong>
+  <%= @peji.manga_id %>
+</p>
+
+<%= link_to 'Edit', edit_peji_path(@peji) %> |
+<%= link_to 'Back', pejis_path %>
