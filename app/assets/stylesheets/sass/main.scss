@@ -29,4 +29,26 @@ header {
     }
   }
 
+  [data-slides] {
+    background: url(../../uploads/banner1.jpg) no-repeat center top; /* Default image. */
+    background-size: cover;
+    transition: background 1s linear;
+  }
+
+}
+
+main {
+  section.actus {
+    display: flex;
+
+    div.actu {
+      width: 25%;
+      background: $primary;
+    }
+
+    div.actu-lien {
+      width: 25%;
+      background: $secondary;
+    }
+  }
 }

@@ -16,7 +16,17 @@
       <p class="alert"><%= alert %></p>
   <% end %>
 
-  <header>
+  <header> <!-- data-slides='[
+		<"uploads/banner1.jpg",
+		"uploads/banner2.jpg",
+		"uploads/banner3.jpg",
+		"uploads/banner4.jpg",
+		"uploads/banner5.jpg",
+		"uploads/banner6.jpg",
+		"uploads/banner7.jpg",
+		"uploads/banner8.jpg",
+		"uploads/banner9.jpg"
+	]' -->
     <nav>
       <ul>
         <li>Magazines</li>
@@ -24,8 +34,8 @@
         <li>Blog</li>
       </ul>
       <div class="header-logo">
-        <%= link_to root_path, :class => 'index-lien' %>
-        <!--image_tag('KD.png',:class=> 'header-logo', alt: 'Logo menu kippon Dream'),-->
+        <%= link_to image_tag('KD.png',:class=> 'header-logo', alt: 'Logo menu kippon Dream'), root_path, :class => 'index-lien' %>
+
       </div>
       <ul>
         <li>Membres</li>
@@ -37,7 +47,7 @@
     <h1>Le webzine de prépublication de bandes-dessinées</h1>
     <div class="header-button">
       <a href="https://www.mangadraft.com/magazine/74-kippon-dream">
-        image_tag("lecture_webzine.png", alt: "bouton lecture magazines")
+        <%= image_tag("lecture_webzine.png", alt: "bouton lecture magazines") %>
       </a>
     </div>
   </header>
