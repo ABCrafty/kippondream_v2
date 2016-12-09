@@ -6,9 +6,7 @@
 <div class="manga">
   <%= m.titre %><br />
   <%= image_tag m.apercu, size: '200x200' %><br />
-  <% m.pejis.each do |p| %>
-    <%= image_tag p.image, size: '100x100' %>
-  <% end %>
+  <%= m.inspect %>
       <br />
   <%= link_to 'Show', m %>
   <%= link_to 'Edit', edit_manga_path(m) %>

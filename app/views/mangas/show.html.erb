@@ -6,8 +6,10 @@
 
   <%= image_tag @manga.apercu, size: '200x200' %>
 <br />
-<% @manga.pejis.each do |p| %>
-<%= image_tag p.image, size: '100x100' %>
+<% @manga.manga_pejis.each do |p| %>
+  <%= link_to  do %>
+    <%= image_tag p.image, size: '100x100' %>
+  <% end %>
     <%= link_to 'Supprimer', p, :method => :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 

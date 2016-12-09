@@ -42,7 +42,7 @@ class PejisController < ApplicationController
   # DELETE /pejis/1
   def destroy
     @peji.destroy
-    redirect_to :back, notice: 'Peji was successfully destroyed.'
+    redirect_to pejis_url, notice: 'Peji was successfully destroyed.'
   end
 
   private

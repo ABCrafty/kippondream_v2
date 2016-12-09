@@ -24,7 +24,7 @@ class MangasController < ApplicationController
     if @manga.save
       if params[:images]
         params[:images].each { |image|
-          @manga.pejis.create(image: image)
+          @manga.manga_pejis.create(image: image)
         }
       end
       redirect_to @manga, notice: 'Manga was successfully created.'
@@ -37,7 +37,7 @@ class MangasController < ApplicationController
     if @manga.update(manga_params)
       if params[:images]
         params[:images].each { |image|
-          @manga.scan.create(image: image)
+          @manga.manga_pejis.create(image: image)
         }
       end
       redirect_to @manga, notice: 'Manga was successfully updated.'
@@ -60,5 +60,6 @@ class MangasController < ApplicationController
   def manga_params
     params.require(:manga).permit(:titre, :apercu)
   end
+
 
 end

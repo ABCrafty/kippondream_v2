@@ -2,19 +2,19 @@
 
 <h1>Magazines</h1>
 
-<% @magazines.each do |magazine| %>
+<% @magazines.each do |m| %>
   <div class="magazines">
-    <h4><%= magazine.titre %></h4>
-    <%= image_tag magazine.apercu, size: '200x200' %><br />
+    <h4><%= m.titre %></h4>
+    <%= image_tag m.apercu, size: '200x200' %><br />
 
-    <% magazine.pages.each do |p| %>
+    <% m.pages.each do |p| %>
         <%= image_tag p.image, size: '100x100' %>
     <% end %>
     <br />
 
-    <%= link_to 'Show', magazine %>
-    <%= link_to 'Edit', edit_magazine_path(magazine) %>
-    <%= link_to 'Destroy', magazine, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Show', m %>
+    <%= link_to 'Edit', edit_magazine_path(m) %>
+    <%= link_to 'Destroy', m, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 <br clear="all" />
 <% end %>
