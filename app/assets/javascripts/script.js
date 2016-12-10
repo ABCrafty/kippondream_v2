@@ -7,7 +7,7 @@ $(document).ready(function () {
     }
 
     $('.header-slider').slick({
-        dots: true;
-        initialSlide : 0;
+        dots: true,
+        initialSlide : 0
     })
 }); // fermeture jquery
