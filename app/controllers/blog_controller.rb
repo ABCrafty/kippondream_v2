@@ -29,6 +29,7 @@ class BlogController < ApplicationController
     @blog = Blog.new(blog_params)
 
     if @blog.save
+      @blog.user = current_user.id
       redirect_to @blog, notice: 'Blog was successfully created.'
     else
       render :new
