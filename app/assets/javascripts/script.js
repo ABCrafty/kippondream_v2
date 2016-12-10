@@ -6,9 +6,8 @@ $(document).ready(function () {
         });
     }
 
-    $("header").backstretch([
-        "/uploads/magazines/1/do_it.jpg",
-        "/uploads/magazines/1/Happy_Souriant.jpg",
-        "/uploads/magazines/1/do_it.jpg"
-    ], {duration: 4000});
+    $('.header-slider').slick({
+        dots: true;
+        initialSlide : 0;
+    })
 }); // fermeture jquery

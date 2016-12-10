@@ -1,0 +1,15 @@
+div.header-slider {
+  width: 100%;
+
+  div.slide {
+    display: flex;
+
+    div {
+      width: 50%;
+    }
+
+    div:first-child {
+      background-color: #FFECC7;
+    }
+  }
+}

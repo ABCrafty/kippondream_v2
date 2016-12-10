@@ -1,3 +1,4 @@
 asset 'fontawesome'
 asset 'normalize-css'
 asset 'jquery-backstretch'
+asset 'slick-carousel'

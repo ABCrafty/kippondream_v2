@@ -9,9 +9,9 @@
   <section class="actus">
     <% @blogs.last(3).each do |b| %>
       <div class="actu">
-        <p><strong><%= b.titre %></strong></p>
+        <h3><strong><%= b.titre %></strong></h3>
         <!--<img src="" alt="">-->
-        <p><%= truncate(strip_tags(b.contenu), :length => 50, :separator => ' ') %></p>
+        <p><%= truncate(strip_tags(b.contenu), :length => 200, :separator => ' ') %></p>
         <%= link_to 'Lire la suite', b %>
       </div>
     <% end %>
