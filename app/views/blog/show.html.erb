@@ -7,7 +7,7 @@
 
 <p>
   <strong>Contenu:</strong>
-  <%= @blog.contenu %>
+  <%= simple_format(@blog.contenu) %>
 </p>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
