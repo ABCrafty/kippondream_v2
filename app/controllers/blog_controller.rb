@@ -2,6 +2,8 @@ class BlogController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
+  layout 'admin', only: [:new, :edit]
+
 
   def index
     @titre = 'Tous les articles'
@@ -27,6 +29,7 @@ class BlogController < ApplicationController
     @blog = Blog.new(blog_params)
 
     if @blog.save
+      @blog.user = current_user.id
       redirect_to @blog, notice: 'Blog was successfully created.'
     else
       render :new
@@ -51,7 +54,7 @@ class BlogController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog.friendly.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
