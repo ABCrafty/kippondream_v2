@@ -21,13 +21,13 @@ class MagazinesController < ApplicationController
 
     if @magazine.save
       if params[:images]
-        params[:images].each { |image|
-          @magazine.pages.create(image: image)
-        }
+        (params[:image] || []).each_with_index do |image, index|
+          @magazine.pages.create(image: image, page_number: index + 1)
       end
       redirect_to @magazine, notice: 'Magazine was successfully created.'
     else
       render :new
+      end
     end
   end
 

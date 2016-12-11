@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :pejis
   #Index de tout le site
   root to: 'home#index'
 
@@ -11,10 +10,13 @@ Rails.application.routes.draw do
   get '/admin' => 'admin#index', as: :admin_root
 
   #Différentes pages disponibles
-  resources :pages
-  resources :magazines
+  resources :magazines do
+    resources :pages
+  end
   resources :mangas
   resources :blog
+
+
 
   # Partie contact
   get '/contact', to: 'contacts#new', as: :new_contact

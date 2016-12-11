@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h4>
   <%= @magazine.titre %>
 </h4>
@@ -7,10 +5,12 @@
   <%= image_tag @magazine.apercu, size: '200x200' %>
 
 <% @magazine.pages.each do |m| %>
+    <%= link_to [@magazine, m] do %>
     <%= image_tag m.image, size: '100x100' %>
-    <%= link_to 'Supprimer', m, :method => :delete, data: {confirm: 'Are you sure?'} %>
 <% end %>
+    <%= link_to 'Supprimer', [@magazine, m], :method => :delete, data: {confirm: 'Are you sure?'} %>
 
+<% end %>
 <br />
 
 <%= link_to 'Edit', edit_magazine_path(@magazine) %> |
