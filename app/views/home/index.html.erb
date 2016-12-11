@@ -5,31 +5,33 @@
 </div>
 
 <main role="main">
+  <div class="webzine">
+    <h1>Le webzine de prépublication de bandes-dessinées</h1>
+    <div class="header-button">
+      <a href="https://www.mangadraft.com/magazine/74-kippon-dream">
+        <%= image_tag("lecture_webzine.png", alt: "bouton lecture magazines") %>
+      </a>
+    </div>
+  </div>
 
   <section class="actus">
     <% @blogs.last(3).each do |b| %>
       <div class="actu">
         <h3><strong><%= b.titre %></strong></h3>
-        <!--<img src="" alt="">-->
+        <img src="https://www.mangadraft.com/library/114/1_avatar.jpg" alt=""/>
         <p><%= truncate(strip_tags(b.contenu), :length => 200, :separator => ' ') %></p>
-        <%= link_to 'Lire la suite', b %>
+        <%= link_to 'Lire la suite ', b %>
       </div>
     <% end %>
 
     <div class="actu-lien">
       <p>Pour les autres articles c'est par ici !</p>
+      <span class="icon-stack">
+        <i class="fa fa-circle-o" aria-hidden="true"></i>
+      </span>
       <%= link_to 'Blog', Blog %>
     </div>
   </section> <!-- .actus -->
-
-  <section class="mag-apercu">
-    <img src="" alt="">
-    <p>Description du dernier mag</p>
-    <div class="lienNouveauNum">
-      <p>N'attendez plus pour découvrir notre nouveau numéro !</p>
-      <a href="">Lire le dernier mag</a>
-    </div>
-  </section> <!-- .mag-apercu -->
 
   <section class="presentation-asso">
     <div class="presentation-texte">
@@ -56,7 +58,7 @@
         ainsi la lecture et vous pouvez retrouver vos séries préférées selon les numéros.</p>
     </div>
     <div class="presentation-img">
-      <!-- <img src="" alt=""> -->
+      <%= image_tag('personnage_pain.png', alt: 'Païn', class:'hidden-sm hidden-xs')%>
     </div>
 
   </section> <!-- .presentation-asso -->

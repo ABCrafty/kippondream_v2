@@ -17,23 +17,31 @@ body {
 }
 
 header {
-  height: 100vh;
-  h1 {
-    text-align: center;
-    margin-top: 2rem;
-  }
-  div.header-button {
-    text-align: center;
-    margin: 3rem 0;
-    img {
-      width: 20%;
-      margin-right: 2.5rem;
-    }
-  }
-
+  height: 60vh;
+  position: relative;
 }
 
 main {
+  background: url('bg_mags.jpg');
+  padding: 1rem 0;
+
+  .webzine {
+    height: 40vh;
+
+    h1 {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    div.header-button {
+      text-align: center;
+      margin: 2rem 0;
+      img {
+        width: 18%;
+        margin-right: 2.5rem;
+      }
+    }
+  }
+
 
   section.actus {
     display: flex;
@@ -41,22 +49,20 @@ main {
     width: 100%;
 
     div.actu:first-child {
-      margin: 2rem 1rem 0 2rem;
+      margin: 2rem 1rem 2rem 2rem;
     }
 
     div.actu:nth-child(3) {
-      margin: 2rem 2rem 0 1rem;
+      margin: 2rem 2rem 2rem 1rem;
     }
 
     div.actu {
       width: 24%;
       background: white;
-      height: 237px;
-      overflow: hidden;
-      position: relative;
       margin: 2rem 1rem;
       text-align: justify;
       border-radius: 4px;
+      position: relative;
 
       h3 {
         text-align: center;
@@ -64,25 +70,75 @@ main {
       }
 
       p {
-        padding: 2rem 1rem 0 1rem;
+        padding: 0 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
       }
 
       a {
-        position: absolute;
-        bottom: 0;
-        color: black;
+        text-transform: uppercase;
         text-align: center;
         width: 100%;
-        background: linear-gradient(to bottom, transparent 35%, white );
-        padding: 236px 0 21px 0px;
-        border: none;
-        text-transform: uppercase;
+        position: absolute;
+        bottom: 0;
+        background: $secondary;
+        text-decoration: none;
+        color: black;
+        padding: 0.2rem 0;
       }
     }
 
     div.actu-lien {
       width: 25%;
       background: $secondary;
+
+      p {
+        text-align: center;
+        font-size: 2rem;
+        padding: 0 1rem;
+      }
+
+      .fa {
+        display: block;
+        font-size: 2rem;
+        text-align: center;
+        margin: 1rem 0;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        margin: 1rem 0;
+        color: black;
+      }
+    } // .actu-lien
+  } // .actus
+
+  section.presentation-asso {
+    background: white;
+    display: flex;
+    width: 80%;
+    margin: 4rem 10rem;
+    padding: 2rem 0;
+    border: 2px solid black;
+    position: relative;
+
+    .presentation-texte {
+      width: 60%;
+      padding: 0.5rem 1rem;
     }
-  }
-}
+
+    .presentation-img {
+      img {
+        position: absolute;
+        bottom: -2rem;
+        right: 0;
+      }
+    }
+  } // section .presentation-asso
+} // main
