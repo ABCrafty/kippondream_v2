@@ -6,8 +6,5 @@ $(document).ready(function () {
         });
     }
 
-    $('.header-slider').slick({
-        dots: true,
-        initialSlide : 0
-    })
+    $('.owl-carousel').owlCarousel();
 }); // fermeture jquery

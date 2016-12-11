@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   #Différentes pages disponibles
   resources :magazines do
-    resources :pages
+    resources :pages, only: [:new, :update, :index]
+    get '/:page_number' => 'pages#show', as: :custom
   end
   resources :mangas
   resources :blog
