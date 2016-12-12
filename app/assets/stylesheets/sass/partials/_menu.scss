@@ -3,6 +3,7 @@ header {
   nav {
     display: flex;
     justify-content: center;
+    z-index: 4000;
 
     ul:first-child {
       li:last-child {
