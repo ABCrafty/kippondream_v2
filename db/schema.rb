@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20161212173309) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "magazine_id"
+    t.integer  "page_number"
   end
 
   create_table "pejis", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

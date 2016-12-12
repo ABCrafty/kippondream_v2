@@ -8,5 +8,8 @@ class CreatePresentations < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    add_column :pages, :page_number, :integer
+
   end
 end
