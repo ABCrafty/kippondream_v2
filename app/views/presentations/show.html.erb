@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre1:</strong>
+  <%= @presentation.titre1 %>
+</p>
+
+<p>
+  <strong>Contenu1:</strong>
+  <%= @presentation.contenu1 %>
+</p>
+
+<p>
+  <strong>Titre2:</strong>
+  <%= @presentation.titre2 %>
+</p>
+
+<p>
+  <strong>Contenu2:</strong>
+  <%= @presentation.contenu2 %>
+</p>
+
+<%= link_to 'Edit', edit_presentation_path(@presentation) %> |
+<%= link_to 'Back', presentations_path %>

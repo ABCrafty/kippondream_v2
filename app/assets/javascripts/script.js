@@ -6,9 +6,15 @@ $(document).ready(function () {
         });
     }
 
-/*    $("header").backstretch([
-        "/uploads/magazines/1/do_it.jpg",
-        "/uploads/magazines/1/Happy_Souriant.jpg",
-        "/uploads/magazines/1/do_it.jpg"
-    ], {duration: 4000});*/
+    $('div#header-slider').owlCarousel({
+        nav : true, // Show next and prev buttons
+        navSpeed : 300,
+        paginationSpeed : 400,
+        singleItem:true,
+        items: 1,
+        loop: true
+    });
+
+
+
 }); // fermeture jquery

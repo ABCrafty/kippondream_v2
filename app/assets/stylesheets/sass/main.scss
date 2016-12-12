@@ -3,6 +3,7 @@
 @import './partials/buttons';
 @import './partials/form';
 @import './partials/menu';
+@import './partials/headerSlider';
 
 body {
   font-size: 16px;
@@ -16,33 +17,167 @@ body {
 }
 
 header {
-  h1 {
-    text-align: center;
-    margin-top: 2rem;
-  }
-  div.header-button {
-    text-align: center;
-    margin: 3rem 0;
-    img {
-      width: 20%;
-      margin-right: 2.5rem;
-    }
-  }
+  height: 64vh;
+  position: relative;
+  background: #FFB36D!important;
 
+  #header-slider{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 0;
+
+    .item {
+      display: flex;
+      width: 100%;
+      height: auto;
+
+      .slide-description {
+        width: 30%;
+      }
+
+      .img-slide {
+        width: 70%;
+        height: 64vh;
+
+        img {
+          width: 100%;
+          height: 64vh;
+        }
+      }
+    }
+
+  }
 }
 
 main {
+  padding: 1rem 0;
+
+  .webzine {
+    height: 36vh;
+    h1 {
+      text-align: center;
+    }
+    div.header-button {
+      text-align: center;
+      img {
+        width: 15%;
+        margin-right: 2.5rem;
+      }
+    }
+  }
+
+
   section.actus {
     display: flex;
+    background: $primary;
+    width: 100%;
 
-    div.actu {
-      width: 25%;
-      background: $primary;
-    }
+    .container-actu {
+      width: 75%;
+      display: flex;
+
+      div.actu:first-child {
+        margin: 2rem 1rem 2rem 2rem;
+      }
+
+      div.actu:nth-child(3) {
+        margin: 2rem 2rem 2rem 1rem;
+      }
+
+      div.actu {
+        width: 29%;
+        background: white;
+        margin: 2rem 1rem;
+        text-align: justify;
+        border-radius: 4px;
+        position: relative;
+
+        h3 {
+          text-align: center;
+          padding: 0 1rem;
+        }
+
+        p {
+          padding: 0 1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        img {
+          width: 100%;
+          height: 200px;
+        }
+
+        a {
+          text-transform: uppercase;
+          text-align: center;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          background: $secondary;
+          text-decoration: none;
+          color: black;
+          padding: 0.2rem 0;
+        }
+      } // .actu
+    } // .container-actu
 
     div.actu-lien {
       width: 25%;
       background: $secondary;
+
+      p {
+        text-align: center;
+        font-size: 2rem;
+        padding: 0 1rem;
+      }
+
+      .fa {
+        display: block;
+        font-size: 10rem;
+        text-align: center;
+        margin: 1rem 0;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        margin: 1rem 0;
+        color: black;
+      }
+    } // .actu-lien
+  } // .actus
+
+  section.presentation-asso {
+    background: asset_data_url('background04.jpg');
+    padding: 2rem 0;
+
+    .cadre-asso {
+      background: white;
+      display: flex;
+      width: 80%;
+      margin: 4rem 10rem;
+
+      border: 2px solid black;
+      position: relative;
+
+      .presentation-texte {
+        width: 53%;
+        padding: 0.5rem 1rem;
+
+        p {
+          text-align: justify;
+        }
+      }
+
+      .presentation-img {
+        img {
+          position: absolute;
+          bottom: -2rem;
+          right: 0;
+        }
+      }
     }
-  }
-}
+  } // section .presentation-asso
+} // main

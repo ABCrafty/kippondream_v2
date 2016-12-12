@@ -87,4 +87,4 @@ une notif apparait dans la partie admin
 
 # FOOTER
 
-- à déterminer
+- partenaires, menu vertical, teasing de recrutement avec redirection vers le contact
