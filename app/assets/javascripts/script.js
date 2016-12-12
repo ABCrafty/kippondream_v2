@@ -7,12 +7,10 @@ $(document).ready(function () {
     }
 
     $('div#header-slider').owlCarousel({
-        nav : true, // Show next and prev buttons
-        navSpeed : 300,
+        navigation : true, // Show next and prev buttons
+        slideSpeed : 300,
         paginationSpeed : 400,
-        singleItem:true,
-        items: 1,
-        loop: true
+        singleItem:true
     });
 
 

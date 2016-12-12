@@ -51,10 +51,11 @@ header {
 }
 
 main {
-  padding: 1rem 0;
+  padding-bottom: 1rem;
 
   .webzine {
     height: 36vh;
+    background: asset_data_url('webzinebg.jpg');
     h1 {
       text-align: center;
     }

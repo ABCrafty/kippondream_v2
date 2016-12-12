@@ -4,6 +4,7 @@ header {
     display: flex;
     justify-content: center;
     z-index: 4000;
+    position: relative;
 
     ul:first-child {
       li:last-child {
@@ -29,7 +30,7 @@ header {
       padding: 0;
       font-size: 1.5rem;
       height: 3rem;
-      background: rgba(255,255,255, 0.5);
+      background: rgba(255,255,255, 0.8);
 
       li {
         margin: 0.2rem 1rem;
