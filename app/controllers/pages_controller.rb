@@ -41,12 +41,17 @@ class PagesController < ApplicationController
 
   private
 
+  def magazine
+
+  end
+
   def set_page
-    @page = Page.find(params[:id])
+    @magazine = Magazine.find_by(slug: params[:magazine_id])
+    @page = @magazine.pages.find_by(page_number: params[:id])
   end
 
   def page_params
-    params.require(:page).permit(:titre, :apercu)
+    params.require(:page).permit(:titre, :apercu, :page_number)
   end
 
 end

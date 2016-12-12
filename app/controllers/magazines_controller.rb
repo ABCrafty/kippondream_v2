@@ -34,9 +34,9 @@ class MagazinesController < ApplicationController
   def update
     if @magazine.update(magazine_params)
       if params[:images]
-        params[:images].each { |image|
-          @magazine.pages.create(image: image)
-        }
+        (params[:image] || []).each_with_index do |image, index|
+          @magazine.pages.create(image: image, page_number: index + 1)
+        end
       end
       redirect_to @magazine, notice: 'Magazine was successfully updated.'
     else

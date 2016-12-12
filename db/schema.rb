@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210220250) do
+ActiveRecord::Schema.define(version: 20161212173309) do
 
   create_table "admin_carousels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "titre"
+    t.string   "description"
+    t.string   "lien"
   end
 
   create_table "blog", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -51,13 +54,21 @@ ActiveRecord::Schema.define(version: 20161210220250) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
+  create_table "homes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "titre1"
+    t.text     "contenu1",   limit: 65535
+    t.string   "titre2"
+    t.text     "contenu2",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "magazines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titre"
     t.string   "apercu"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "slug"
-    t.string   "description"
   end
 
   create_table "mangas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -65,7 +76,6 @@ ActiveRecord::Schema.define(version: 20161210220250) do
     t.string   "apercu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "slug"
   end
 
   create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -73,6 +83,7 @@ ActiveRecord::Schema.define(version: 20161210220250) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "magazine_id"
+    t.integer  "page_number"
   end
 
   create_table "pejis", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -80,6 +91,24 @@ ActiveRecord::Schema.define(version: 20161210220250) do
     t.integer  "manga_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "presentation", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "titre1"
+    t.text     "contenu1",   limit: 65535
+    t.string   "titre2"
+    t.text     "contenu2",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "presentations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "titre1"
+    t.text     "contenu1",   limit: 65535
+    t.string   "titre2"
+    t.text     "contenu2",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :presentations
   #Index de tout le site
   root to: 'home#index'
+
 
   #Partie admin
   namespace :admin do
@@ -11,9 +13,9 @@ Rails.application.routes.draw do
 
   #Différentes pages disponibles
   resources :magazines do
-    resources :pages, only: [:new, :update, :index]
-    get '/:page_number' => 'pages#show', as: :custom
+    resources :pages
   end
+
   resources :mangas
   resources :blog
 
