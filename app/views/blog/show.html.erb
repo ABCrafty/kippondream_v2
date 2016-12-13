@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Illustration :</strong>
+  <%= image_tag @blog.illu %>
+</p>
+
+<p>
   <strong>Contenu:</strong>
   <%= simple_format(@blog.contenu) %>
 </p>
@@ -13,6 +18,7 @@
 <p>
   <strong>Auteur:</strong>
   <%= @blog.user.username %>
+  <%= image_tag @blog.user.avatar, size: '100x100' %> <%= image_tag @blog.user.banniere, size: '100x100' %>
 </p>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |

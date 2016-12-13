@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit]
+  before_action :set_user, only: [:show, :edit, :update, :password]
 
   def new
     @user = User.new
@@ -11,6 +11,10 @@ class UserController < ApplicationController
   end
 
   def edit
+
+  end
+
+  def password
 
   end
 
@@ -38,7 +42,7 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :avatar, :is_femme, :date_naissance, :role)
+    params.require(:user).permit(:username, :email, :password, :avatar, :is_femme, :date_naissance, :role, :banniere)
   end
 
   def set_user

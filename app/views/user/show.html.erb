@@ -1,5 +1,11 @@
 <h1>Profiiiiil</h1>
 
-<%= @user.username %>
+<%= @user.username %><br />
+<%= image_tag @user.avatar, size: '100x100' %><br />
+<%= image_tag @user.banniere, size: '200x100' %><br />
+<%= @user.date_naissance.strftime('%d / %m / %Y') %><br />
+<%= @user.is_femme ? 'Femme' : 'Homme' %><br />
+<%= @user.email %><br />
+<%= @user.role %><br />
 
 <%= link_to 'Modifier profil', edit_user_path, id: current_user.id %>

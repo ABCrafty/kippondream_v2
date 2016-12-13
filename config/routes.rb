@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'user/new'
   get 'user/create'
+  get '/user/:id/edit_password' => 'user#password', as: :change_password
   resources :user, :controller => 'user'
 
   #Permet de faire fonctionner CKEditor

@@ -1,9 +1,53 @@
 <%= form_for(@user) do |f| %>
-  <p>Allo</p>
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
+
+    <p>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </p>
+
+    <p>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </p>
+
+    <p>
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+    </p>
+
+    <p>
+      <%= f.label :is_femme %>
+      <%= f.check_box :is_femme %>
+    </p>
+
+    <p>
+      <% if @user.avatar %>
+          <%= image_tag @user.avatar, size: '100x100' %>
+      <% end %>
+    </p>
+
+    <p>
+      <%= f.label :banniere %>
+      <%= f.file_field :banniere %>
+    </p>
+
+    <p>
+      <% if @user.banniere %>
+          <%= image_tag @user.banniere, size: '200x100' %>
+      <% end %>
+    </p>
+
+    <p>
+      <%= f.label :date_naissance %>
+      <%= f.date_select :date_naissance, {:start_year => 1990, order: [:day, :month, :year] } %>
+    </p>
+
+    <p>
+      <%= f.label :role %>
+      <%= f.select :role, options_for_select(%w[Dieu Staff Auteur], 'Auteur') %>
+    </p>
+
+    <%= link_to 'test', change_password_path(@user) %>
 
   <%= f.submit %>
 <% end %>

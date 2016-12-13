@@ -20,6 +20,16 @@
   </p>
 
   <p>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </p>
+
+  <p>
+    <%= f.label :banniere %>
+    <%= f.file_field :banniere %>
+  </p>
+
+  <p>
     <%= f.label :role %>
     <%= f.select :role, options_for_select(%w[Dieu Staff Auteur], 'Auteur') %>
   </p>

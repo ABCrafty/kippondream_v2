@@ -4,6 +4,10 @@ class User < ApplicationRecord
   has_many :mangas
   has_many :blogs
 
+  mount_uploader :avatar, AvatarUploader
+  mount_uploader :banniere, AvatarUploader
+
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
