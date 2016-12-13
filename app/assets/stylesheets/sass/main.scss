@@ -34,6 +34,32 @@ header {
 
       .slide-description {
         width: 30%;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 5rem;
+
+        h3 {
+          text-align: center;
+          margin-left: 22%;
+        }
+
+        p {
+          margin-left: 22%;
+        }
+
+        button {
+          text-align: center;
+          margin-left: 22%;
+          padding: 1rem 2rem;
+          text-transform: uppercase;
+          border: none;
+          box-shadow: 1px 1px 7px black;
+          cursor: pointer;
+          background: $primary;
+          color: white;
+        }
       }
 
       .img-slide {
@@ -44,11 +70,30 @@ header {
           width: 100%;
           height: 64vh;
         }
+      } // .img-slide
+    } // .item
+
+    .owl-prev {
+      position: absolute;
+      top: 50%;
+      left: 0.5rem;
+
+      .fa {
+        font-size: 2.5rem;
       }
     }
 
-  }
-}
+    .owl-next {
+      position: absolute;
+      top: 50%;
+      right: 0.5rem;
+
+      .fa {
+        font-size: 2.5rem;
+      }
+    }
+  } // #header-slider
+} // header
 
 main {
   padding-bottom: 1rem;

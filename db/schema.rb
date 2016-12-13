@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212225558) do
+ActiveRecord::Schema.define(version: 20161212214009) do
 
   create_table "admin_carousels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
@@ -21,22 +21,14 @@ ActiveRecord::Schema.define(version: 20161212225558) do
     t.string   "lien"
   end
 
-  create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "titre"
-    t.text     "contenu",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "slug"
-  end
-
   create_table "blog", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titre"
     t.text     "contenu",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.string   "slug"
-    t.string   "illu"
     t.integer  "user_id"
+    t.string   "illu"
   end
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -70,13 +62,6 @@ ActiveRecord::Schema.define(version: 20161212225558) do
     t.datetime "updated_at",  null: false
     t.string   "slug"
     t.string   "description"
-  end
-
-  create_table "manga_pejis", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "image"
-    t.integer  "manga_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "mangas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -114,14 +99,7 @@ ActiveRecord::Schema.define(version: 20161212225558) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "scans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "manga_id"
-  end
-
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "The base table for user entities." do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"

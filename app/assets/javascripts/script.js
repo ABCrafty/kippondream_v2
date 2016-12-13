@@ -8,9 +8,12 @@ $(document).ready(function () {
 
     $('div#header-slider').owlCarousel({
         navigation : true, // Show next and prev buttons
-        slideSpeed : 300,
-        paginationSpeed : 400,
-        singleItem:true
+        slideSpeed : 1000,
+        paginationSpeed : 2000,
+        singleItem:true,
+        autoPlay: 5000,
+        stopOnHover: true,
+        navigationText : ['<i class="fa fa-arrow-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-right" aria-hidden="true"></i>']
     });
 
 

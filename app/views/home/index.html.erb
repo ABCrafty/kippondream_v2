@@ -20,7 +20,7 @@
         <div class="actu">
           <h3><strong><%= b.titre %></strong></h3>
           <img src="https://www.mangadraft.com/library/114/1_avatar.jpg" alt=""/>
-          <p><%= truncate(strip_tags(b.contenu), :length => 200, :separator => ' ') %></p>
+          <p><%= truncate(strip_tags(b.contenu), :length => 150, :separator => ' ') %></p>
           <%= link_to 'Lire la suite ', b %>
         </div>
       <% end %>
