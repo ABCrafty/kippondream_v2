@@ -20,27 +20,29 @@ class MangasController < ApplicationController
 
   def create
     @manga = Manga.new(manga_params)
+    @manga.user = current_user
 
     if @manga.save
+
       if params[:images]
-        params[:images].each { |image|
-          @manga.manga_pejis.create(image: image)
-        }
+        (params[:images] || []).each_with_index do |image, index|
+          @manga.pejis.create(image: image, scan_number: index + 1)
+        end
+        redirect_to @manga, notice: 'Manga créé'
+      else
+        render :new
       end
-      redirect_to @manga, notice: 'Manga was successfully created.'
-    else
-      render :new
     end
   end
 
   def update
     if @manga.update(manga_params)
       if params[:images]
-        params[:images].each { |image|
-          @manga.manga_pejis.create(image: image)
-        }
+        (params[:images] || []).each_with_index do |image, index|
+          @manga.pejis.create(image: image, scan_number: index + 1)
+        end
       end
-      redirect_to @manga, notice: 'Manga was successfully updated.'
+      redirect_to @manga, notice: 'Manga mis à jour'
     else
       render :edit
     end
@@ -48,7 +50,7 @@ class MangasController < ApplicationController
 
   def destroy
     @manga.destroy
-    redirect_to mangas_url, notice: 'Manga was successfully destroyed.'
+    redirect_to mangas_url, notice: 'Manga supprimé'
   end
 
   private
@@ -58,7 +60,7 @@ class MangasController < ApplicationController
   end
 
   def manga_params
-    params.require(:manga).permit(:titre, :apercu)
+    params.require(:manga).permit(:titre, :apercu, :user_id, :description).merge(user_id: current_user)
   end
 
 

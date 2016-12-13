@@ -19,9 +19,9 @@
   <header>
     <nav>
       <ul>
-        <li>Magazines</li>
-        <li>Séries</li>
-        <li>Blog</li>
+        <li><%= link_to 'Magazines', magazines_path %></li>
+        <li><%= link_to 'Mangas', mangas_path %></li>
+        <li><%= link_to 'Blog', Blog %></li>
       </ul>
       <div class="header-logo">
         <%= link_to image_tag('KD.png',:class=> 'header-logo', alt: 'Logo menu kippon Dream'), root_path, :class => 'index-lien' %>
@@ -29,7 +29,7 @@
       </div>
       <ul>
         <li>Membres</li>
-        <li>Contact</li>
+        <li><%= link_to 'Contact', new_contact_path %></li>
         <li>Boutique</li>
       </ul>
     </nav>

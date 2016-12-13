@@ -20,8 +20,7 @@ class MagazinesController < ApplicationController
     @magazine = Magazine.new(magazine_params)
 
     if @magazine.save
-      (params[:images] || []).each_with_index do |image, index| #for each of them...
-        #Save each of the images as a new image from the :image scaffold
+      (params[:images] || []).each_with_index do |image, index|
         @magazine.pages.create(image: image, page_number: index + 1)
       end
       redirect_to @magazine, notice: 'Magazine créé'
@@ -33,7 +32,7 @@ class MagazinesController < ApplicationController
   def update
     if @magazine.update(magazine_params)
       if params[:images]
-        (params[:image] || []).each_with_index do |image, index|
+        (params[:images] || []).each_with_index do |image, index|
           @magazine.pages.create(image: image, page_number: index + 1)
         end
       end

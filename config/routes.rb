@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :presentations
   #Index de tout le site
   root to: 'home#index'
-
 
   #Partie admin
   namespace :admin do
@@ -16,10 +14,12 @@ Rails.application.routes.draw do
     resources :pages
   end
 
-  resources :mangas
+  resources :mangas do
+    resources :pejis, :path => 'pages'
+  end
+
+  resources :presentations
   resources :blog
-
-
 
   # Partie contact
   get '/contact', to: 'contacts#new', as: :new_contact

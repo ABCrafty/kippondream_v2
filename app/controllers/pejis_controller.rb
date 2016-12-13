@@ -48,7 +48,8 @@ class PejisController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_peji
-      @peji = Peji.find(params[:id])
+      @manga = Manga.find_by(slug: params[:manga_id])
+      @peji = @manga.pejis.find_by(scan_number: params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

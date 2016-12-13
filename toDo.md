@@ -2,17 +2,17 @@
 
 1). inscription, droits, backoffice
 - le staff doit pouvoir créer des utilisateurs comme auteurs (fait)
-- le staff peut modifier l'ensemble du contenu du site à sa guise
+- le staff peut modifier l'ensemble du contenu du site à sa guise (fait)
 - les auteurs peuvent modifier le contenu des chapitres des différents mangas et leur présentation seulement
-- les auteurs peuvent créer des articles et personnaliser le contenu, modifiable
+- les auteurs peuvent créer des articles et personnaliser le contenu, modifiable (fait)
 - le backoffice contient plusieurs pages sur chaque zone personnalisable (type wordpress) :
    - le header: upload d'images en fond d'écran dans le carousel (fait)
    - le footer: à déterminer
-   - la page d'accueil : la présentation du projet
-   - la page mags : upload des magazines, créer un titre, une description, la couverture, et les pages
+   - la page d'accueil : la présentation du projet (fait)
+   - la page mags : upload des magazines, créer un titre, une description, la couverture, et les pages (fait)
    - la page auteurs : présentation de chaque auteur personnalisable, récupérer les mangas liés aux auteurs pour
                       afficher en présentation brève
-   - la page manga : upload des chapitres, couverture, description, pouvoir relier les mangas à un auteur,
+   - la page manga : upload des chapitres, couverture, description, pouvoir relier les mangas à un auteur (fait)
                     il sera envoyé dans sa présentation en page auteurs
    - la page blog : créer un article, y associer du texte, une image, vidéo.. Galerie d'images possible ?
                    liste des articles, possibilité de les modifier, supprimer..

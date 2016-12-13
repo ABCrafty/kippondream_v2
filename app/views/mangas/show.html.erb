@@ -6,12 +6,16 @@
 
   <%= image_tag @manga.apercu, size: '200x200' %>
 <br />
-<% @manga.manga_pejis.each do |p| %>
-  <%= link_to  do %>
+<% @manga.pejis.each do |p| %>
+
+    <%= link_to manga_peji_path(id: p.scan_number, manga_id: @manga.slug) do %>
     <%= image_tag p.image, size: '100x100' %>
   <% end %>
-    <%= link_to 'Supprimer', p, :method => :delete, data: { confirm: 'Are you sure?' } %>
+
+    <%= link_to 'Supprimer', [@manga, p], :method => :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+
+<p><strong>Auteur :</strong><%= @manga.user.username %></p>
 
 <br />
 <%= link_to 'Edit', edit_manga_path(@manga) %> |

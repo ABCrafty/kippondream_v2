@@ -27,9 +27,8 @@ class BlogController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-
+    @blog.user = current_user
     if @blog.save
-      @blog.user = current_user
       redirect_to @blog, notice: 'Blog was successfully created.'
     else
       render :new
@@ -59,6 +58,6 @@ class BlogController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def blog_params
-      params.require(:blog).permit(:titre, :contenu)
+      params.require(:blog).permit(:titre, :contenu, :user)
     end
 end
