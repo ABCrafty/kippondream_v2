@@ -4,9 +4,9 @@ class Contact
   include ActiveModel::Conversion
   extend  ActiveModel::Naming
 
-  attr_accessor :nom, :objet, :email, :message
+  attr_accessor :nom, :sujet, :objet, :email, :message
 
-  validates :nom, :objet, :email, :message, presence: true
+  validates :nom, :objet, :sujet, :email, :message, presence: true
   validates :email, :format => { :with => %r{.+@.+\..+} }, allow_blank: true
 
   def persisted?

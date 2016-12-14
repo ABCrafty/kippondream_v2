@@ -4,16 +4,20 @@ class MagazinesController < ApplicationController
 
   def index
     @magazines = Magazine.all
+    @titre = 'Tous les magazines'
   end
 
   def show
+    @titre = @magazine.titre
   end
 
   def new
     @magazine = Magazine.new
+    @titre = 'Nouveau magazine'
   end
 
   def edit
+    @titre = 'Modifier '+@magazine.titre
   end
 
   def create
@@ -36,7 +40,7 @@ class MagazinesController < ApplicationController
           @magazine.pages.create(image: image, page_number: index + 1)
         end
       end
-      redirect_to @magazine, notice: 'Magazine was successfully updated.'
+      redirect_to @magazine, notice: 'Magazine mis à jour'
     else
       render :edit
     end
@@ -44,7 +48,7 @@ class MagazinesController < ApplicationController
 
   def destroy
     @magazine.destroy
-    redirect_to magazines_url, notice: 'Magazine was successfully destroyed.'
+    redirect_to magazines_url, notice: 'Magazine supprimé'
   end
 
   private

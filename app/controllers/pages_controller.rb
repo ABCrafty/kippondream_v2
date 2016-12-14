@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def show
+    @titre = @page.magazine.titre+ ' | page '+@page.page_number
   end
 
   def new

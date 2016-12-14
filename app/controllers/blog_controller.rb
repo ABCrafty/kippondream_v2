@@ -29,34 +29,30 @@ class BlogController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user = current_user
     if @blog.save
-      redirect_to @blog, notice: 'Blog was successfully created.'
+      redirect_to @blog, notice: 'Article créé'
     else
       render :new
     end
   end
 
-  # PATCH/PUT /blog/1
   def update
     if @blog.update(blog_params)
-      redirect_to @blog, notice: 'Blog was successfully updated.'
+      redirect_to @blog, notice: 'Article mis à jour'
     else
       render :edit
     end
   end
 
-  # DELETE /blog/1
   def destroy
     @blog.destroy
-    redirect_to blog_index_url, notice: 'Blog was successfully destroyed.'
+    redirect_to blog_index_url, notice: 'Article supprimé'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.friendly.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def blog_params
       params.require(:blog).permit(:titre, :contenu, :user, :illu)
     end

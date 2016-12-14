@@ -11,11 +11,12 @@ class MangasController < ApplicationController
   end
 
   def new
-    @titre = 'Nouveau chapitrerake '
+    @titre = 'Nouveau chapitre '
     @manga = Manga.new
   end
 
   def edit
+    @titre = 'Modifier '+@manga.titre
   end
 
   def create

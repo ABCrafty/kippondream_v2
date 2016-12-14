@@ -2,6 +2,7 @@
 
     <%= f.text_field :nom, :placeholder => 'Nom', :class => 'contacts-input' %>
     <%= f.text_field :email, :placeholder => 'E-mail', :class => 'contacts-input'  %>
+    <%= f.select :sujet, ['Question','Recrutement', 'Evenement'], :class => 'contacts-input'  %>
     <%= f.text_field :objet, :placeholder => 'Objet', :class => 'contacts-input'  %>
     <%= f.text_area :message, :placeholder => 'Ecrivez votre message', :class => 'contacts-textarea'  %>
 

@@ -1,25 +1,21 @@
 class PejisController < ApplicationController
   before_action :set_peji, only: [:show, :edit, :update, :destroy]
 
-  # GET /pejis
   def index
     @pejis = Peji.all
   end
 
-  # GET /pejis/1
   def show
+    @titre = @peji.manga.titre
   end
 
-  # GET /pejis/new
   def new
     @peji = Peji.new
   end
 
-  # GET /pejis/1/edit
   def edit
   end
 
-  # POST /pejis
   def create
     @peji = Peji.new(peji_params)
 
@@ -30,7 +26,6 @@ class PejisController < ApplicationController
     end
   end
 
-  # PATCH/PUT /pejis/1
   def update
     if @peji.update(peji_params)
       redirect_to @peji, notice: 'Peji was successfully updated.'
@@ -39,20 +34,18 @@ class PejisController < ApplicationController
     end
   end
 
-  # DELETE /pejis/1
   def destroy
     @peji.destroy
     redirect_to pejis_url, notice: 'Peji was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_peji
       @manga = Manga.find_by(slug: params[:manga_id])
       @peji = @manga.pejis.find_by(scan_number: params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def peji_params
       params.require(:peji).permit(:image, :manga_id)
     end
