@@ -1,3 +1,8 @@
-<%= image_tag @page.image %>
+<%= image_tag @page.image, size: '500x500' %>
+<br />
 
+<%= link_to '< Précédent', magazine_page_path(id: @page.previous.page_number, magazine_id: @magazine.slug) if @page.previous %> |
+<%= link_to 'Suivant >', magazine_page_path(id: @page.next.page_number, magazine_id: @magazine.slug) if @page.next %>
+
+<br />
 <%= link_to 'Back', magazines_path %>
