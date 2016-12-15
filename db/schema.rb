@@ -21,20 +21,11 @@ ActiveRecord::Schema.define(version: 20161215000109) do
     t.string   "lien"
   end
 
-  create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "titre"
-    t.text     "contenu",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "slug"
-  end
-
   create_table "blog", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titre"
     t.text     "contenu",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.string   "slug"
     t.string   "illu"
     t.integer  "user_id"
   end
@@ -78,17 +69,17 @@ ActiveRecord::Schema.define(version: 20161215000109) do
     t.string   "apercu"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "slug"
     t.string   "description"
   end
 
   create_table "mangas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titre"
-    t.string   "description"
+    t.text     "description", limit: 65535
     t.string   "apercu"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.string   "slug"
+    t.integer  "user_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "mangas_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -102,16 +93,14 @@ ActiveRecord::Schema.define(version: 20161215000109) do
     t.string   "image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "magazine_id"
     t.integer  "page_number"
   end
 
   create_table "pejis", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
-    t.integer  "manga_id"
+    t.integer  "scan_number"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "scan_number"
   end
 
   create_table "presentations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -121,13 +110,6 @@ ActiveRecord::Schema.define(version: 20161215000109) do
     t.text     "contenu2",   limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-  end
-
-  create_table "scans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "manga_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
