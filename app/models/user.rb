@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :login
 
-  has_many :mangas
+  has_and_belongs_to_many :mangas
   has_many :blogs
 
   mount_uploader :avatar, AvatarUploader
@@ -26,6 +26,10 @@ class User < ApplicationRecord
     if User.where(email: username).exists?
       errors.add(:username, :invalid)
     end
+  end
+
+  def self.all_except(user)
+    where.not(id: user)
   end
 
 end

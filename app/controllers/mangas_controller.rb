@@ -1,9 +1,7 @@
 class MangasController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_manga, only: [:show, :edit, :update, :destroy]
 
   def index
-    @titre = 'Tous les mangas'
     @mangas = Manga.all
   end
 
@@ -11,39 +9,26 @@ class MangasController < ApplicationController
   end
 
   def new
-    @titre = 'Nouveau chapitre '
     @manga = Manga.new
   end
 
   def edit
-    @titre = 'Modifier '+@manga.titre
   end
 
   def create
     @manga = Manga.new(manga_params)
-    @manga.user = current_user
 
     if @manga.save
-
-      if params[:images]
-        (params[:images] || []).each_with_index do |image, index|
-          @manga.pejis.create(image: image, scan_number: index + 1)
-        end
-        redirect_to @manga, notice: 'Manga créé'
-      else
-        render :new
-      end
+      @manga.users.push(current_user)
+      redirect_to @manga, notice: 'Manga was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
     if @manga.update(manga_params)
-      if params[:images]
-        (params[:images] || []).each_with_index do |image, index|
-          @manga.pejis.create(image: image, scan_number: index + 1)
-        end
-      end
-      redirect_to @manga, notice: 'Manga mis à jour'
+      redirect_to @manga, notice: 'Manga was successfully updated.'
     else
       render :edit
     end
@@ -51,18 +36,15 @@ class MangasController < ApplicationController
 
   def destroy
     @manga.destroy
-    redirect_to mangas_url, notice: 'Manga supprimé'
+    redirect_to mangas_url, notice: 'Manga was successfully destroyed.'
   end
 
   private
+    def set_manga
+      @manga = Manga.friendly.find(params[:id])
+    end
 
-  def set_manga
-    @manga = Manga.friendly.find(params[:id])
-  end
-
-  def manga_params
-    params.require(:manga).permit(:titre, :apercu, :user_id, :description).merge(user_id: current_user)
-  end
-
-
+    def manga_params
+      params.require(:manga).permit(:titre, :description, :apercu, :user_ids =>[])
+    end
 end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   #Index de tout le site
   root to: 'home#index'
 
@@ -14,7 +15,9 @@ Rails.application.routes.draw do
     resources :pages
   end
 
-  resources :mangas do
+  resources :mangas
+
+  resources :chapters do
     resources :pejis, :path => 'pages'
   end
 

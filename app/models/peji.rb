@@ -1,7 +1,7 @@
 class Peji < ApplicationRecord
 
-  belongs_to :manga
-  validates_presence_of :manga
+  belongs_to :chapter
+  validates_presence_of :chapter
   mount_uploader :image, ScansUploader
 
   def previous

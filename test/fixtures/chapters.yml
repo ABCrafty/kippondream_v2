@@ -2,10 +2,12 @@
 
 one:
   titre: MyString
-  description: MyString
   apercu: MyString
+  slug: MyString
+  : 
 
 two:
   titre: MyString
-  description: MyString
   apercu: MyString
+  slug: MyString
+  : 

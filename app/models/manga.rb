@@ -1,8 +1,10 @@
 class Manga < ApplicationRecord
+
   extend FriendlyId
-  mount_uploader :apercu, ThumbnailUploader
   friendly_id :titre, use: :slugged
-  belongs_to :user
-  has_many :pejis, :inverse_of => :manga, :dependent => :destroy
-  validates_uniqueness_of :slug
+  has_many :chapters , :inverse_of => :manga, :dependent => :destroy
+  mount_uploader :apercu, ThumbnailUploader
+
+  has_and_belongs_to_many :users
+
 end

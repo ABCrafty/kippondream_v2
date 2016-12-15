@@ -17,7 +17,7 @@ class MangasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create manga" do
     assert_difference('Manga.count') do
-      post mangas_url, params: { manga: { apercu: @manga.apercu, titre: @manga.titre } }
+      post mangas_url, params: { manga: { apercu: @manga.apercu, description: @manga.description, titre: @manga.titre } }
     end
 
     assert_redirected_to manga_url(Manga.last)
@@ -34,7 +34,7 @@ class MangasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update manga" do
-    patch manga_url(@manga), params: { manga: { apercu: @manga.apercu, titre: @manga.titre } }
+    patch manga_url(@manga), params: { manga: { apercu: @manga.apercu, description: @manga.description, titre: @manga.titre } }
     assert_redirected_to manga_url(@manga)
   end
 

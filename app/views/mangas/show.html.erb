@@ -1,22 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h3>
+<p>
+  <strong>Titre:</strong>
   <%= @manga.titre %>
-</h3>
+</p>
 
-  <%= image_tag @manga.apercu, size: '200x200' %>
-<br />
-<% @manga.pejis.each do |p| %>
+<p>
+  <strong>Description:</strong>
+  <%= @manga.description %>
+</p>
 
-    <%= link_to manga_peji_path(id: p.scan_number, manga_id: @manga.slug) do %>
-    <%= image_tag p.image, size: '100x100' %>
-  <% end %>
+<p>
+  <strong>Apercu:</strong>
+  <%= @manga.apercu %>
+</p>
 
-    <%= link_to 'Supprimer', [@manga, p], :method => :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+<p>
+  <strong>Users:</strong>
+  <%= @manga.users.map(&:username).join(" - ") %>
+</p>
 
-<p><strong>Auteur :</strong><%= @manga.user.username %></p>
-
-<br />
 <%= link_to 'Edit', edit_manga_path(@manga) %> |
 <%= link_to 'Back', mangas_path %>

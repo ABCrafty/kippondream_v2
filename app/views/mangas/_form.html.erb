@@ -1,4 +1,15 @@
 <%= form_for(manga) do |f| %>
+  <% if manga.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(manga.errors.count, "error") %> prohibited this manga from being saved:</h2>
+
+      <ul>
+      <% manga.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= f.label :titre %>
@@ -6,18 +17,19 @@
   </div>
 
   <div class="field">
-    <%= f.label :apercu %>
-    <%= f.file_field :apercu %>
+    <%= f.label :users %>
+    <%= f.select :user_ids, User.all_except(current_user).collect { |u| [u.username, u.id] }, {include_blank: true}, {multiple: true} %>
   </div>
 
-  <div class="field">
-    <label for="images[]">Multi Upload</label>
-    <%= file_field_tag 'images[]', type: :file, multiple: true %>
-  </div>
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apercu %>
+    <%= f.file_field :apercu %>
   </div>
 
   <div class="actions">
