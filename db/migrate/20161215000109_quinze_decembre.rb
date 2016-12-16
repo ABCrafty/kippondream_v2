@@ -7,8 +7,5 @@ class QuinzeDecembre < ActiveRecord::Migration[5.0]
       t.belongs_to :user, index: true
     end
 
-    add_column :pages, :magazine_id, :integer
-
-
   end
 end
