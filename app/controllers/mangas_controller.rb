@@ -28,6 +28,9 @@ class MangasController < ApplicationController
 
   def update
     if @manga.update(manga_params)
+      if @manga.users.empty?
+        @manga.users.push(current_user)
+      end
       redirect_to @manga, notice: 'Manga was successfully updated.'
     else
       render :edit

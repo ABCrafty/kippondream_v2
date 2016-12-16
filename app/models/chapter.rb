@@ -1,6 +1,6 @@
 class Chapter < ApplicationRecord
 
-  has_many :pejis, :inverse_of => :chapters, :dependent => :destroy
+  has_many :pejis, :dependent => :destroy
   extend FriendlyId
   friendly_id :titre, use: :slugged
   belongs_to :manga

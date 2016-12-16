@@ -5,7 +5,7 @@ class ScansUploader < CarrierWave::Uploader::Base
   storage :file
 
   def store_dir
-    "uploads/mangas/#{model.manga.id}"
+    "uploads/mangas/#{model.chapter.id}"
   end
 
 

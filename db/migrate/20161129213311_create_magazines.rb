@@ -3,6 +3,7 @@ class CreateMagazines < ActiveRecord::Migration[5.0]
     create_table :magazines do |t|
       t.string :titre
       t.string :apercu
+      t.string :slug
 
       t.timestamps
     end

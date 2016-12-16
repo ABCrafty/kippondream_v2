@@ -4,6 +4,7 @@ class DouzeDecembre < ActiveRecord::Migration[5.0]
     create_table :pejis do |t|
       t.string :image
       t.integer :scan_number
+      t.integer :chapter_id
       t.timestamps
     end
 

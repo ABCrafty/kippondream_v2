@@ -5,9 +5,9 @@
 
 <p>
   <strong>Manga:</strong>
-  <%= @peji.manga.titre %>
+  <%= @peji.chapter.titre %>
 </p>
 
-<%= link_to '< Précédent', manga_peji_path(id: @peji.previous.scan_number, manga_id: @manga.slug) if @peji.previous %> |
-<%= link_to 'Suivant >', manga_peji_path(id: @peji.next.scan_number, manga_id: @manga.slug) if @peji.next %>
+<%= link_to '< Précédent', chapter_peji_path(id: @peji.previous.scan_number, chapter_id: @chapter.slug) if @peji.previous %> |
+<%= link_to 'Suivant >', chapter_peji_path(id: @peji.next.scan_number, chapter_id: @chapter.slug) if @peji.next %>
 

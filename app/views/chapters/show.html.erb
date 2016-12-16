@@ -7,17 +7,16 @@
 
 <p>
   <strong>Apercu:</strong>
-  <%= @chapter.apercu %>
+  <%= image_tag @chapter.apercu, size: '200x200' %>
 </p>
 
 <p>
-  <strong>Slug:</strong>
-  <%= @chapter.slug %>
-</p>
+  <% @chapter.pejis.each do |p| %>
 
-<p>
-  <strong>:</strong>
-  <%= @chapter. %>
+      <%= link_to chapter_peji_path(id: p.scan_number, chapter_id: @chapter.slug) do %>
+          <%= image_tag p.image, size: '100x100' %>
+      <% end %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_chapter_path(@chapter) %> |

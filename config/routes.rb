@@ -17,9 +17,11 @@ Rails.application.routes.draw do
 
   resources :mangas
 
-  resources :chapters do
-    resources :pejis, :path => 'pages'
+  resources :chapters, :path => 'manga', except: :new do
+    resources :pejis, :path => 'page'
   end
+
+  get '/manga/new/:manga_id' => 'chapters#new', as: :new_chapter
 
   resources :presentations
   resources :blog

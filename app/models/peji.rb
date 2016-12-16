@@ -1,6 +1,6 @@
 class Peji < ApplicationRecord
 
-  belongs_to :chapter
+  belongs_to :chapter, :inverse_of => :pejis
   validates_presence_of :chapter
   mount_uploader :image, ScansUploader
 

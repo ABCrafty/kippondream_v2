@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20161215000109) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "description"
+    t.string   "slug"
   end
 
   create_table "mangas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -94,6 +95,7 @@ ActiveRecord::Schema.define(version: 20161215000109) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "page_number"
+    t.integer  "magazine_id"
   end
 
   create_table "pejis", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -101,6 +103,7 @@ ActiveRecord::Schema.define(version: 20161215000109) do
     t.integer  "scan_number"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "chapter_id"
   end
 
   create_table "presentations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
