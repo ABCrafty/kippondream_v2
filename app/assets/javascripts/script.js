@@ -8,8 +8,8 @@ $(document).ready(function () {
 
     $('div#header-slider').owlCarousel({
         navigation : true, // Show next and prev buttons
-        slideSpeed : 1000,
-        paginationSpeed : 2000,
+        slideSpeed : 800,
+        paginationSpeed : 1000,
         singleItem:true,
         autoPlay: 5000,
         stopOnHover: true,

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20161215000109) do
   create_table "blog", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titre"
     t.text     "contenu",    limit: 65535
+    t.string   "slug"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.string   "illu"
@@ -67,10 +68,10 @@ ActiveRecord::Schema.define(version: 20161215000109) do
   create_table "magazines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titre"
     t.string   "apercu"
+    t.string   "slug"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "description"
-    t.string   "slug"
   end
 
   create_table "mangas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -92,18 +93,18 @@ ActiveRecord::Schema.define(version: 20161215000109) do
 
   create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
+    t.integer  "magazine_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "page_number"
-    t.integer  "magazine_id"
   end
 
   create_table "pejis", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
     t.integer  "scan_number"
+    t.integer  "chapter_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "chapter_id"
   end
 
   create_table "presentations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

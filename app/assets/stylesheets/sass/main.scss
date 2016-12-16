@@ -60,6 +60,10 @@ header {
           background: $primary;
           color: white;
         }
+
+        button:active {
+          box-shadow: none;
+        }
       }
 
       .img-slide {
@@ -98,20 +102,30 @@ header {
 main {
   padding-bottom: 1rem;
 
-  .webzine {
-    height: 36vh;
-    /*background: asset_data_url('webzinebg.jpg');*/
+  .container-webzine {
+    height: 62vh;
+    display: flex;
+    box-shadow: inset 1px 10px 35px black;
+    border-top: 2px solid black;
+    background: asset_data_url('webzinebg2.jpg') 100% 0% no-repeat;
+
+
+    .webzine {
+      margin: auto;
+      width: 40%;
+      background: rgba(255,255,255, 0.8);
+      border-radius: 6px;
+    }
     h1 {
       text-align: center;
     }
     div.header-button {
       text-align: center;
       img {
-        width: 15%;
-        margin-right: 2.5rem;
+        width: 40%;
       }
-    }
-  }
+    } // .header-button
+  } // .container-webzine
 
 
   section.actus {
