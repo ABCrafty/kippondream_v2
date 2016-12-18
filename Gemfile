@@ -17,6 +17,7 @@ gem 'friendly_id'
 gem 'mail'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'mini_magick'
+gem 'acts_as_list'
 
 
 group :development, :test do

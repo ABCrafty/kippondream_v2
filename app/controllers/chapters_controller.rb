@@ -21,8 +21,9 @@ class ChaptersController < ApplicationController
   def create
     @manga = Manga.find(params[:manga_id])
     @chapter = Chapter.new(chapter_params)
-    @chapter.chapter_number += 1
     @chapter.manga = @manga
+    @chapter.chapter_number = @manga.chapters.count + 1
+
     if @chapter.save
       (params[:images] || []).each_with_index do |image, index|
         @chapter.pejis.create(image: image, scan_number: index + 1)
@@ -52,7 +53,7 @@ class ChaptersController < ApplicationController
   private
 
     def set_chapter
-      @chapter = Chapter.find(params[:id])
+      @chapter = @manga.chapters.find_by(chapter_number: params[:id])
     end
 
     def chapter_params
