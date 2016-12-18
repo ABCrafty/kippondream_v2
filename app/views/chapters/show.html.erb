@@ -11,13 +11,14 @@
 </p>
 
 <p>
+  <strong>Images :</strong>
   <% @chapter.pejis.each do |p| %>
 
-      <%= link_to chapter_peji_path(id: p.scan_number, chapter_id: @chapter.slug) do %>
+      <%= link_to manga_chapter_peji_path(id: p.scan_number, chapter_id: @chapter.id) do %>
           <%= image_tag p.image, size: '100x100' %>
       <% end %>
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
-<%= link_to 'Back', chapters_path %>
+<%= link_to 'Edit', edit_manga_chapter_path(@chapter) %> |
+<%= link_to 'Back', manga_chapters_path %>

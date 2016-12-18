@@ -1,4 +1,26 @@
-<%= form_for(chapter) do |f| %>
+<%= form_for [@manga, @chapter] do |f| %>
+    <% if @manga.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@manga.errors.count, "error") %> prohibited this peji from being saved:</h2>
+
+          <ul>
+            <% @manga.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <% if @chapter.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@chapter.errors.count, "error") %> prohibited this peji from being saved:</h2>
+
+          <ul>
+            <% @chapter.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
   <div class="field">
     <%= f.label :titre %>

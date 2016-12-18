@@ -42,7 +42,7 @@ class PejisController < ApplicationController
   private
 
     def set_peji
-      @chapter = Chapter.find_by(slug: params[:chapter_id])
+      @chapter = Chapter.find_by(id: params[:chapter_id])
       @peji = @chapter.pejis.find_by(scan_number: params[:id])
     end
 

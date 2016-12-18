@@ -2,6 +2,7 @@ class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
 
   def index
+    @manga = Manga.find(params[:manga_id])
     @chapters = Chapter.all
   end
 
@@ -9,21 +10,24 @@ class ChaptersController < ApplicationController
   end
 
   def new
+    @manga = Manga.find(params[:manga_id])
     @chapter = Chapter.new
+
   end
 
   def edit
   end
 
   def create
+    @manga = Manga.find(params[:manga_id])
     @chapter = Chapter.new(chapter_params)
-
+    @chapter.chapter_number += 1
+    @chapter.manga = @manga
     if @chapter.save
       (params[:images] || []).each_with_index do |image, index|
         @chapter.pejis.create(image: image, scan_number: index + 1)
-        @chapter.manga = request.original_url.split('/').last.to_i
       end
-      redirect_to @chapter, notice: 'Chapter was successfully created.'
+      redirect_to manga_chapter_path(@manga, @chapter), notice: 'Chapter was successfully created.'
     else
       render :new
     end
@@ -34,7 +38,7 @@ class ChaptersController < ApplicationController
       (params[:images] || []).each_with_index do |image, index|
         @chapter.pejis.create(image: image, scan_number: index + 1)
       end
-      redirect_to @chapter, notice: 'Chapter was successfully updated.'
+      redirect_to manga_chapter_path(@manga, @chapter), notice: 'Chapter was successfully updated.'
     else
       render :edit
     end
@@ -42,13 +46,13 @@ class ChaptersController < ApplicationController
 
   def destroy
     @chapter.destroy
-    redirect_to chapters_url, notice: 'Chapter was successfully destroyed.'
+    redirect_to :back, notice: 'Chapter was successfully destroyed.'
   end
 
   private
 
     def set_chapter
-      @chapter = Chapter.friendly.find(params[:id])
+      @chapter = Chapter.find(params[:id])
     end
 
     def chapter_params

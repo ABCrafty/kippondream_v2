@@ -1,29 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Chapters</h1>
+<% @manga.chapters.each do |chapter| %>
+  <p>Titre : <%= chapter.titre %></p>
+  <p>Apercu : <%= image_tag chapter.apercu, size: '100x100' %></p>
+  <%= link_to 'Show', manga_chapter_path(@manga.id, chapter) %>
+  <%= link_to 'Edit', edit_manga_chapter_path(@manga.id, chapter) %>
+  <%= link_to 'Destroy', manga_chapter_path(@manga.id, chapter), method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Apercu</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% end %>
 
-  <tbody>
-    <% @chapters.each do |chapter| %>
-      <tr>
-        <td><%= chapter.titre %></td>
-        <td><%= chapter.apercu %></td>
-        <td><%= link_to 'Show', chapter %></td>
-        <td><%= link_to 'Edit', edit_chapter_path(chapter) %></td>
-        <td><%= link_to 'Destroy', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
-<%= link_to 'New Chapter', new_chapter_path %>
+<%= link_to 'New Chapter', new_manga_chapter_path %>

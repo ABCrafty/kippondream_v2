@@ -1,11 +1,14 @@
 class Chapter < ApplicationRecord
 
   has_many :pejis, :dependent => :destroy
-  extend FriendlyId
-  friendly_id :titre, use: :slugged
   belongs_to :manga
   mount_uploader :apercu, ThumbnailUploader
 
-  validates_uniqueness_of :slug
+  def plus_un
+
+  end
+
+  #self.class.where('scan_number < ?', scan_number).limit(1).first
+
 
 end

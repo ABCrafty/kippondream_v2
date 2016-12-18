@@ -26,7 +26,7 @@
   <%= @manga.users.map(&:username).join(" - ") %>
 </p>
 
-<%= link_to 'Ajouter un chapitre', new_chapter_path(@manga.attributes['id']) %> <br />
+<%= link_to 'Ajouter un chapitre', new_manga_chapter_path(@manga.attributes['id']) %> <br />
 
 <%= link_to 'Edit', edit_manga_path(@manga) %> |
 <%= link_to 'Back', mangas_path %>
