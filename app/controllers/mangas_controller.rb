@@ -44,7 +44,7 @@ class MangasController < ApplicationController
 
   private
     def set_manga
-      @manga = Manga.find(params[:id])
+      @manga = Manga.friendly.find(params[:id])
     end
 
     def manga_params

@@ -16,10 +16,13 @@ Rails.application.routes.draw do
   end
 
   resources :mangas do
-    resources :chapters do
-      resources :pejis
+    resources :chapters, except: :show do
+      resources :pejis, except: :show
     end
   end
+
+  get '/mangas/:manga_id/:id' => 'chapters#show', as: :chapter
+  get '/mangas/:manga_id/:chapter_id/:id' => 'pejis#show', as: :peji
 
 
   resources :presentations

@@ -51,8 +51,8 @@ class ChaptersController < ApplicationController
   end
 
   private
-
     def set_chapter
+      @manga = Manga.find_by(slug: params[:manga_id])
       @chapter = @manga.chapters.find_by(chapter_number: params[:id])
     end
 

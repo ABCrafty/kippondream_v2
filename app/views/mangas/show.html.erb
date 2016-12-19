@@ -17,7 +17,7 @@
 <p><strong>Chapitres :</strong></p>
 <% @manga.chapters.each do |c| %>
     <li>
-      <%= link_to c.titre, c %>
+      <%= link_to c.titre, chapter_path(manga_id: @manga, id: c.chapter_number) %>
     </li>
 <% end %>
 

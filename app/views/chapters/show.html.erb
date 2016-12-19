@@ -14,7 +14,7 @@
   <strong>Images :</strong>
   <% @chapter.pejis.each do |p| %>
 
-      <%= link_to manga_chapter_peji_path(id: p.scan_number, chapter_id: @chapter.id) do %>
+      <%= link_to peji_path(id: p.scan_number, chapter_id: @chapter.chapter_number) do %>
           <%= image_tag p.image, size: '100x100' %>
       <% end %>
   <% end %>
