@@ -10,16 +10,17 @@ class ChaptersController < ApplicationController
   end
 
   def new
-    @manga = Manga.find(params[:manga_id])
+    @manga = Manga.find(params[:id])
     @chapter = Chapter.new
 
   end
 
   def edit
+    @manga = Manga.find_by(slug: params[:manga_id])
   end
 
   def create
-    @manga = Manga.find(params[:manga_id])
+    @manga = Manga.friendly.find(params[:manga_id])
     @chapter = Chapter.new(chapter_params)
     @chapter.manga = @manga
     @chapter.chapter_number = @manga.chapters.count + 1
@@ -28,7 +29,7 @@ class ChaptersController < ApplicationController
       (params[:images] || []).each_with_index do |image, index|
         @chapter.pejis.create(image: image, scan_number: index + 1)
       end
-      redirect_to manga_chapter_path(@manga, @chapter), notice: 'Chapter was successfully created.'
+      redirect_to chapter_path(manga_id: @manga, id: @chapter.chapter_number), notice: 'Chapter was successfully created.'
     else
       render :new
     end

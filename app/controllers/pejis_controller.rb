@@ -6,7 +6,7 @@ class PejisController < ApplicationController
   end
 
   def show
-    @titre = @peji.chapter.titre
+    # @titre = @peji.chapter.titre
   end
 
   def new
