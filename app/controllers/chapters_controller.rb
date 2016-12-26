@@ -10,7 +10,7 @@ class ChaptersController < ApplicationController
   end
 
   def new
-    @manga = Manga.find(params[:id])
+    @manga = Manga.find_by(slug: params[:manga_id])
     @chapter = Chapter.new
 
   end
