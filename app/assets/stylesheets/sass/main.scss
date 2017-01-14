@@ -240,4 +240,70 @@ main {
       }
     }
   } // section .presentation-asso
+
+  .last-mag {
+    background: $primary;
+    display: flex;
+    padding: 1rem;
+    color: white;
+
+    .id-mag {
+      padding: 0 1rem;
+
+      h3 {
+        text-align: center;
+        border: 4px solid white;
+        padding: 1rem 0;
+        margin: 1rem 0;
+      }
+    } // id-mag
+
+    .edito {
+      padding: 0 2rem;
+      text-align: justify;
+      order: 3;
+
+      p {
+        margin: 0;
+      }
+    } // edito
+  } // last-mag
+
+  .mags-container {
+    width: 100%;
+    padding: 3rem 0;
+    background: asset_data_url('bgmags.jpg')
+  }
+
+
+
 } // main
+
+.series-container {
+  background: asset_data_url('bgseries.jpg');
+
+  .cadre-container {
+    width: 90%;
+    margin: auto;
+    background: white;
+    border-left: 30px $primary;
+    border-right: 30px $secondary;
+
+    .flex-series {
+      display: flex;
+
+      .series-paires {
+        width: 45%;
+      }
+
+      .barre {
+        width: 3px;
+        background: black;
+      }
+
+      .series-impaires {
+        width: 45%;
+      }
+    }
+  }
+}

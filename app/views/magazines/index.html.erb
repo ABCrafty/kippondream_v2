@@ -1,6 +1,109 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Magazines</h1>
+<main role="main">
+
+  <h1>Magazines</h1>
+  <div class="texte-mags">
+    <p>Du contenu exclusif et plus de 2000 pages du Kippon Dream vous attendent ! <br />
+      Ici vous trouvez l'ensemble de nos numéros en lecture libre ! <br />
+      Vous découvrirez dans ces derniers l'ensemble de nos projets bd/manga, quelques <br />
+      articles et des interviews des membres de l'équipe (ainsi que des guests parfois!). </p>
+
+    <p>Il est aussi important de savoir que nos numéros sont, à partir du sixième, partagés en <br />
+      deux groupes, les pairs et les impairs. <br />
+      Cela nous permet de vous offrir un numéro tous les un mois et demi et d'avoir à chaque <br /> fois un contenu suffisant et mieux organisé.<br />
+      Il est à noter que chaque série reste dans son groupe, cela facilite ainsi la lecture et <br />
+      vous pouvez retrouver vos séries préférées selon les numéros.</p>
+  </div>
+
+  <h2>Dernier mag</h2>
+  <div class="last-mag">
+    <div class="id-mag">
+      <h3>Numéro #18</h3>
+      <a href="#"><%= image_tag('btnmangadraft.png', alt: 'mangadraft') %></a>
+      <a href="#">Lire sur notre site</a>
+    </div>
+
+    <div class="edito">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a tincidunt elit. Mauris in cursus odio. 
+        Proin a orci urna. Aenean vel dictum orci. Maecenas quis ante in arcu commodo scelerisque. 
+        Vivamus eget felis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac 
+        turpis egestas. Vestibulum vitae feugiat dui. Nam blandit turpis vitae odio malesuada cursus. Sed non metus 
+        in est egestas mollis. Nunc porttitor bibendum nisl sit amet feugiat. Mauris ac faucibus leo, at pharetra 
+        tortor. Nunc ut faucibus eros.</p>
+    </div>
+    
+    <div class="couv">
+      <%= image_tag('mags/mag_15.jpg', alt: 'kippon dream 15') %>
+    </div>
+
+  </div> <!-- .last-mag -->
+
+<div class="mags-container">
+  <div class="owl-carousel owl-theme" id="mag-carousel">
+
+    <!-- première slide -->
+    <div class="mag-container item">
+      <h3>Numéro 1<span class="date-sortie">27 juin 2014</span></h3>
+      <div class="edito-couv">
+        <div class="mag-btn-edito">
+          <div class="mag-liens">
+            <a href="#"><%= image_tag('btnmangadraft.png', alt: 'mangadraft') %></a>
+            <a href="#">Lire sur notre site</a>
+          </div>
+
+          <div class="mag-edito">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a tincidunt elit. Mauris in cursus odio.
+              Proin a orci urna. Aenean vel dictum orci. Maecenas quis ante in arcu commodo scelerisque.
+              Vivamus eget felis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+              turpis egestas. Vestibulum vitae feugiat dui. Nam blandit turpis vitae odio malesuada cursus. Sed non metus
+              in est egestas mollis. Nunc porttitor bibendum nisl sit amet feugiat. Mauris ac faucibus leo, at pharetra
+              tortor. Nunc ut faucibus eros.</p>
+          </div>
+        </div> <!-- .mag-btn-edito -->
+        <div class="mag-couv">
+          <%= image_tag('mags/mag_01.png', alt: 'kippon dream 01') %>
+        </div>
+      </div> <!-- .edito-couv -->
+
+    </div> <!-- .mag-container -->
+
+    <!-- deuxième slide -->
+    <div class="mag-container item">
+      <h3>Numéro 1<span class="date-sortie">27 juin 2014</span></h3>
+      <div class="edito-couv">
+        <div class="mag-btn-edito">
+          <div class="mag-liens">
+            <a href="#"><%= image_tag('btnmangadraft.png', alt: 'mangadraft') %></a>
+            <a href="#">Lire sur notre site</a>
+          </div>
+
+          <div class="mag-edito">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a tincidunt elit. Mauris in cursus odio.
+              Proin a orci urna. Aenean vel dictum orci. Maecenas quis ante in arcu commodo scelerisque.
+              Vivamus eget felis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+              turpis egestas. Vestibulum vitae feugiat dui. Nam blandit turpis vitae odio malesuada cursus. Sed non metus
+              in est egestas mollis. Nunc porttitor bibendum nisl sit amet feugiat. Mauris ac faucibus leo, at pharetra
+              tortor. Nunc ut faucibus eros.</p>
+          </div>
+        </div> <!-- .mag-btn-edito -->
+        <div class="mag-couv">
+          <%= image_tag('mags/mag_01.png', alt: 'kippon dream 01') %>
+        </div>
+      </div> <!-- .edito-couv -->
+
+    </div> <!-- .mag-container -->
+  </div> <!-- #mag-carousel -->
+</div>
+
+
+
+</main>
+
+
+
+
+<!--
 
 <% @magazines.each do |m| %>
   <div class="magazines">
@@ -23,3 +126,5 @@
 <br>
 
 <%= link_to 'New Magazine', new_magazine_path %>
+
+-->

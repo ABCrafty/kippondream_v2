@@ -1,0 +1,74 @@
+#mag-carousel {
+  width: 90%;
+  height: 88vh;
+  margin: auto;
+  display: flex!important;
+  border: 2px solid black;
+  background: white;
+
+  .mag-container {
+    width: 80%;
+    padding: 1rem;
+
+    h3 {
+      text-align: center;
+      padding: 0.5rem 0;
+
+      .date-sortie {
+        margin-left: 2rem;
+      }
+
+      .date-sortie:before {
+        content: "~ "
+      }
+    }
+
+    .edito-couv {
+      display: flex;
+
+      .mag-btn-edito {
+        display: flex;
+
+        .mag-liens {
+          padding: 1rem;
+        }
+
+        .mag-edito {
+          padding: 0 1em;
+          text-align: justify;
+        }
+      }
+    }
+  }
+
+  .owl-controls {
+    width: 20%;
+    text-align: center;
+
+    .owl-page {
+      border: 1px solid black;
+      background: lightblue;
+      padding: 1rem;
+    }
+
+    .active {
+      background: red;
+    }
+
+    .owl-prev {
+      position: absolute;
+      font-size: 2rem;
+      right: -41px;
+      top: 0;
+    }
+
+    .owl-next {
+      position: absolute;
+      font-size: 2rem;
+      right: -41px;
+      bottom: 0;
+    }
+  }
+
+
+}
