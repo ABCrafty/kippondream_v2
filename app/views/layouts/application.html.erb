@@ -41,71 +41,13 @@
         <div class="slide-description">
           <h3><%= c.titre %></h3>
           <p><%= c.description %></p>
-          <button class="header-button">En savoir plus ici</button>
-
+          <button onclick="window.open('<%= c.lien %>')" class="header-button" type="button">En savoir plus ici</button>
         </div>
-
         <div class="img-slide">
           <%= image_tag c.image, class:'hidden-sm hidden-xs'%>
         </div>
       </div>
       <% end %>
-      <!-- deuxième slide -->
-      <div class="item">
-        <div class="slide-description">
-          <h3>Kippon Dream à la Japan Expo !! </h3>
-          <p>Kippon Dream s'invite à la Japan Expo 2017 pour vous rencontrer une fois de plus ! Découvrez le planning de nos auteurs
-            pour discuter, échanger ou encore lire notre numéro papier en exclusivité Japan Expo !</p>
-          <button class="header-button">En savoir plus ici</button>
-        </div>
-
-        <div class="img-slide">
-          <%= image_tag('imgcarousel1.png', alt: '', class:'hidden-sm hidden-xs')%>
-        </div>
-      </div>
-
-      <!-- troisième slide -->
-      <div class="item">
-        <div class="slide-description">
-          <h3>Kippon Dream à la Japan Expo !! </h3>
-          <p>Kippon Dream s'invite à la Japan Expo 2017 pour vous rencontrer une fois de plus ! Découvrez le planning de nos auteurs
-            pour discuter, échanger ou encore lire notre numéro papier en exclusivité Japan Expo !</p>
-          <button class="header-button">En savoir plus ici</button>
-
-        </div>
-
-        <div class="img-slide">
-          <%= image_tag('imgcarousel1.png', alt: '', class:'hidden-sm hidden-xs')%>
-        </div>
-      </div>
-
-      <!-- quatrième slide -->
-      <div class="item">
-        <div class="slide-description">
-          <h3>Kippon Dream à la Japan Expo !! </h3>
-          <p>Kippon Dream s'invite à la Japan Expo 2017 pour vous rencontrer une fois de plus ! Découvrez le planning de nos auteurs
-            pour discuter, échanger ou encore lire notre numéro papier en exclusivité Japan Expo !</p>
-          <button class="header-button">En savoir plus ici</button>
-        </div>
-
-        <div class="img-slide">
-          <%= image_tag('imgcarousel1.png', alt: '', class:'hidden-sm hidden-xs')%>
-        </div>
-      </div>
-
-      <!-- cinquième slide -->
-      <div class="item">
-        <div class="slide-description">
-          <h3>Kippon Dream à la Japan Expo !! </h3>
-          <p>Kippon Dream s'invite à la Japan Expo 2017 pour vous rencontrer une fois de plus ! Découvrez le planning de nos auteurs
-            pour discuter, échanger ou encore lire notre numéro papier en exclusivité Japan Expo !</p>
-          <button class="header-button">En savoir plus ici</button>
-        </div>
-
-        <div class="img-slide">
-          <%= image_tag('imgcarousel1.png', alt: '', class:'hidden-sm hidden-xs')%>
-        </div>
-      </div>
     </div>
   </header>
 

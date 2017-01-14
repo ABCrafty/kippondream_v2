@@ -4,7 +4,7 @@
       <h1>Le webzine de prépublication de bandes-dessinées</h1>
       <div class="header-button">
         <a href="https://www.mangadraft.com/magazine/74-kippon-dream">
-          <%= image_tag('lecture_webzine.png', alt: 'bouton lecture magazines') %>
+           <%= image_tag('lecture_webzine.png', alt: 'bouton lecture magazines') %>
         </a>
       </div> <!-- .header-button -->
     </div> <!-- .webzine -->
@@ -12,7 +12,8 @@
 
   <section class="actus">
     <div class="container-actu">
-      <% @blogs.last(3).each do |b| %>
+      <!-- Afficher les 3 derniers articles du blog -->
+      <% @blogs.last(3).shuffle.each do |b| %>
         <div class="actu">
           <h3><strong><%= b.titre %></strong></h3>
           <%= image_tag b.illu %>
@@ -42,7 +43,7 @@
         <%= simple_format(@presentation.contenu2) %>
       </div>
       <div class="presentation-img">
-        <%= image_tag('personnage_pain.png', alt: 'Païn', class:'hidden-sm hidden-xs')%>
+          <%= image_tag('personnage_pain.png', alt: 'Païn', class:'hidden-sm hidden-xs') %>
       </div>
     </div>
 
