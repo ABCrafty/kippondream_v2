@@ -1,7 +1,7 @@
 class Admin::CarouselsController < ApplicationController
   before_action :authenticate_user!
   # before_action :check_role, only: :index
-  before_action :set_admin_carousel, only: [:show, :edit, :destroy]
+  before_action :set_admin_carousel, only: [:show, :edit, :destroy, :update]
 
   layout 'admin'
 
@@ -23,6 +23,14 @@ class Admin::CarouselsController < ApplicationController
     end
   end
 
+  def update
+    if @admin_carousel.update(admin_carousel_params)
+      redirect_to :back, notice: 'Image mise à jour'
+    else
+      render :edit
+    end
+  end
+
   # DELETE /admin/carousels/1
   def destroy
     @admin_carousel.destroy
@@ -37,7 +45,7 @@ class Admin::CarouselsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_carousel_params
-      params.require(:admin_carousel).permit(:image)
+      params.require(:admin_carousel).permit(:image, :description, :titre, :lien)
     end
 
 =begin

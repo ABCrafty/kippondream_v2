@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_carousel
 
   protect_from_forgery with: :null_session
 
@@ -9,6 +10,12 @@ class ApplicationController < ActionController::Base
     added_attrs = [:username, :email, :password, :password_confirmation, :remember_me]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+  end
+
+  private
+
+  def set_carousel
+    @carousels = Admin::Carousel.all
   end
 
 end

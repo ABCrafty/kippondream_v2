@@ -1,9 +1,3 @@
-<div class="test">
-<% @diapos.each do |d| %>
-    <%= image_tag d.image, size: '100x100' %>
-<% end %>
-</div>
-
 <main role="main">
   <div class="container-webzine">
     <div class="webzine">
@@ -40,27 +34,12 @@
   <section class="presentation-asso">
     <div class="cadre-asso">
       <div class="presentation-texte">
-        <h2>A propos du projet, qu'est-ce que le Kippon Dream ?</h2>
-
-        <p>Le Kippon Dream est un webzine de prépublication francophone de bandes-dessinées style manga
-          avec déjà plus de 15 numéros à son actif et un staff motivé et dynamique. Ce projet est
-          en perpétuel développement et si toute l'équipe travaille de façon bénévole et
-          par passion pour le moment, nous avons pour objectif de nous professionnaliser afin
-          de se faire une place dans le milieu de la bd francophone.</p>
-
-        <h2>Présentation générale des magazines</h2>
-
-        <p>Du contenu exclusif et plus de 2000 pages du Kippon Dream vous attendent ! <br />
-          Ici vous trouverez l'ensemble de nos numéros en lecture libre ! <br />
-          Vous découvrirez dans ces derniers l'ensemble de nos projets bd/manga, quelques
-          articles et des interviews des membres de l'équipe (ainsi que des guests parfois!)</p>
-
-        <p>Il est aussi important de savoir que nos numéros sont, à partir du sixième,
-          partagés en deux groupes, les pairs et les impairs. <br />
-          Cela nous permet de vous offrir un numéro tous les un mois et demi et d'avoir
-          à chaque fois un contenu suffisant et mieux organisé. <br />
-          Il est à noter que chaque série reste dans son groupe, cela facilite
-          ainsi la lecture et vous pouvez retrouver vos séries préférées selon les numéros.</p>
+        <h2><%= @presentation.titre1%></h2>
+          <!-- les balises <p> sont incluses dans le contenu -->
+          <%= simple_format(@presentation.contenu1) %>
+        <h2><%= @presentation.titre2 %></h2>
+        <!-- les balises <p> sont incluses dans le contenu -->
+        <%= simple_format(@presentation.contenu2) %>
       </div>
       <div class="presentation-img">
         <%= image_tag('personnage_pain.png', alt: 'Païn', class:'hidden-sm hidden-xs')%>
