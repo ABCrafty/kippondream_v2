@@ -1,5 +1,5 @@
 class MagazinesController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_magazine, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -58,7 +58,7 @@ class MagazinesController < ApplicationController
   end
 
   def magazine_params
-    params.require(:magazine).permit(:titre, :apercu)
+    params.require(:magazine).permit(:titre, :apercu, :date_parution, :pair)
   end
 
 end

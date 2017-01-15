@@ -1,5 +1,5 @@
 class BlogController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   layout 'admin', only: [:new, :edit]

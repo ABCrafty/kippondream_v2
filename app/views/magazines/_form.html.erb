@@ -11,6 +11,19 @@
   </div>
 
   <div class="field">
+    <%= f.label :date_parution %>
+    <%= f.date_select :date_parution, start_year: 2010, order: [ :day, :month, :year] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pair, "Pair ou impaire ?" %>
+    <%= f.radio_button :pair, true %>
+    <%= label :pair, 'Pair' %>
+    <%= f.radio_button :pair, false %>
+    <%= label :pair, 'Impair' %>
+  </div>
+
+  <div class="field">
     <label for="images[]">Multi Upload</label>
     <%= file_field_tag 'images[]', type: :file, multiple: true %>
   </div>

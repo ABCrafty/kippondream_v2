@@ -1,4 +1,5 @@
 class MangasController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_manga, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -48,6 +49,6 @@ class MangasController < ApplicationController
     end
 
     def manga_params
-      params.require(:manga).permit(:titre, :description, :apercu, :user_ids =>[])
+      params.require(:manga).permit(:titre, :description, :apercu, :pair, :date_parution, :user_ids =>[])
     end
 end

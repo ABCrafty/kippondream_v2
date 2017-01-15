@@ -1,4 +1,5 @@
 class PejisController < ApplicationController
+  before_action :authenticate_user!, only: :show
   before_action :set_peji, only: [:show, :edit, :update, :destroy]
 
   def index

@@ -21,6 +21,18 @@
     <%= f.select :user_ids, User.all_except(current_user).collect { |u| [u.username, u.id] }, {include_blank: true}, {multiple: true} %>
   </div>
 
+  <div class="field">
+    <%= f.label :date_parution %>
+    <%= f.date_select :date_parution, start_year: 2010, order: [ :day, :month, :year] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pair, "Pair ou impaire ?" %>
+    <%= f.radio_button :pair, true %>
+    <%= label :pair, 'Pair' %>
+    <%= f.radio_button :pair, false %>
+    <%= label :pair, 'Impair' %>
+  </div>
 
   <div class="field">
     <%= f.label :description %>
