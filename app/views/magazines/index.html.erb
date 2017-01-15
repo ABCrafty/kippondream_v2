@@ -38,55 +38,27 @@
 <div class="mags-container">
   <div class="owl-carousel owl-theme" id="mag-carousel">
 
-    <!-- première slide -->
+    <!-- slide -->
+    <% @magazines.each do |m| %>
     <div class="mag-container item">
-      <h3>Numéro 1<span class="date-sortie">27 juin 2014</span></h3>
+      <h3><%= m.titre %><span class="date-sortie"><%= m.date_parution.strftime('%d/%m/%Y') || m.created_at.strftime('%d/%m/%Y') %></span></h3>
       <div class="edito-couv">
         <div class="mag-btn-edito">
           <div class="mag-liens">
             <a href="#"><%= image_tag('btnmangadraft.png', alt: 'mangadraft') %></a>
-            <a href="#">Lire sur notre site</a>
+            <%= link_to 'Lire sur notre site', m %>
           </div>
 
           <div class="mag-edito">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a tincidunt elit. Mauris in cursus odio.
-              Proin a orci urna. Aenean vel dictum orci. Maecenas quis ante in arcu commodo scelerisque.
-              Vivamus eget felis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-              turpis egestas. Vestibulum vitae feugiat dui. Nam blandit turpis vitae odio malesuada cursus. Sed non metus
-              in est egestas mollis. Nunc porttitor bibendum nisl sit amet feugiat. Mauris ac faucibus leo, at pharetra
-              tortor. Nunc ut faucibus eros.</p>
+            <p><%= m.description %></p>
           </div>
         </div> <!-- .mag-btn-edito -->
         <div class="mag-couv">
-          <%= image_tag('mags/mag_01.png', alt: 'kippon dream 01') %>
+          <%= image_tag m.apercu, size: '344x485' %>
         </div>
       </div> <!-- .edito-couv -->
-
     </div> <!-- .mag-container -->
-
-    <!-- deuxième slide -->
-    <div class="mag-container item">
-      <h3>Numéro 1<span class="date-sortie">27 juin 2014</span></h3>
-      <div class="edito-couv">
-        <div class="mag-btn-edito">
-          <div class="mag-liens">
-            <a href="#"><%= image_tag('btnmangadraft.png', alt: 'mangadraft') %></a>
-            <a href="#">Lire sur notre site</a>
-          </div>
-
-          <div class="mag-edito">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a tincidunt elit. Mauris in cursus odio.
-              Proin a orci urna. Aenean vel dictum orci. Maecenas quis ante in arcu commodo scelerisque.
-              Vivamus eget felis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-              turpis egestas. Vestibulum vitae feugiat dui. Nam blandit turpis vitae odio malesuada cursus. Sed non metus
-              in est egestas mollis. Nunc porttitor bibendum nisl sit amet feugiat. Mauris ac faucibus leo, at pharetra
-              tortor. Nunc ut faucibus eros.</p>
-          </div>
-        </div> <!-- .mag-btn-edito -->
-        <div class="mag-couv">
-          <%= image_tag('mags/mag_01.png', alt: 'kippon dream 01') %>
-        </div>
-      </div> <!-- .edito-couv -->
+    <% end %>
 
     </div> <!-- .mag-container -->
   </div> <!-- #mag-carousel -->

@@ -1,11 +1,11 @@
 /*
   *= require normalize-css
-  *= require fontawesome
   *= require owl-carousel/owl-carousel/owl.carousel.css
   *= require sass/main
   *= require_self
 */
 
+@import 'font-awesome';
 @import './sass/partials/variables';
 @import './sass/partials/mixins';
 @import './sass/partials/buttons';

@@ -33,7 +33,7 @@ Rails.application.configure do
 
   #A changer, pas urgent + copier dans production dans production.rb
 
-  config.assets.debug = true
+  # config.assets.debug = true
   config.assets.quiet = true
   config.assets.digest = false
 
