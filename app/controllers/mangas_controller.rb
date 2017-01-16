@@ -3,17 +3,22 @@ class MangasController < ApplicationController
   before_action :set_manga, only: [:show, :edit, :update, :destroy]
 
   def index
-    @mangas = Manga.all
+    @titre = 'Mangas'
+    @pair = Manga.where(:pair => true)
+    @impair = Manga.where(:pair => false)
   end
 
   def show
+    @titre = @manga.titre
   end
 
   def new
+    @titre = 'Nouveau manga'
     @manga = Manga.new
   end
 
   def edit
+    @titre = 'Modifier '+@manga.titre
   end
 
   def create

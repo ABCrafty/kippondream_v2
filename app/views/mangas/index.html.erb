@@ -4,97 +4,41 @@
     <div class="flex-series">
       <div class="series series-paires">
         <p>Séries paires</p>
-        <div class="serie">
-          <div class="container-img">
-            <%= image_tag('mags/mag_15.jpg', alt: 'manga') %>
-          </div>
-          <div class="container-texte">
-            <h3>Nom de la série</h3>
-            <p>Je suis un résumé et je veux que tu ailles lire la suite de mon histoire car tu vas
-            beaucoup l'aimer je suis sûre. Il y a plein de beaux garçons et en plus il y a plein
-            de sang. Voilà. Viens lire mon histoire.</p>
-            <a href="#">Lire la série</a>
-          </div>
-        </div> <!-- .serie -->
 
+        <% @pair.each do |p| %>
         <div class="serie">
           <div class="container-img">
-            <%= image_tag('mags/mag_15.jpg', alt: 'manga') %>
+            <%= image_tag p.apercu, size: '158x218' %>
           </div>
           <div class="container-texte">
-            <h3>Nom de la série</h3>
-            <p>Je suis un résumé et je veux que tu ailles lire la suite de mon histoire car tu vas
-              beaucoup l'aimer je suis sûre. Il y a plein de beaux garçons et en plus il y a plein
-              de sang. Voilà. Viens lire mon histoire.</p>
-            <a href="#">Lire la série</a>
+            <h3><%= p.titre %></h3>
+            <p><%= p.description %></p>
+            <%= link_to 'lire la suite', p %>
           </div>
         </div> <!-- .serie -->
+        <% end %>
+
       </div> <!-- .series .series-paires -->
 
       <div class="barre"></div>
 
       <div class="series series-impaires">
         <p>Séries impaires</p>
+        <% @impair.each do |i| %>
         <div class="serie">
           <div class="container-img">
-            <%= image_tag('mags/mag_15.jpg', alt: 'manga') %>
+            <%= image_tag i.apercu, size: '158x218' %>
           </div>
           <div class="container-texte">
-            <h3>Nom de la série</h3>
-            <p>Je suis un résumé et je veux que tu ailles lire la suite de mon histoire car tu vas
-              beaucoup l'aimer je suis sûre. Il y a plein de beaux garçons et en plus il y a plein
-              de sang. Voilà. Viens lire mon histoire.</p>
-            <a href="#">Lire la série</a>
+            <h3><%= i.titre %></h3>
+            <p><%= i.description %></p>
+            <%= link_to 'Lire la suite', i %>
           </div>
         </div> <!-- .serie -->
+        <% end %>
 
-        <div class="serie">
-          <div class="container-img">
-            <%= image_tag('mags/mag_15.jpg', alt: 'manga') %>
-          </div>
-          <div class="container-texte">
-            <h3>Nom de la série</h3>
-            <p>Je suis un résumé et je veux que tu ailles lire la suite de mon histoire car tu vas
-              beaucoup l'aimer je suis sûre. Il y a plein de beaux garçons et en plus il y a plein
-              de sang. Voilà. Viens lire mon histoire.</p>
-            <a href="#">Lire la série</a>
-          </div>
-        </div> <!-- .serie -->
       </div> <!-- .series .series-impaires -->
     </div>
 
   </div>
 </div>
-
-<!--
-<h1>Mangas</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Description</th>
-      <th>Apercu</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @mangas.each do |manga| %>
-      <tr>
-        <td><%= manga.titre %></td>
-        <td><%= manga.description %></td>
-        <td><%= manga.apercu %></td>
-        <td><%= link_to 'Show', manga %></td>
-        <td><%= link_to 'Edit', edit_manga_path(manga) %></td>
-        <td><%= link_to 'Destroy', manga, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
--->
-
-<br>
-
-<%= link_to 'New Manga', new_manga_path %>
