@@ -63,29 +63,6 @@
     </div> <!-- .mag-container -->
   </div> <!-- #mag-carousel -->
 </div>
-
-
-
-
-
-<% @magazines.each do |m| %>
-  <div class="magazines">
-    <h4><%= m.titre %></h4>
-    <%= image_tag m.apercu, size: '200x200' %><br />
-
-    <% m.pages.each do |p| %>
-        <%= image_tag p.image, size: '100x100' %>
-    <% end %>
-    <br />
-
-    <%= link_to 'Show', m %>
-    <%= link_to 'Edit', edit_magazine_path(m) %>
-    <%= link_to 'Destroy', m, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
-<br clear="all" />
-<% end %>
-
-
 <br>
 
 <%= link_to 'New Magazine', new_magazine_path %>

@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, except: :show
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
+  layout 'reader', only: :show
+
   def index
     @pages = Page.all
   end

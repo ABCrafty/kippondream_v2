@@ -1,6 +1,7 @@
 class MangasController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: :index
   before_action :set_manga, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @titre = 'Mangas'
