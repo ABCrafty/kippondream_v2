@@ -46,7 +46,7 @@
         <div class="mag-btn-edito">
           <div class="mag-liens">
             <a href="#"><%= image_tag('btnmangadraft.png', alt: 'mangadraft') %></a>
-            <%= link_to 'Lire sur notre site', m %>
+            <%= link_to 'Lire sur notre site', magazine_page_path(m, m.first_page) %>
           </div>
 
           <div class="mag-edito">

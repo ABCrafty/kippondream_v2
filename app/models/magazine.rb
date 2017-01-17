@@ -4,4 +4,10 @@ class Magazine < ApplicationRecord
   mount_uploader :apercu, ThumbnailUploader
   has_many :pages, :inverse_of => :magazine, :dependent => :destroy
   validates_uniqueness_of :slug
+
+
+  def first_page
+    self.pages.find_by(page_number: 1)
+  end
+
 end
