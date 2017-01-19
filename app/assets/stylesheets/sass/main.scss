@@ -14,7 +14,16 @@ body {
     padding: 0;
     margin: 0;
   }
+
+  .title {
+    background: linear-gradient(-45deg, $secondary 58%, rgba(58, 139, 194, 0) 53%,
+            #3a8bc2 54%, #3a8bc2 57%, #3a8bc2 61%, #3a8bc2 64%, rgba(58, 139, 194, 0) 65%, $secondary -3%);
+    text-align: center;
+    padding: 0.5rem 0;
+  }
 }
+
+
 
 header {
   height: 64vh;
@@ -115,12 +124,14 @@ main {
       width: 40%;
       background: rgba(255,255,255, 0.8);
       border-radius: 6px;
+      border: 3px solid grey;
     }
     h1 {
       text-align: center;
     }
     div.header-button {
       text-align: center;
+      margin: 0.5rem 0;
       img {
         width: 40%;
       }
@@ -241,32 +252,92 @@ main {
     }
   } // section .presentation-asso
 
+
+  // page magazines
+
+  .presentation-mags {
+    display: flex;
+    background: $primary;
+
+    .texte-mags {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      padding-left: 8rem;
+
+      p {
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+
+    .mascotte {
+      width: 40%;
+
+      img {
+        width: 100%;
+      }
+    }
+  } // .presentation-mags
+
   .last-mag {
     background: $primary;
     display: flex;
     padding: 1rem;
     color: white;
+    overflow: hidden;
 
-    .id-mag {
-      padding: 0 1rem;
-
-      h3 {
-        text-align: center;
-        border: 4px solid white;
-        padding: 1rem 0;
-        margin: 1rem 0;
+    .couv {
+      img {
+        transform: rotate(-7deg);
+        margin: -1rem 0 0 -1.5rem;
+        height: 30vw;
       }
-    } // id-mag
+    }
 
-    .edito {
+    .last-mag-text {
       padding: 0 2rem;
-      text-align: justify;
-      order: 3;
-
-      p {
-        margin: 0;
+      h3 {
+        padding: 1rem 0;
+        margin: 1rem auto;
+        text-transform: uppercase;
+        width: 40%;
+        font-size: 2rem;
+        background: $thirdColor;
+        color: black;
+        text-align: center;
       }
-    } // edito
+
+      .edito-series {
+        display: flex;
+
+        .edito {
+          padding: 0 2rem;
+          text-align: justify;
+          width: 60%;
+
+          p {
+            margin: 0;
+          }
+        } // edito
+
+        .series-num {
+          h4 {
+            text-align: center;
+          }
+
+          .id-mag {
+            padding: 0 1rem;
+
+            a {
+              display: block;
+            }
+          } // id-mag
+        } // .series-num
+      } // edito-series
+    } // .last-mag-text
   } // last-mag
 
   .mags-container {
@@ -274,6 +345,9 @@ main {
     padding: 3rem 0;
     background: asset_data_url('bgmags.jpg')
   }
+
+
+  // page séries
 
   .series-container {
     background: asset_data_url('bgseries.jpg');

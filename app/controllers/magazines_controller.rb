@@ -58,7 +58,7 @@ class MagazinesController < ApplicationController
   end
 
   def magazine_params
-    params.require(:magazine).permit(:titre, :apercu, :date_parution, :pair)
+    params.require(:magazine).permit(:titre, :apercu, :date_parution, :pair, :description)
   end
 
   def first_page
