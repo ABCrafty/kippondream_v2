@@ -14,7 +14,7 @@
     <div class="container-actu">
       <!-- Afficher les 3 derniers articles du blog -->
       <% @blogs.last(3).shuffle.each do |b| %>
-        <div class="actu">
+        <div class="actu kd-animate">
           <h3><strong><%= b.titre %></strong></h3>
           <%= image_tag b.illu %>
           <p><%= truncate(strip_tags(b.contenu), :length => 150, :separator => ' ') %></p>
@@ -26,7 +26,10 @@
     <div class="actu-lien">
       <p>Pour les autres articles c'est par ici !</p>
       <span class="icon-stack">
-        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+        <div class="news-mascotte">
+          <%= image_tag('mascotte3.png', alt: 'mascotte kd') %>
+        </div>
+
       </span>
       <%= link_to 'Blog', Blog %>
     </div>

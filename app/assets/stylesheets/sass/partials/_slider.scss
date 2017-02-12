@@ -13,6 +13,9 @@
     h3 {
       text-align: center;
       padding: 0.5rem 0;
+      color: $secondaryColor;
+      text-transform: uppercase;
+      font-size: 2rem;
 
       .date-sortie {
         margin-left: 2rem;
@@ -31,15 +34,61 @@
 
         .mag-liens {
           padding: 1rem;
+          width: 42%;
+          position: relative;
+
+          h4 {
+            text-align: center;
+            text-transform: uppercase;
+            color: $secondaryColor;
+            font-size: 2rem;
+            line-height: 1.5;
+          }
+
+          ul {
+            list-style-type: none;
+            padding: 1rem 0;
+            margin: 0;
+
+            li {
+              font-size: 1.5rem;
+            }
+
+            li:before {
+              content: "- ";
+            }
+          }
 
           a {
             display: block;
           }
+
+          .id-mag {
+            position: absolute;
+            bottom: 5rem;
+            left: 0;
+
+            img {
+              width: 100%;
+            }
+          }
         }
 
         .mag-edito {
-          padding: 0 1em;
+          padding: 0 2rem;
           text-align: justify;
+          width: 65%;
+
+
+        }
+      }
+
+      .mag-couv {
+        width: 30%;
+        padding: 0.5rem;
+
+        img {
+          transform: rotate(-7deg);
         }
       }
     }
@@ -50,13 +99,22 @@
     text-align: center;
 
     .owl-page {
-      border: 1px solid black;
-      background: lightblue;
       padding: 1rem;
+      color: $primaryColor;
+
+      .owl-numbers {
+        text-transform: uppercase;
+        font-size: 1.8rem;
+      }
+
+      .owl-numbers:before {
+        content: "numéro "
+      }
     }
 
     .active {
-      background: red;
+      background: $primaryColor!important;
+      color: white!important;
     }
 
     .owl-prev {

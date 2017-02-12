@@ -1,112 +1,22 @@
 @import './partials/variables';
 @import './partials/mixins';
-@import './partials/buttons';
-@import './partials/form';
-@import './partials/menu';
+@import './partials/header';
 @import './partials/headerSlider';
+@import './partials/buttons';
+@import './partials/menu';
+@import './partials/slider';
+@import './partials/form';
+@import './partials/titles';
+@import './partials/links';
 
 body {
   font-size: 16px;
   line-height: 1.2;
-
-  h1,h2,h3,h4,h5,h6 {
-    font-size: 1.5rem;
-    padding: 0;
-    margin: 0;
-  }
-
-  .title {
-    background: linear-gradient(-45deg, $secondary 58%, rgba(58, 139, 194, 0) 53%,
-            #3a8bc2 54%, #3a8bc2 57%, #3a8bc2 61%, #3a8bc2 64%, rgba(58, 139, 194, 0) 65%, $secondary -3%);
-    text-align: center;
-    padding: 0.5rem 0;
-  }
 }
 
 
 
-header {
-  height: 64vh;
-  position: relative;
-  background: #FFB36D!important;
 
-  #header-slider{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    z-index: 0;
-
-    .item {
-      display: flex;
-      width: 100%;
-      height: auto;
-
-      .slide-description {
-        width: 30%;
-        display: flex;
-        flex-direction:column;
-        align-items: center;
-        justify-content: center;
-        padding-top: 5rem;
-
-        h3 {
-          text-align: center;
-          margin-left: 22%;
-        }
-
-        p {
-          margin-left: 22%;
-        }
-
-        button {
-          text-align: center;
-          margin-left: 22%;
-          padding: 1rem 2rem;
-          text-transform: uppercase;
-          border: none;
-          box-shadow: 1px 1px 7px black;
-          cursor: pointer;
-          background: $primary;
-          color: white;
-        }
-
-        button:active {
-          box-shadow: none;
-        }
-      }
-
-      .img-slide {
-        width: 70%;
-        height: 64vh;
-
-        img {
-          width: 100%;
-          height: 64vh;
-        }
-      } // .img-slide
-    } // .item
-
-    .owl-prev {
-      position: absolute;
-      top: 50%;
-      left: 0.5rem;
-
-      .fa {
-        font-size: 2.5rem;
-      }
-    }
-
-    .owl-next {
-      position: absolute;
-      top: 50%;
-      right: 0.5rem;
-
-      .fa {
-        font-size: 2.5rem;
-      }
-    }
-  } // #header-slider
-} // header
 
 main {
   padding-bottom: 1rem;
@@ -139,10 +49,13 @@ main {
   } // .container-webzine
 
 
+
+
   section.actus {
     display: flex;
-    background: $primary;
+    background: $primaryColor;
     width: 100%;
+
 
     .container-actu {
       width: 75%;
@@ -162,7 +75,6 @@ main {
         margin: 2rem 1rem;
         text-align: justify;
         border-radius: 4px;
-        position: relative;
 
         h3 {
           text-align: center;
@@ -180,12 +92,11 @@ main {
         }
 
         a {
+          display: block;
           text-transform: uppercase;
           text-align: center;
           width: 100%;
-          position: absolute;
-          bottom: 0;
-          background: $secondary;
+          background: $secondaryColor;
           text-decoration: none;
           color: black;
           padding: 0.2rem 0;
@@ -195,13 +106,21 @@ main {
 
     div.actu-lien {
       width: 25%;
-      background: $secondary;
+      background: $secondaryColor;
 
       p {
         text-align: center;
         font-size: 2rem;
         padding: 0 1rem;
       }
+      .news-mascotte {
+        img {
+          width: 45%;
+          margin: auto;
+          display: block;
+        }
+      }
+
 
       .fa {
         display: block;
@@ -257,7 +176,7 @@ main {
 
   .presentation-mags {
     display: flex;
-    background: $primary;
+    background: $primaryColor;
 
     .texte-mags {
       width: 60%;
@@ -283,11 +202,11 @@ main {
   } // .presentation-mags
 
   .last-mag {
-    background: $primary;
+    background: $primaryColor;
     display: flex;
-    padding: 1rem;
     color: white;
     overflow: hidden;
+    padding: 1rem 0;
 
     .couv {
       img {
@@ -299,16 +218,7 @@ main {
 
     .last-mag-text {
       padding: 0 2rem;
-      h3 {
-        padding: 1rem 0;
-        margin: 1rem auto;
-        text-transform: uppercase;
-        width: 40%;
-        font-size: 2rem;
-        background: $thirdColor;
-        color: black;
-        text-align: center;
-      }
+
 
       .edito-series {
         display: flex;
@@ -318,16 +228,42 @@ main {
           text-align: justify;
           width: 60%;
 
+          h3 {
+            padding: 1rem 0;
+            margin: 1rem auto;
+            text-transform: uppercase;
+            width: 65%;
+            font-size: 2rem;
+            background: $thirdColor;
+            color: black;
+            text-align: center;
+          }
+
           p {
             margin: 0;
           }
         } // edito
 
         .series-num {
+          padding: 2rem 0;
           h4 {
             text-align: center;
+            text-transform: uppercase;
           }
 
+          ul {
+            list-style-type: none;
+            padding: 1rem 2rem;
+            margin: 0;
+
+            li {
+              font-size: 1.5rem;
+            }
+
+            li:before {
+              content: "- ";
+            }
+          }
           .id-mag {
             padding: 0 1rem;
 
@@ -343,7 +279,7 @@ main {
   .mags-container {
     width: 100%;
     padding: 3rem 0;
-    background: asset_data_url('bgmags.jpg')
+    background: asset_data_url('bgmags.jpg') 100% no-repeat;
   }
 
 
@@ -356,8 +292,8 @@ main {
       width: 90%;
       margin: auto;
       background: white;
-      border-left: 1rem solid $secondary;
-      border-right: 1rem solid $primary;
+      border-left: 1rem solid $secondaryColor;
+      border-right: 1rem solid $primaryColor;
 
       h2 {
         text-align: center;
@@ -416,11 +352,11 @@ main {
 
         .series-paires {
           > p {
-            color: $primary;
+            color: $primaryColor;
           }
 
           h3 {
-            color: $secondary;
+            color: $secondaryColor;
           }
 
           a {
@@ -428,7 +364,7 @@ main {
           }
 
           img {
-            border: 4px solid $primary;
+            border: 4px solid $primaryColor;
           }
 
           .container-img {
@@ -444,11 +380,11 @@ main {
 
         .series-impaires {
           > p {
-            color: $secondary;
+            color: $secondaryColor;
           }
 
           h3 {
-            color: $primary;
+            color: $primaryColor;
           }
 
           a {
@@ -456,7 +392,7 @@ main {
           }
 
           img {
-            border: 4px solid $secondary;
+            border: 4px solid $secondaryColor;
           }
 
           .container-img {

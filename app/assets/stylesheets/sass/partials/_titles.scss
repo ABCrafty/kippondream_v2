@@ -1,0 +1,22 @@
+h1,h2,h3,h4,h5,h6 {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+  padding: 0.5rem 0;
+  background: $secondaryColor;
+}
+
+.title-left {
+  background: linear-gradient(-45deg, $secondaryColor 58%, rgba(58, 139, 194, 0) 53%, $primaryColor 54%, $primaryColor 65%,
+          $primaryColor 61%, $primaryColor 64%, rgba(58, 139, 194, 0) 65%, $secondaryColor -3%);
+
+}
+
+.title-right {
+  background: linear-gradient(-45deg, $secondaryColor 58%, rgba(58, 139, 194, 0) 53%, $primaryColor 54%, $primaryColor 65%,
+          $primaryColor 61%, $primaryColor 64%, rgba(58, 139, 194, 0) 65%, $secondaryColor -3%);
+}

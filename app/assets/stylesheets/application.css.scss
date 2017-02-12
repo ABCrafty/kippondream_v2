@@ -2,6 +2,7 @@
   *= require normalize-css
   *= require owl-carousel/owl-carousel/owl.carousel.css
   *= require sass/main
+  *= require animate.css/animate.min.css
   *= require_self
 */
 
@@ -12,3 +13,5 @@
 @import './sass/partials/form';
 @import './sass/partials/menu';
 @import './sass/partials/slider';
+@import './sass/partials/animation';
+@import './sass/partials/titles';

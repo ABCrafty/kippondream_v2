@@ -1,0 +1,9 @@
+a.lecture-kippon {
+  font-size: 1.5rem;
+  text-decoration: none;
+
+}
+
+a.lecture-kippon:before {
+  content: "<%= image_tag('mags/mag_15.jpg', alt: 'kippon dream 15') %>";
+}
