@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    @titre = @page.magazine.titre.to_s+ ' - page '+@page.page_number.to_s
+    # @titre = @page.magazine.titre.to_s+ ' - page '+@page.page_number.to_s
   end
 
   def new
@@ -43,10 +43,6 @@ class PagesController < ApplicationController
   end
 
   private
-
-  def magazine
-
-  end
 
   def set_page
     @magazine = Magazine.find_by(slug: params[:magazine_id])

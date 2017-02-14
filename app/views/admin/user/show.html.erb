@@ -1,0 +1,11 @@
+<h1>PROFIL DE <%= @admin_user.username.upcase %></h1>
+
+<ul>
+  <li>Avatar : <%= image_tag @admin_user.avatar, size: '70x70' %></li>
+  <li>Pseudo : <%= @admin_user.username %></li>
+  <li>Adresse e-mail : <%= @admin_user.email %></li>
+  <li>Dernière connexion : <%= @admin_user.last_sign_in_at.strftime('%d / %m / %Y à %H:%M') %></li>
+  <li>Profil créé le : <%= @admin_user.created_at.strftime('%d / %m / %Y') %></li>
+  <li><%= @admin_user.is_femme? ? 'Femme' : 'Homme' %></li>
+  <li>Rôle : <%= @admin_user.role %></li>
+</ul>

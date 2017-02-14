@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-
   #Index de tout le site
   root to: 'home#index'
 
   #Partie admin
   namespace :admin do
     resources :carousels
+    resources :user, except: :index
+    get '/users' => 'user#index', as: :admin_user_index
   end
   get '/admin' => 'admin#index', as: :admin_root
 
@@ -38,6 +39,8 @@ Rails.application.routes.draw do
   get 'user/create'
   get '/user/:id/edit_password' => 'user#password', as: :change_password
   resources :user, :controller => 'user'
+
+
 
   #Permet de faire fonctionner CKEditor
   mount Ckeditor::Engine => '/ckeditor'

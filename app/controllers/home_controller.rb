@@ -5,6 +5,8 @@ class HomeController < ApplicationController
     @titre = 'Accueil'
     @diapos = Admin::Carousel.all
     @blogs = Blog.all
+    @manga = Manga.all
+    @chapters = Chapter.all
     @presentation = Presentation.first
   end
 

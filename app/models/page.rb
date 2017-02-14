@@ -12,4 +12,8 @@ class Page < ApplicationRecord
     self.class.where('page_number > ?', page_number).limit(1).last
   end
 
+  def first_page
+    self.class.where('page_number = 1', page_number)
+  end
+
 end
