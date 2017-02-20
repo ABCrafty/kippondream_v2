@@ -17,6 +17,9 @@ class Admin::CarouselsController < ApplicationController
     @admin_carousel = Admin::Carousel.new(admin_carousel_params)
 
     if @admin_carousel.save
+      if !@admin_carousel.lien.start_with?('http://')
+	@admin_carousel.lien.prepend('http://')
+      end
       redirect_to :back, notice: 'Image ajoutée'
     else
       render :new
