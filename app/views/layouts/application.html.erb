@@ -56,20 +56,57 @@
   </main>
 
 
-  <% if user_signed_in? %>
-      <li>
-        <%= link_to 'Administration', admin_root_path %> | <%= link_to 'Profil', current_user %> <%= link_to('Deconnexion', destroy_user_session_path, :method => :delete) %>
-      </li>
-  <% else %>
-      <li>
-        <%= link_to('Connexion', new_user_session_path)  %>
-      </li>
-  <% end %>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-content-logo">
+        <%= image_tag 'mascotte.png' %>
+      </div>
+      <div class="footer-content-links">
+        <h3>Kippon Dream</h3>
+        <ul>
+          <li><%= link_to 'Les magazines', magazines_path %></li>
+          <li><%= link_to 'Les mangas', mangas_path %></li>
+          <li><%= link_to 'Le blog', Blog %></li>
+          <li><%= link_to 'La team et les membres', root_path %></a></li>
+          <li><%= link_to 'Contact', new_contact_path %></li>
+          <li><%= link_to 'La boutique', '#' %></li>
+        </ul>
+      </div>
+      <div class="footer-content-links">
+        <h3>Partenaires</h3>
+        <ul>
+          <li><a href="#">Les magazines</a></li>
+          <li><a href="#">Les magazines</a></li>
+          <li><a href="#">Les magazines</a></li>
+          <li><a href="#">Les magazines</a></li>
+          <li><a href="#">Les magazines</a></li>
+          <li><a href="#">Les magazines</a></li>
+        </ul>
+      </div>
+      <div class="footer-content-links">
+        <h3>Retrouvez-nous ici aussi</h3>
+        <ul>
+          <li><a href="#">Les magazines</a></li>
+          <li><a href="#">Les magazines</a></li>
+          <li><a href="#">Les magazines</a></li>
+          <li><a href="#">Les magazines</a></li>
+          <li><a href="#">Les magazines</a></li>
+          <li><a href="#">Les magazines</a></li>
+        </ul>
+      </div>
 
-  <% if current_user %>
-  <%= current_user.role %>
-  <% end %>
-
+    </div>
+    <div class="div1"><p>&copy; 2016 - KIPPON DREAM</p></div>
+    <div class="div2">
+      <% if user_signed_in? %>
+          <p>
+            <%= link_to 'Administration', admin_root_path %> |
+            <%= link_to 'Profil', current_user %>
+            <%= link_to('Deconnexion', destroy_user_session_path, :method => :delete) %>
+          </p>
+      <% end %>
+    </div>
+  </footer>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
