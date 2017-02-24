@@ -36,8 +36,9 @@ class MagazinesController < ApplicationController
   def update
     if @magazine.update(magazine_params)
       if params[:images]
+	@page_number = @magazine.pages.order("page_number DESC").first
         (params[:images] || []).each_with_index do |image, index|
-          @magazine.pages.create(image: image, page_number: index + 1)
+          @magazine.pages.create(image: image, page_number: @page_number.page_number + index + 1)
         end
       end
       redirect_to @magazine, notice: 'Magazine mis à jour'
