@@ -10,11 +10,11 @@
   opacity: 1;
 }
 
-.actu:nth-child(3) {
-  -webkit-transition-delay: 500ms;
-  -moz-transition-delay: 500ms;
-  -o-transition-delay: 500ms;
-  transition-delay: 500ms;
+.actu:nth-child(1) {
+  -webkit-transition-delay: 1500ms;
+  -moz-transition-delay: 1500ms;
+  -o-transition-delay: 1500ms;
+  transition-delay: 1500ms;
 }
 
 .actu:nth-child(2) {
@@ -24,9 +24,38 @@
   transition-delay: 1000ms;
 }
 
-.actu:nth-child(1) {
-  -webkit-transition-delay: 1500ms;
-  -moz-transition-delay: 1500ms;
-  -o-transition-delay: 1500ms;
-  transition-delay: 1500ms;
+.actu:nth-child(3) {
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+
+
+.series-paires .serie {
+  opacity: 0;
+  margin-left: -10rem;
+  -moz-transition: all 500ms ease-in;
+  -webkit-transition: all 500ms ease-in;
+  -o-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
+}
+
+.series-paires .serie.in-view {
+  opacity: 1;
+  margin-left: 0;
+}
+
+.series-impaires .serie {
+  opacity: 0;
+  margin-right: -10rem;
+  -moz-transition: all 500ms ease-in;
+  -webkit-transition: all 500ms ease-in;
+  -o-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
+}
+
+.series-impaires .serie.in-view {
+  opacity: 1;
+  margin-right: 0;
 }

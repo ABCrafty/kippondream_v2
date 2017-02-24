@@ -1,0 +1,57 @@
+header.header-reader {
+  height: 60vh;
+  background: asset_data_url('vacancesbg.jpg') 100%!important;
+
+  .read-menu {
+    display: flex;
+    margin-top: 3rem;
+    justify-content: center;
+    align-items: flex-end;
+
+    .read-titre {
+      width: 45%;
+      margin-bottom: 3rem;
+
+      h1 {
+        background: #2b2b2b;
+        color: white;
+        text-align: right;
+        padding: 1rem;
+      }
+    }
+
+    .read-img {
+      width: 10%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        border: 3px solid $primaryColor;
+      }
+    }
+
+    .read-select {
+      display: flex;
+      width: 45%;
+      margin-bottom: 3rem;
+      justify-content: center;
+      padding: 1rem;
+      background: #2b2b2b;
+
+      select {
+        width: 64%;
+        padding: 0.2rem 0.4rem;
+      }
+    }
+  }
+}
+
+main.main-reader {
+  background: #2b2b2b;
+  text-align: center;
+  padding-top: 2rem;
+
+  img {
+    width: 70%;
+  }
+}

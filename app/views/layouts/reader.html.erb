@@ -16,7 +16,7 @@
     <p class="alert"><%= alert %></p>
 <% end %>
 
-<header>
+<header class="header-reader">
   <nav>
     <ul>
       <li><%= link_to 'Magazines', magazines_path %></li>
@@ -33,9 +33,27 @@
       <li>Boutique</li>
     </ul>
   </nav>
+
+  <div class="read-menu">
+    <div class="read-titre">
+      <h1>Animix</h1>
+    </div>
+    <div class="read-img">
+      <%= image_tag('mags/mag_01.png', alt: 'mascotte') %>
+    </div>
+
+    <div class="read-select">
+      <select name="" id="select-chapitre">
+        <option value="1">Chapitre 1 : titre du chapitre</option>
+        <option value="2">Chapitre 2 : titre du chapitre</option>
+        <option value="3">Chapitre 3 : titre du chapitre</option>
+      </select>
+    </div>
+
+  </div>
 </header>
 
-<main>
+<main class="main-reader">
   <%= yield %>
 </main>
 

@@ -6,7 +6,7 @@
         <p>Séries paires</p>
 
         <% @pair.each do |p| %>
-        <div class="serie">
+        <div class="serie kd-animate">
           <div class="container-img">
             <%= image_tag p.apercu, size: '158x218' %>
           </div>
@@ -25,7 +25,7 @@
       <div class="series series-impaires">
         <p>Séries impaires</p>
         <% @impair.each do |i| %>
-        <div class="serie">
+        <div class="serie kd-animate">
           <div class="container-img">
             <%= image_tag i.apercu, size: '158x218' %>
           </div>

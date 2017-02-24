@@ -4,7 +4,7 @@ Rails.application.configure do
   config.eager_load = false
   config.consider_all_requests_local = true
   if Rails.root.join('tmp/caching-dev.txt').exist?
-    config.action_controller.perform_caching = true
+    config.action_controller.perform_caching = false
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
@@ -16,6 +16,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+
+  config.action_controller.perform_caching = false
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false

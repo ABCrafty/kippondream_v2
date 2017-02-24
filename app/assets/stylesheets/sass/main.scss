@@ -8,6 +8,9 @@
 @import './partials/form';
 @import './partials/titles';
 @import './partials/links';
+@import './partials/membre';
+@import './partials/animation';
+@import './partials/reader';
 
 body {
   font-size: 16px;
@@ -322,6 +325,7 @@ main {
           .serie {
             display: flex;
             padding: 1rem;
+            width: 542px;
 
             .container-texte {
               padding: 1rem;
