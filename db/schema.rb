@@ -10,34 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119200521) do
+ActiveRecord::Schema.define(version: 20161215000109) do
 
   create_table "admin_carousels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "admin_carousels"
     t.string   "titre"
-    t.string   "description"
+    t.text     "description",     limit: 255
     t.string   "lien"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "blog", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titre"
     t.text     "contenu",    limit: 65535
     t.string   "slug"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
     t.string   "illu"
     t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "chapters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titre"
     t.string   "apercu"
     t.integer  "manga_id"
+    t.integer  "chapter_number", default: 0
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.integer  "chapter_number", default: 0
   end
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -66,13 +67,15 @@ ActiveRecord::Schema.define(version: 20170119200521) do
 
   create_table "magazines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titre"
+    t.string   "link_mangadraft"
+    t.text     "sommaire",        limit: 65535
     t.string   "apercu"
     t.string   "slug"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.text     "description",   limit: 65535
     t.boolean  "pair"
     t.datetime "date_parution"
+    t.text     "description",     limit: 65535
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "mangas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -81,10 +84,10 @@ ActiveRecord::Schema.define(version: 20170119200521) do
     t.string   "apercu"
     t.string   "slug"
     t.integer  "user_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
     t.boolean  "pair"
     t.datetime "date_parution"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "mangas_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -97,9 +100,10 @@ ActiveRecord::Schema.define(version: 20170119200521) do
   create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
     t.integer  "magazine_id"
+    t.integer  "page_number"
+    t.integer  "integer"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "page_number"
   end
 
   create_table "pejis", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -115,29 +119,34 @@ ActiveRecord::Schema.define(version: 20170119200521) do
     t.text     "contenu1",   limit: 65535
     t.string   "titre2"
     t.text     "contenu2",   limit: 65535
+    t.string   "titre3"
+    t.text     "contenu3",   limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "The base table for user entities." do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "email",                                default: "",    null: false
+    t.string   "encrypted_password",                   default: "",    null: false
+    t.string   "username",                             default: "",    null: false
+    t.datetime "date_naissance"
+    t.datetime "datetime"
+    t.boolean  "is_femme",                             default: false
+    t.boolean  "boolean",                              default: false
+    t.string   "avatar"
+    t.string   "banniere"
+    t.string   "role"
+    t.text     "description",            limit: 65535
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",                        default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "username"
-    t.datetime "date_naissance"
-    t.boolean  "is_femme",               default: false
-    t.string   "avatar"
-    t.string   "role"
-    t.string   "banniere"
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree

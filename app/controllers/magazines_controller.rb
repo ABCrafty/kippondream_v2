@@ -3,7 +3,9 @@ class MagazinesController < ApplicationController
   before_action :set_magazine, only: [:show, :edit, :update, :destroy]
 
   def index
+    @last = Magazine.last
     @magazines = Magazine.all
+    @presentation = Presentation.first
     @titre = 'Tous les magazines'
   end
 
@@ -24,8 +26,12 @@ class MagazinesController < ApplicationController
     @magazine = Magazine.new(magazine_params)
 
     if @magazine.save
+      @index = 0
       (params[:images] || []).each_with_index do |image, index|
-        @magazine.pages.create(image: image, page_number: index + 1)
+        if index.even?
+          @index += 1
+        end
+        @magazine.pages.create(image: image, page_number: @index)
       end
       redirect_to @magazine, notice: 'Magazine créé'
     else
@@ -37,6 +43,7 @@ class MagazinesController < ApplicationController
     if @magazine.update(magazine_params)
       if params[:images]
 	@page_number = @magazine.pages.order("page_number DESC").first
+        
         (params[:images] || []).each_with_index do |image, index|
           @magazine.pages.create(image: image, page_number: @page_number.page_number + index + 1)
         end
@@ -59,7 +66,7 @@ class MagazinesController < ApplicationController
   end
 
   def magazine_params
-    params.require(:magazine).permit(:titre, :apercu, :date_parution, :pair, :description)
+    params.require(:magazine).permit(:titre, :apercu, :date_parution, :pair, :description, :link_mangadraft, :sommaire)
   end
 
   def first_page

@@ -12,7 +12,7 @@
           </div>
           <div class="container-texte">
             <h3><%= p.titre %></h3>
-            <p><%= p.description %></p>
+            <p><%= simple_format(p.description) %></p>
             <%= link_to 'lire la suite', p %>
           </div>
         </div> <!-- .serie -->
@@ -31,7 +31,7 @@
           </div>
           <div class="container-texte">
             <h3><%= i.titre %></h3>
-            <p><%= i.description %></p>
+            <p><%= simple_format(i.description) %></p>
             <%= link_to 'Lire la suite', i %>
           </div>
         </div> <!-- .serie -->

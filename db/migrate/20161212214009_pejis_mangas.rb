@@ -1,4 +1,4 @@
-class DouzeDecembre < ActiveRecord::Migration[5.0]
+class PejisMangas < ActiveRecord::Migration[5.0]
   def change
 
     create_table :pejis do |t|
@@ -10,18 +10,15 @@ class DouzeDecembre < ActiveRecord::Migration[5.0]
 
     create_table :mangas do |t|
       t.string :titre
-      t.string :description
+      t.text :description, :limit => 300
       t.string :apercu
       t.string :slug
       t.integer :user_id
       t.text :description
+      t.boolean :pair
+      t.datetime :date_parution
 
       t.timestamps
     end
-
-    add_column :blog, :illu, :string
-    add_column :blog, :user_id, :integer
-    add_column :users, :banniere, :string
-
   end
 end

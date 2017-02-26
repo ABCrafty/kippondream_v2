@@ -2,10 +2,11 @@
 
 <div class="staff">
 
+  <% @users.each do |u| %>
   <div class="membre">
     <div class="profil">
-      <%= image_tag('kuro.jpg', alt: 'mascotte') %>
-      <h4>Nom du membre</h4>
+      <%= image_tag u.avatar %>
+      <h4><%= u.username %></h4>
     </div>
     <div class="membre-presentation">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis vestibulum enim, vitae pellentesque velit.
@@ -19,172 +20,23 @@
         <div class="membre-projets">
           <h5>Ses projets :</h5>
           <ul>
-            <li>Pain</li>
-            <li>3 coups</li>
-            <li>One Shot</li>
+            <% u.mangas.last(3).each do |m| %>
+            <li><%= link_to m.titre, m %></li>
+            <% end %>
           </ul>
         </div>
 
         <div class="articles-recents">
           <h5>Ses articles récents :</h5>
           <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
+            <% u.blogs.last(3).each do |b| %>
+            <li><%= link_to b.titre, b %></li>
+            <% end %>
           </ul>
         </div>
       </div>
       <i class="fa fa-times-circle-o close" aria-hidden="true"></i>
     </div> <!-- membre-presentation -->
   </div> <!-- membre -->
-
-  <div class="membre">
-    <div class="profil">
-      <%= image_tag('kuro.jpg', alt: 'mascotte') %>
-      <h4>Nom du membre</h4>
-    </div>
-    <div class="membre-presentation">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis vestibulum enim, vitae pellentesque velit.
-        Pellentesque dictum in dui bibendum sagittis. Phasellus faucibus nisi ac rutrum scelerisque.
-        Pellentesque scelerisque felis sed pretium mollis. Etiam venenatis odio nisl. Nulla viverra luctus maximus.
-        Donec sollicitudin ullamcorper purus eu elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-        per inceptos himenaeos. Pellentesque feugiat velit dolor, ac tempor mi accumsan ut. Proin et sem consequat,
-        semper turpis sit amet, volutpat arcu. Sed dapibus rhoncus malesuada. Morbi ultrices lobortis mattis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <div class="projets-articles">
-        <div class="membre-projets">
-          <h5>Ses projets :</h5>
-          <ul>
-            <li>Pain</li>
-            <li>3 coups</li>
-            <li>One Shot</li>
-          </ul>
-        </div>
-
-        <div class="articles-recents">
-          <h5>Ses articles récents :</h5>
-          <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-          </ul>
-        </div>
-      </div>
-      <i class="fa fa-times-circle-o close" aria-hidden="true"></i>
-    </div> <!-- membre-presentation -->
-  </div> <!-- membre -->
-
-  <div class="membre">
-    <div class="profil">
-      <%= image_tag('kuro.jpg', alt: 'mascotte') %>
-      <h4>Nom du membre</h4>
-    </div>
-    <div class="membre-presentation">
-      <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis vestibulum enim, vitae pellentesque velit.
-        Pellentesque dictum in dui bibendum sagittis. Phasellus faucibus nisi ac rutrum scelerisque.
-        Pellentesque scelerisque felis sed pretium mollis. Etiam venenatis odio nisl. Nulla viverra luctus maximus.
-        Donec sollicitudin ullamcorper purus eu elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-        per inceptos himenaeos. Pellentesque feugiat velit dolor, ac tempor mi accumsan ut. Proin et sem consequat,
-        semper turpis sit amet, volutpat arcu. Sed dapibus rhoncus malesuada. Morbi ultrices lobortis mattis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</blockquote>
-      <div class="projets-articles">
-        <div class="membre-projets">
-          <h5>Ses projets :</h5>
-          <ul>
-            <li>Pain</li>
-            <li>3 coups</li>
-            <li>One Shot</li>
-          </ul>
-        </div>
-
-        <div class="articles-recents">
-          <h5>Ses articles récents :</h5>
-          <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-          </ul>
-        </div>
-      </div>
-      <i class="fa fa-times-circle-o close" aria-hidden="true"></i>
-    </div> <!-- membre-presentation -->
-  </div> <!-- membre -->
-
-  <div class="membre">
-    <div class="profil">
-      <%= image_tag('kuro.jpg', alt: 'mascotte') %>
-      <h4>Nom du membre</h4>
-    </div>
-    <div class="membre-presentation">
-      <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis vestibulum enim, vitae pellentesque velit.
-        Pellentesque dictum in dui bibendum sagittis. Phasellus faucibus nisi ac rutrum scelerisque.
-        Pellentesque scelerisque felis sed pretium mollis. Etiam venenatis odio nisl. Nulla viverra luctus maximus.
-        Donec sollicitudin ullamcorper purus eu elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-        per inceptos himenaeos. Pellentesque feugiat velit dolor, ac tempor mi accumsan ut. Proin et sem consequat,
-        semper turpis sit amet, volutpat arcu. Sed dapibus rhoncus malesuada. Morbi ultrices lobortis mattis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</blockquote>
-      <div class="projets-articles">
-        <div class="membre-projets">
-          <h5>Ses projets :</h5>
-          <ul>
-            <li>Pain</li>
-            <li>3 coups</li>
-            <li>One Shot</li>
-          </ul>
-        </div>
-
-        <div class="articles-recents">
-          <h5>Ses articles récents :</h5>
-          <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-          </ul>
-        </div>
-      </div>
-      <i class="fa fa-times-circle-o close" aria-hidden="true"></i>
-    </div> <!-- membre-presentation -->
-  </div> <!-- membre -->
-
-  <div class="membre">
-    <div class="profil">
-      <%= image_tag('kuro.jpg', alt: 'mascotte') %>
-      <h4>Nom du membre</h4>
-    </div>
-    <div class="membre-presentation">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis vestibulum enim, vitae pellentesque velit.
-        Pellentesque dictum in dui bibendum sagittis. Phasellus faucibus nisi ac rutrum scelerisque.
-        Pellentesque scelerisque felis sed pretium mollis. Etiam venenatis odio nisl. Nulla viverra luctus maximus.
-        Donec sollicitudin ullamcorper purus eu elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-        per inceptos himenaeos. Pellentesque feugiat velit dolor, ac tempor mi accumsan ut. Proin et sem consequat,
-        semper turpis sit amet, volutpat arcu. Sed dapibus rhoncus malesuada. Morbi ultrices lobortis mattis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <div class="projets-articles">
-        <div class="membre-projets">
-          <h5>Ses projets :</h5>
-          <ul>
-            <li>Pain</li>
-            <li>3 coups</li>
-            <li>One Shot</li>
-          </ul>
-        </div>
-
-        <div class="articles-recents">
-          <h5>Ses articles récents :</h5>
-          <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-          </ul>
-        </div>
-      </div>
-      <i class="fa fa-times-circle-o close" aria-hidden="true"></i>
-    </div> <!-- membre-presentation -->
-  </div> <!-- membre -->
+  <% end %>
 </div> <!-- staff -->
-
-<div class="auteurs">
-  <div class="membre">
-
-  </div>
-</div>

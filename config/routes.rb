@@ -35,8 +35,8 @@ Rails.application.routes.draw do
 
   #Login + paramétrage des membres de KD
   devise_for :users
-  get 'user/new'
   get 'user/create'
+  get '/membres' => 'user#index', as: :membres
   get '/membre/:id' => 'user#show', as: :membre
   get '/user/:id/edit_password' => 'user#password', as: :change_password
   resources :user, :controller => 'user'

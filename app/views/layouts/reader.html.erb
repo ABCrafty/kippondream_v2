@@ -28,7 +28,7 @@
 
     </div>
     <ul>
-      <li>Membres</li>
+      <li><%= link_to 'Membres', '/membres' %></li>
       <li><%= link_to 'Contact', new_contact_path %></li>
       <li>Boutique</li>
     </ul>
@@ -41,7 +41,6 @@
     <div class="read-img">
       <%= image_tag('mags/mag_01.png', alt: 'mascotte') %>
     </div>
-
     <div class="read-select">
       <select name="" id="select-chapitre">
         <option value="1">Chapitre 1 : titre du chapitre</option>

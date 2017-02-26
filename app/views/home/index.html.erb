@@ -13,7 +13,7 @@
   <section class="actus">
     <div class="container-actu">
       <!-- Afficher les 3 derniers articles du blog -->
-      <% @blogs.last(3).shuffle.each do |b| %>
+      <% @blogs.last(3).each do |b| %>
         <div class="actu kd-animate">
           <h3><strong><%= b.titre %></strong></h3>
           <%= image_tag b.illu %>

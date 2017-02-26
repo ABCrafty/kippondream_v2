@@ -8,8 +8,7 @@ class User < ApplicationRecord
   mount_uploader :banniere, AvatarUploader
 
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
