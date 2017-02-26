@@ -42,8 +42,4 @@ Rails.application.routes.draw do
   resources :user, :controller => 'user'
 
 
-
-  #Permet de faire fonctionner CKEditor
-  mount Ckeditor::Engine => '/ckeditor'
-
 end
