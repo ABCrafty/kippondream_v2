@@ -56,38 +56,9 @@ $(document).ready(function () {
         } // attribut checkView
     }; // objet scroll
 
-    var membre = {
-        showPresentation : function() {
-            if(!$membre.hasClass('active-membre')) {
-                $(this).addClass('active-membre');
-            }
-            else if($membre.hasClass('active-membre')) {
-                event.preventDefault();
-            }
-        },
-
-        closePresentation : function () {
-            if($membre.hasClass('active-membre')) {
-
-            }
-
-        }
-    };
-
     // exécution des fonctions
 
     $(window).on('scroll resize', scroll.checkView);
     $(window).trigger('scroll');
-    $membre.on('click', membre.showPresentation);
-    $membre.on('click', membre.closePresentation);
-
-
-    $(document).mouseup(function (e) {
-        if (!$membre.is(e.target) // if the target of the click isn't the container...
-            && $membre.has(e.target).length === 0 ) { // ... nor a descendant of the container
-            $membre.removeClass('active-membre');
-            $(document).unbind( 'mouseup');
-        }
-    });
 
 }); // fermeture jquery
