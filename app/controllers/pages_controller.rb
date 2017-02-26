@@ -46,7 +46,7 @@ class PagesController < ApplicationController
 
   def set_page
     @magazine = Magazine.find_by(slug: params[:magazine_id])
-    @page = @magazine.pages.find_by(page_number: params[:id])
+    @page = @magazine.pages.where(page_number: params[:id])
   end
 
   def page_params

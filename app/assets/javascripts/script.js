@@ -50,7 +50,7 @@ $(document).ready(function () {
                     (elementTopPosition <= windowBottomPosition)) {
                     $element.addClass('in-view');
                 } else {
-                    
+
                 }
             });
         } // attribut checkView

@@ -5,7 +5,7 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @manga.description %>
+  <%= simple_format(@manga.description) %>
 </p>
 
 <p>
@@ -15,7 +15,7 @@
 <p><strong>Chapitres :</strong></p>
 <% @manga.chapters.each do |c| %>
     <li>
-      <%= link_to c.titre, chapter_path(manga_id: @manga, id: c.chapter_number) %>
+      <%= link_to c.titre, peji_path(manga_id: @manga.slug, chapter_id: c.chapter_number, id: 1) %>
     </li>
 <% end %>
 

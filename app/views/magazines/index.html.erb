@@ -1,27 +1,15 @@
 <div class="last-mag">
-
+    <!-- Dernier Magazine -->
     <div class="couv">
-      <%= image_tag('mags/mag_15.jpg', alt: 'kippon dream 15') %>
+      <%= image_tag @last.apercu %>
     </div>
 
     <div class="last-mag-text">
 
       <div class="edito-series">
         <div class="edito">
-          <h3>Numéro #18</h3>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a tincidunt elit. Mauris in cursus odio.
-            Proin a orci urna. Aenean vel dictum orci. Maecenas quis ante in arcu commodo scelerisque.
-            Vivamus eget felis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-            turpis egestas. Vestibulum vitae feugiat dui. Nam blandit turpis vitae odio malesuada cursus. Sed non metus
-            in est egestas mollis. Nunc porttitor bibendum nisl sit amet feugiat. Mauris ac faucibus leo, at pharetra
-            tortor. Nunc ut faucibus eros.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a tincidunt elit. Mauris in cursus odio.
-            Proin a orci urna. Aenean vel dictum orci. Maecenas quis ante in arcu commodo scelerisque.
-            Vivamus eget felis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-            turpis egestas. Vestibulum vitae feugiat dui. Nam blandit turpis vitae odio malesuada cursus. Sed non metus
-            in est egestas mollis. Nunc porttitor bibendum nisl sit amet feugiat. Mauris ac faucibus leo, at pharetra
-            tortor. Nunc ut faucibus eros.</p>
+          <h3><%= @last.titre %></h3>
+          <%= simple_format(@last.description) %>
         </div>
 
         <div class="series-num">
@@ -34,8 +22,8 @@
           </ul>
 
           <div class="id-mag">
-            <a href="#"><%= image_tag('btnmangadraft.png', alt: 'mangadraft') %></a>
-            <a href="#"><%= image_tag('btnkippon.png', alt: 'mangadraft') %></a>
+            <%= link_to image_tag('btnmangadraft.png'), @last.link_mangadraft, :target => '_blank' %>
+            <%= link_to image_tag('btnkippon.png'), magazine_page_path(@last, @last.first_page) %>
           </div>
         </div>
       </div> <!-- .edito-series -->
@@ -43,6 +31,7 @@
 
     </div> <!-- .last-mag-text -->
   </div> <!-- .last-mag -->
+  <!-- /dernier magazine -->
 
 <div class="mags-container">
   <div class="owl-carousel owl-theme" id="mag-carousel">
@@ -55,25 +44,24 @@
         <div class="mag-btn-edito">
           <div class="mag-liens">
 
-
-
               <h4>Séries dans ce mag :</h4>
               <ul>
-                <li>Pain </li>
+                <li>Pain</li>
                 <li>Dawn of</li>
                 <li>Infinite Revenge</li>
                 <li>3 coups</li>
               </ul>
 
               <div class="id-mag">
-                <a href="#"><%= image_tag('btnmangadraft.png', alt: 'mangadraft') %></a>
-                <a href="#"><%= image_tag('btnkippon.png', alt: 'mangadraft') %></a>
+                <!-- Lien Mangadraft -->
+                <%= link_to image_tag('btnmangadraft.png'), m.link_mangadraft %>
+                <!-- link_to image_tag('btnkippon.png'), magazine_page_path(m, m.first_page) -->
               </div>
 
           </div>
 
           <div class="mag-edito">
-            <p><%= m.description %></p>
+            <p><%= simple_format(m.description) %></p>
           </div>
         </div> <!-- .mag-btn-edito -->
         <div class="mag-couv">
@@ -86,20 +74,10 @@
     </div> <!-- #mag-carousel -->
   </div> <!-- .mags-container -->
 
-  <h3  class="title">Pourquoi lire nos magazines ?</h3>
+  <h3  class="title"><%= @presentation.titre3 %></h3>
   <div class="presentation-mags">
     <div class="texte-mags">
-      <p>Du contenu exclusif et plus de 2000 pages du Kippon Dream vous attendent ! <br />
-        Ici vous trouvez l'ensemble de nos numéros en lecture libre ! <br />
-        Vous découvrirez dans ces derniers l'ensemble de nos projets bd/manga, quelques <br />
-        articles et des interviews des membres de l'équipe (ainsi que des guests parfois!). </p>
-
-      <p>Il est aussi important de savoir que nos numéros sont, à partir du sixième, partagés en <br />
-        deux groupes, les pairs et les impairs. <br />
-        Cela nous permet de vous offrir un numéro tous les un mois et demi et d'avoir à chaque <br />
-        fois un contenu suffisant et mieux organisé.<br />
-        Il est à noter que chaque série reste dans son groupe, cela facilite ainsi la lecture et <br />
-        vous pouvez retrouver vos séries préférées selon les numéros.</p>
+      <%= simple_format(@presentation.contenu3) %>
     </div>
     <div class="mascotte">
       <%= image_tag('mascotte3.png', alt: 'mascotte') %>

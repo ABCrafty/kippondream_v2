@@ -1,3 +1,7 @@
+<% @chapter.pejis.each_with_index do |p,i| %>
+  <%= link_to i+1, peji_path(id: i+1, chapter_id: @chapter.chapter_number) %>
+<% end %>
+
 <p>
   <strong>Image:</strong>
   <%= image_tag @peji.image, size: '500x500' %>
@@ -10,4 +14,3 @@
 
 <%= link_to '< Précédent', peji_path(id: @peji.previous.scan_number, chapter_id: @chapter.chapter_number) if @peji.previous %> |
 <%= link_to 'Suivant >', peji_path(id: @peji.next.scan_number, chapter_id: @chapter.chapter_number) if @peji.next %>
-

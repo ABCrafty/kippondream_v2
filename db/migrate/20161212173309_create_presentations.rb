@@ -5,11 +5,10 @@ class CreatePresentations < ActiveRecord::Migration[5.0]
       t.text :contenu1
       t.string :titre2
       t.text :contenu2
+      t.string :titre3
+      t.text :contenu3
 
       t.timestamps
     end
-
-    add_column :pages, :page_number, :integer
-
   end
 end

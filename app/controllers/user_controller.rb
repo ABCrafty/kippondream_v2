@@ -3,11 +3,13 @@ class UserController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :password]
 
   def new
+    @titre = 'Nouveau membre'
     @user = User.new
   end
 
   def index
-
+    @titre = 'Membres'
+    @users = User.all
   end
 
   def edit
@@ -15,11 +17,11 @@ class UserController < ApplicationController
   end
 
   def password
-
+    @titre = 'Modifiez votre mot de passe'
   end
 
   def show
-
+    @titre = @user.username
   end
 
   def create
