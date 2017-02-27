@@ -1,6 +1,6 @@
   #ActiveRecord::Migration.drop_table(:presentations)
   #ActiveRecord::Migration.create_table(:presentations)
-
+=begin
   presentation = Presentation.create(
 
   titre1: "A PROPOS DU PROJET, QU'EST-CE QUE LE KIPPON DREAM ?",
@@ -25,5 +25,6 @@
           Il est à noter que chaque série reste dans son groupe, cela facilite ainsi la lecture et <br />
           vous pouvez retrouver vos séries préférées selon les numéros.</p>"
   )
-  user = User.create! :email => 'jd.levarato@gmail.com', :username => 'Jaeger767', :password => 'RedKhezuHR5' #, :confirm_password => 'RedKhezuHR5'
+=end
+  user = User.create! :email => 'alexandreblack@hotmail.fr', :username => 'Kuro', :password => 'B10br4wl*5071' #, :confirm_password => 'RedKhezuHR5'
   # end

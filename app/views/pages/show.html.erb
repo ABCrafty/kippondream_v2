@@ -1,5 +1,16 @@
-<% @page.each do |p| %>
-  <%= image_tag p.image %>
-<% end %>
-<br />
-<%= link_to 'Back', magazines_path %>
+
+
+<div class="pages-reader">
+    <% @page.each do |p| %>
+      <%= image_tag p.image %>
+    <% end %>
+  <div class="arrow-back">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </div>
+  <div class="arrow-next">
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+  </div>
+</div>
+<!--<br />-->
+<!--<%= link_to 'Back', magazines_path %>-->
+
