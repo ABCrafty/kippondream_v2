@@ -37,6 +37,11 @@
       <% end %>
     </p>
 
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+
     <p>
       <%= f.label :date_naissance %>
       <%= f.date_select :date_naissance, {:start_year => 1990, order: [:day, :month, :year] } %>
@@ -47,7 +52,7 @@
       <%= f.select :role, options_for_select(%w[Dieu Staff Auteur], 'Auteur') %>
     </p>
 
-    <%= link_to 'test', change_password_path(@user) %>
-
   <%= f.submit %>
 <% end %>
+
+<%= link_to 'Modifier le mot de passe', change_password_path(@user) %>

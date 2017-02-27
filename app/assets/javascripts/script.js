@@ -2,7 +2,8 @@ $(document).ready(function () {
 
   tinymce.init({
     selector: 'textarea',
-    inline_styles : false
+    inline_styles: false,
+    entity_encoding: 'raw'
   });
 
   $('div#header-slider').owlCarousel({
@@ -26,6 +27,16 @@ $(document).ready(function () {
       stopOnHover: true,
       navigationText : ['<i class="fa fa-arrow-up" aria-hidden="true"></i>', '<i class="fa fa-arrow-down" aria-hidden="true"></i>']
   });
+
+  if($('.first-paragraph').has('br')){
+    $(this).find('br').remove();
+  }
+  if($('.second-paragraph').has('br')){
+    $(this).find('br').remove();
+  }
+  if($('.third-paragraph').has('br')){
+    $(this).find('br').remove();
+  }
 
 
   var $animationElements = $('.kd-animate');

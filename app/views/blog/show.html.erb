@@ -1,49 +1,16 @@
 <section class="article-container">
   <article class="article">
-    <h1>Titre de l'article</h1>
+    <h1><%= @blog.titre %></h1>
     <div class="first-paragraph">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida egestas pellentesque.
-        Aenean elementum hendrerit accumsan. Fusce mi metus, lacinia in tincidunt nec, sagittis at turpis.
-        Mauris iaculis fermentum nisi. Vivamus egestas tellus et ipsum blandit, in hendrerit massa lobortis.
-        Sed id mauris vehicula, laoreet elit quis, ultricies mi. Duis mollis ex quis massa hendrerit, tincidunt bibendum
-        eros molestie.
-
-        Sed vel turpis commodo, interdum felis euismod, dictum dolor. Aliquam varius libero quis dui fringilla,
-        ut eleifend lectus placerat. Praesent facilisis libero id tortor tempus, vel ornare est aliquam.
-        Nulla volutpat urna in risus rutrum commodo. Quisque sollicitudin sem ligula, condimentum volutpat libero
-        consequat a. Duis tortor dolor, tempor quis sodales vitae, sagittis ut elit. Nunc sed bibendum nunc.
-        Sed aliquam mauris ac tellus efficitur maximus. Fusce in ante euismod orci volutpat imperdiet.
-        Aenean ipsum lorem, sollicitudin et aliquet ac, auctor eget enim. In hac habitasse platea dictumst.</p>
+      <%= simple_format(@blog.paragraphe1) %>
     </div>
     <div class="second-paragraph">
-      <%= image_tag 'pair.png', class: 'img-article-1' %>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida egestas pellentesque.
-        Aenean elementum hendrerit accumsan. Fusce mi metus, lacinia in tincidunt nec, sagittis at turpis.
-        Mauris iaculis fermentum nisi. Vivamus egestas tellus et ipsum blandit, in hendrerit massa lobortis.
-        Sed id mauris vehicula, laoreet elit quis, ultricies mi. Duis mollis ex quis massa hendrerit, tincidunt bibendum
-        eros molestie.
-
-        Sed vel turpis commodo, interdum felis euismod, dictum dolor. Aliquam varius libero quis dui fringilla,
-        ut eleifend lectus placerat. Praesent facilisis libero id tortor tempus, vel ornare est aliquam.
-        Nulla volutpat urna in risus rutrum commodo. Quisque sollicitudin sem ligula, condimentum volutpat libero
-        consequat a. Duis tortor dolor, tempor quis sodales vitae, sagittis ut elit. Nunc sed bibendum nunc.
-        Sed aliquam mauris ac tellus efficitur maximus. Fusce in ante euismod orci volutpat imperdiet.
-        Aenean ipsum lorem, sollicitudin et aliquet ac, auctor eget enim. In hac habitasse platea dictumst.</p>
+      <%= image_tag @blog.illu1, class: 'img-article-1' %>
+      <%= simple_format(@blog.paragraphe2) %>
     </div>
     <div class="third-paragraph">
-      <%= image_tag 'impair.png', class: 'img-article-2' %>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida egestas pellentesque.
-        Aenean elementum hendrerit accumsan. Fusce mi metus, lacinia in tincidunt nec, sagittis at turpis.
-        Mauris iaculis fermentum nisi. Vivamus egestas tellus et ipsum blandit, in hendrerit massa lobortis.
-        Sed id mauris vehicula, laoreet elit quis, ultricies mi. Duis mollis ex quis massa hendrerit, tincidunt bibendum
-        eros molestie.
-
-        Sed vel turpis commodo, interdum felis euismod, dictum dolor. Aliquam varius libero quis dui fringilla,
-        ut eleifend lectus placerat. Praesent facilisis libero id tortor tempus, vel ornare est aliquam.
-        Nulla volutpat urna in risus rutrum commodo. Quisque sollicitudin sem ligula, condimentum volutpat libero
-        consequat a. Duis tortor dolor, tempor quis sodales vitae, sagittis ut elit. Nunc sed bibendum nunc.
-        Sed aliquam mauris ac tellus efficitur maximus. Fusce in ante euismod orci volutpat imperdiet.
-        Aenean ipsum lorem, sollicitudin et aliquet ac, auctor eget enim. In hac habitasse platea dictumst.</p>
+      <%= image_tag @blog.illu2, class: 'img-article-2' %>
+      <%= simple_format(@blog.paragraphe3) %>
     </div>
     <!-- note : plus tard tkt
     <div class="article-tags">
@@ -57,65 +24,27 @@
   <div class="infos-bonus">
     <div class="article-auteur">
       <p>A propos de l'auteur de l'article</p>
-      <%= image_tag 'kuro.jpg' %>
-      <h4>Nom de l'auteur <span class="auteur-role">Rôle</span></h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida egestas pellentesque.
-        Aenean elementum hendrerit accumsan. Fusce mi metus, lacinia in tincidunt nec</p>
+      <%= image_tag @blog.user.avatar %>
+      <h4><%= @blog.user.username %><span class="auteur-role"><%= @blog.user.role %></span></h4>
+      <%= simple_format(@blog.user.description).truncate_words(30) %>
     </div>
 
     <div class="autres-articles">
       <p>Découvrez aussi :</p>
-      <div class="article-apercu">
-        <div class="apercu-texte">
-          <h5>Titre de l'article</h5>
-          <p>Créé le 17/06/2001</p>
+
+      <% @blogs.last(5).each do |b| %>
+        <%= link_to b, :class => current_page?(b) ? 'hide' : '' do %>
+        <div class="article-apercu">
+          <div class="apercu-texte">
+            <h5><%= b.titre %></h5>
+            <p>Créé le <%= b.created_at.strftime('%d/%m/%Y') %></p>
+          </div>
+          <div class="apercu-img">
+            <%= image_tag b.illu1, class: 'article-auteur-img' %>
+          </div>
         </div>
-        <div class="apercu-img">
-          <%= image_tag 'kuro.jpg', class: 'article-auteur-img' %>
-        </div>
-      </div>
-      <div class="article-apercu">
-        <div class="apercu-texte">
-          <h5>Titre de l'article</h5>
-          <p>Créé le 17/06/2001</p>
-        </div>
-        <div class="apercu-img">
-          <%= image_tag 'kuro.jpg', class: 'article-auteur-img' %>
-        </div>
-      </div>
-      <div class="article-apercu">
-        <div class="apercu-texte">
-          <h5>Titre de l'article</h5>
-          <p>Créé le 17/06/2001</p>
-        </div>
-        <div class="apercu-img">
-          <%= image_tag 'kuro.jpg', class: 'article-auteur-img' %>
-        </div>
-      </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </section>
-
-<p>
-  <strong>Titre:</strong>
-  <%= @blog.titre %>
-</p>
-
-<p>
-  <strong>Illustration :</strong>
-  <%= image_tag @blog.illu1 %>
-</p>
-
-<p>
-  <strong>Contenu:</strong>
-  <%= simple_format(@blog.paragraphe1) %>
-</p>
-
-<p>
-  <strong>Auteur:</strong>
-  <%= @blog.user.username %>
-  <%= image_tag @blog.user.avatar, size: '100x100' %> <%= image_tag @blog.user.banniere, size: '100x100' %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blog_index_path %>
