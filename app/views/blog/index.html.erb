@@ -1,27 +1,17 @@
-<h1>Blog</h1>
+<div class="article-index">
+  <h1>Le Blog</h1>
+  <% @blog.each_with_index do |b,i| %>
+    <div class="article-each">
+      <div class="article-text <%= i.even? ? 'first' : 'second' %>">
+        <h1><%= link_to b.titre, b %></h1>
+        <%= strip_tags(b.paragraphe1).truncate_words(50) %>
+        <br />
+        <%= link_to 'Lire la suite >', b, :class => 'article-link' %>
+      </div>
+      <div class="article-img <%= i.even? ? 'second' : 'first' %>">
+        <%= link_to image_tag(b.illu1), b %>
+      </div>
+    </div>
+  <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Contenu</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blog.each do |blog| %>
-      <tr>
-        <td><%= blog.titre %></td>
-        <td><%= truncate(strip_tags(blog.contenu), :length => 50, :separator => ' ') %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
+</div>

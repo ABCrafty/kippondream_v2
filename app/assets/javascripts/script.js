@@ -1,8 +1,9 @@
 $(document).ready(function () {
 
   tinymce.init({
-    selector: 'textarea'
-  }
+    selector: 'textarea',
+    inline_styles : false
+  });
 
   $('div#header-slider').owlCarousel({
       navigation : true, // Show next and prev buttons

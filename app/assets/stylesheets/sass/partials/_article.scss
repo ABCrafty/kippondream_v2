@@ -1,3 +1,62 @@
+.article-index {
+  background-color: $secondaryColor;
+  padding: 3%;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .article-each {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: solid 2px;
+    width: 85%;
+    min-height: 8rem;
+    padding: 1%;
+    display: flex;
+    margin-bottom: 20px;
+
+    .article-text {
+      h1 a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .article-link {
+        text-align: center;
+        margin-left: 40%;
+        display: block;
+        margin-top: 25px;
+        width: 20%;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        border: none;
+        box-shadow: 1px 1px 7px black;
+        cursor: pointer;
+        background: #41a4d5;
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    .article-img img {
+      width: 250px;
+    }
+
+    .first {
+      order: 1;
+      margin-right: 20px;
+    }
+
+    .second {
+      order: 2;
+    }
+  }
+}
+
+
+
 .article-container {
   display: flex;
   padding: 0.5rem 1rem;
@@ -108,7 +167,6 @@
           }
         }
       }
-
     }
   }
 }
