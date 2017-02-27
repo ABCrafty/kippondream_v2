@@ -1,13 +1,12 @@
 <h3>Staff</h3>
 
 <section class="staff">
-
+  <% @users.each_with_index do |u,i| %>
   <div class="membre is-collapsed">
     <div class="image-basic">
-      <h4>Nom du membre</h4>
-      <a href="#expand-jump-1">
-        <img id="expand-jump-1" class="membre-img" src="img/kuro.jpg" alt="Fashion 1" />
-      </a>
+      <h4><%= u.username %></h4>
+        <%= image_tag u.avatar, class: 'membre-img' %>
+
       <div class="arrow-up"></div>
     </div>
     <div class="image-expand">
@@ -23,62 +22,22 @@
           <div class="membre-projets">
             <h5>Ses projets :</h5>
             <ul>
-              <li>Pain</li>
-              <li>3 coups</li>
-              <li>One Shot</li>
+              <% u.mangas.each do |m| %>
+                  <li><%= link_to m.titre, m %></li>
+              <% end %>
             </ul>
           </div>
           <div class="articles-recents">
             <h5>Ses articles récents :</h5>
             <ul>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
+              <% u.blogs.each do |b| %>
+                  <li><%= link_to b.titre, b %></li>
+              <% end %>
             </ul>
           </div>
         </div>
       </div> <!-- .membre-presentation -->
     </div> <!-- .image-expand -->
   </div> <!-- .membre -->
-</section> <!-- .staff -->
-
-<div class="staff">
-
-  <% @users.each do |u| %>
-      <div class="membre">
-        <div class="profil">
-          <%= image_tag u.avatar %>
-          <h4><%= u.username %></h4>
-        </div>
-        <div class="membre-presentation">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis vestibulum enim, vitae pellentesque velit.
-            Pellentesque dictum in dui bibendum sagittis. Phasellus faucibus nisi ac rutrum scelerisque.
-            Pellentesque scelerisque felis sed pretium mollis. Etiam venenatis odio nisl. Nulla viverra luctus maximus.
-            Donec sollicitudin ullamcorper purus eu elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-            per inceptos himenaeos. Pellentesque feugiat velit dolor, ac tempor mi accumsan ut. Proin et sem consequat,
-            semper turpis sit amet, volutpat arcu. Sed dapibus rhoncus malesuada. Morbi ultrices lobortis mattis.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div class="projets-articles">
-            <div class="membre-projets">
-              <h5>Ses projets :</h5>
-              <ul>
-                <% u.mangas.last(3).each do |m| %>
-                    <li><%= link_to m.titre, m %></li>
-                <% end %>
-              </ul>
-            </div>
-
-            <div class="articles-recents">
-              <h5>Ses articles récents :</h5>
-              <ul>
-                <% u.blogs.last(3).each do |b| %>
-                    <li><%= link_to b.titre, b %></li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-          <i class="fa fa-times-circle-o close" aria-hidden="true"></i>
-        </div> <!-- membre-presentation -->
-      </div> <!-- membre -->
   <% end %>
-</div> <!-- staff -->
+</section> <!-- .staff -->

@@ -23,7 +23,7 @@
 
           <div class="id-mag">
             <%= link_to image_tag('btnmangadraft.png'), @last.link_mangadraft, :target => '_blank' %>
-            <%= link_to image_tag('btnkippon.png'), magazine_page_path(@last, @last.first_page) %>
+            <%= link_to image_tag('btnkippon.png'), magazine_page_path(@last.id, 1) %>
           </div>
         </div>
       </div> <!-- .edito-series -->
@@ -55,7 +55,7 @@
               <div class="id-mag">
                 <!-- Lien Mangadraft -->
                 <%= link_to image_tag('btnmangadraft.png'), m.link_mangadraft %>
-                <!-- link_to image_tag('btnkippon.png'), magazine_page_path(m, m.first_page) -->
+                <%= link_to image_tag('btnkippon.png'), magazine_page_path(m, m.first_page) %>
               </div>
 
           </div>

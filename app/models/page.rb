@@ -4,12 +4,14 @@ class Page < ApplicationRecord
   validates_presence_of :magazine
   mount_uploader :image, PageUploader
 
-  def previous
-    self.class.first.where('page_number < ?', page_number).limit(1).first
+  def self.previous
+    new_page_set = Page.where(page_number: (first.page_number - 1), magazine: first.magazine)
+    return page_set.count == 0 ? nil : page_set
   end
 
-  def next
-    self.class.first.where('page_number > ?', page_number).limit(1).last
+  def self.next
+    new_page_set = Page.where(page_number: (first.page_number + 1), magazine: first.magazine)
+    return page_set.count == 0 ? nil : page_set
   end
 
 end

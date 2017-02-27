@@ -1,12 +1,5 @@
 <% @page.each do |p| %>
   <%= image_tag p.image %>
-  <%= p.inspect %>
 <% end %>
-<br />
-
-<%= @page.first.page_number %>
-
-<%= link_to '< Précédent', magazine_page_path(magazine_id: @magazine.slug, id: @page.previous) if @page.previous %>
-<%= link_to 'Suivant >', magazine_page_path(magazine_id: @magazine.slug, id: @page.next) if @page.next %>
 <br />
 <%= link_to 'Back', magazines_path %>
