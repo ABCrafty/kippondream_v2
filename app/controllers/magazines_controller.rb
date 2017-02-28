@@ -43,7 +43,7 @@ class MagazinesController < ApplicationController
     if @magazine.update(magazine_params)
       if params[:images]
 	@page_number = @magazine.pages.order("page_number DESC").first
-        
+
         (params[:images] || []).each_with_index do |image, index|
           @magazine.pages.create(image: image, page_number: @page_number.page_number + index + 1)
         end
@@ -66,7 +66,8 @@ class MagazinesController < ApplicationController
   end
 
   def magazine_params
-    params.require(:magazine).permit(:titre, :apercu, :date_parution, :pair, :description, :link_mangadraft, :sommaire)
+    params.require(:magazine).permit(:titre, :apercu, :date_parution, :pair,
+    :description, :banniere, :link_mangadraft, :sommaire)
   end
 
   def first_page

@@ -28,16 +28,9 @@ $(document).ready(function () {
       navigationText : ['<i class="fa fa-arrow-up" aria-hidden="true"></i>', '<i class="fa fa-arrow-down" aria-hidden="true"></i>']
   });
 
-  if($('.first-paragraph').has('br')){
+  if($('.first-paragraph, .second-paragraph, .third-paragraph').has('br')){
     $(this).find('br').remove();
   }
-  if($('.second-paragraph').has('br')){
-    $(this).find('br').remove();
-  }
-  if($('.third-paragraph').has('br')){
-    $(this).find('br').remove();
-  }
-
 
   var $animationElements = $('.kd-animate');
   var $window = $(window);

@@ -5,8 +5,6 @@ class User < ApplicationRecord
   has_many :blogs
 
   mount_uploader :avatar, AvatarUploader
-  mount_uploader :banniere, AvatarUploader
-
 
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 

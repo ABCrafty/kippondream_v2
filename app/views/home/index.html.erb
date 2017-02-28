@@ -16,8 +16,8 @@
       <% @blogs.last(3).each do |b| %>
         <div class="actu kd-animate">
           <h3><strong><%= b.titre %></strong></h3>
-          <%= image_tag b.illu %>
-          <p><%= truncate(strip_tags(b.contenu), :length => 150, :separator => ' ') %></p>
+          <%= image_tag b.illu1 %>
+          <p><%= truncate(strip_tags(b.paragraphe1), :length => 150, :separator => ' ') %></p>
           <%= link_to 'Lire la suite ', b %>
         </div>
       <% end %>
@@ -38,7 +38,7 @@
   <section class="presentation-asso">
     <div class="cadre-asso">
       <div class="presentation-texte">
-        <h2><%= @presentation.titre1%></h2>
+        <h2><%= @presentation.titre1 %></h2>
           <!-- les balises <p> sont incluses dans le contenu -->
           <%= simple_format(@presentation.contenu1) %>
         <h2><%= @presentation.titre2 %></h2>

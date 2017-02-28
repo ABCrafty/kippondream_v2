@@ -6,6 +6,7 @@ class Manga < ApplicationRecord
 
   has_many :chapters , :inverse_of => :manga, :dependent => :destroy
   mount_uploader :apercu, ThumbnailUploader
+  mount_uploader :banniere, ThumbnailUploader
 
   has_and_belongs_to_many :users
 

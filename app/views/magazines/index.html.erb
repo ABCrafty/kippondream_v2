@@ -23,7 +23,7 @@
 
           <div class="id-mag">
             <%= link_to image_tag('btnmangadraft.png'), @last.link_mangadraft, :target => '_blank' %>
-            <%= link_to image_tag('btnkippon.png'), magazine_page_path(@last.id, 1) %>
+            <%= link_to image_tag('btnkippon.png'), magazine_page_path(@last.slug, 1) %>
           </div>
         </div>
       </div> <!-- .edito-series -->

@@ -12,6 +12,12 @@
   <strong>Apercu:</strong>
   <%= image_tag @manga.apercu, size: '200x200' %>
 </p>
+
+<p>
+  <strong>Banniere:</strong>
+  <%= image_tag @manga.banniere, size: '200x200' %>
+</p>
+
 <p><strong>Chapitres :</strong></p>
 <% @manga.chapters.each do |c| %>
     <li>
