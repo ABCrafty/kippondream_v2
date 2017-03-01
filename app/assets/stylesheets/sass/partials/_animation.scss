@@ -11,24 +11,24 @@
 }
 
 .actu:nth-child(1) {
-  -webkit-transition-delay: 1500ms;
-  -moz-transition-delay: 1500ms;
-  -o-transition-delay: 1500ms;
-  transition-delay: 1500ms;
+  -webkit-transition-delay: 900ms;
+  -moz-transition-delay: 900ms;
+  -o-transition-delay: 900ms;
+  transition-delay: 900ms;
 }
 
 .actu:nth-child(2) {
-  -webkit-transition-delay: 1000ms;
-  -moz-transition-delay: 1000ms;
-  -o-transition-delay: 1000ms;
-  transition-delay: 1000ms;
+  -webkit-transition-delay: 600ms;
+  -moz-transition-delay: 600ms;
+  -o-transition-delay: 600ms;
+  transition-delay: 600ms;
 }
 
 .actu:nth-child(3) {
-  -webkit-transition-delay: 500ms;
-  -moz-transition-delay: 500ms;
-  -o-transition-delay: 500ms;
-  transition-delay: 500ms;
+  -webkit-transition-delay: 300ms;
+  -moz-transition-delay: 300ms;
+  -o-transition-delay: 300ms;
+  transition-delay: 300ms;
 }
 
 
@@ -48,7 +48,7 @@
 
 .series-impaires .serie {
   opacity: 0;
-  margin-right: -10rem;
+  margin-left: 10rem;
   -moz-transition: all 500ms ease-in;
   -webkit-transition: all 500ms ease-in;
   -o-transition: all 500ms ease-in;
@@ -57,5 +57,5 @@
 
 .series-impaires .serie.in-view {
   opacity: 1;
-  margin-right: 0;
+  margin-left: 0;
 }

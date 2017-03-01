@@ -1,6 +1,6 @@
 input {
   padding: 0.4rem;
-  border: 2px solid $primaryColor;
+
   border-radius: 5px;
 }
 
@@ -11,6 +11,7 @@ input:focus {
 
 input.input-text, input.input-login {
   width: 250px;
+  border: 2px solid $primaryColor;
 }
 
 input.input-login {
