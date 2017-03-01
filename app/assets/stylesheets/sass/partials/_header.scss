@@ -31,17 +31,7 @@ header {
           margin-left: 22%;
         }
 
-        .header-button {
-          text-align: center;
-          margin-left: 22%;
-          padding: 1rem 2rem;
-          text-transform: uppercase;
-          border: none;
-          box-shadow: 1px 1px 7px black;
-          cursor: pointer;
-          background: $primaryColor;
-          color: white;
-        }
+
 
         button:active {
           box-shadow: none;

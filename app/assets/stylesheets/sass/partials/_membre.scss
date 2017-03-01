@@ -4,94 +4,136 @@
   margin: 0 auto;
   overflow: hidden;
   padding: 10px 5px 0;
-}
 
-.membre {
-  float: left;
-  position: relative;
-}
+  .membre {
+    float: left;
+    position: relative;
 
-.image-basic {
-  padding: 0 5px;
-}
+    .image-basic {
+      padding: 0 5px;
 
-.image-basic h4 {
-  margin: 0.5rem 0 0.2rem 0 ;
-  text-align: center;
-}
+      h4 {
+        margin: 0.5rem 0 0.2rem 0 ;
+        text-align: center;
+      }
 
-.membre-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-}
+      .membre-img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
 
-.membre.is-collapsed .image-basic {
-  cursor: pointer;
-}
+    .image-expand {
+      position: relative;
+      left: -5px;
+      padding: 0 5px;
+      box-sizing: content-box;
+      overflow: hidden;
+      background: #222;
+      max-height: 0;
+      transition: max-height .3s ease-in-out,margin-bottom .1s .2s;
 
-.membre.is-expanded .image-expand {
-  max-height: 500px;
-  margin-bottom: 10px;
-}
+      .membre-presentation {
+        width: 95%;
+        display: flex;
+        color: white;
 
-.image-expand {
-  position: relative;
-  left: -5px;
-  padding: 0 5px;
-  box-sizing: content-box;
-  overflow: hidden;
-  background: #222;
-  max-height: 0;
-  transition: max-height .3s ease-in-out,margin-bottom .1s .2s;
-}
+        p {
+          width: 50%;
+          padding: 1rem 2rem;
+        }
 
-.membre.is-collapsed .arrow-up {
-  height: 10px;
-  width: 100%;
-}
+        .projets-articles {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          padding: 1rem;
+          margin: 1rem 0;
 
-.membre.is-expanded .arrow-up {
-  border-bottom: 8px solid #222;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  height: 0;
-  width: 0;
-  margin: 2px auto 0;
-}
+          .membre-projets {
+            padding: 0 1rem;
+            margin: 0 2rem;
+          }
 
-.expand-close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  color: #454545;
-  font-size: 50px;
-  line-height: 50px;
-  text-decoration: none;
-}
+          .articles-recents {
+            padding: 0 1rem;
+            margin: 0 2rem;
 
-.expand-close:before {
-  content: '×';
-}
+            ul {
+              list-style-type: none;
+              padding: 0;
 
-.expand-close:hover {
-  color: #fff;
-}
+              li {
+                a {
+                  color: $primaryColor;
+                }
+              }
+            }
+          }
+        }
+      }
 
-.image-large {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  padding: 40px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
+      .expand-close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: #454545;
+        font-size: 50px;
+        line-height: 50px;
+        text-decoration: none;
+      }
+
+      .expand-close:before {
+        content: '×';
+      }
+
+      .expand-close:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .membre.is-collapsed {
+    .image-basic {
+      cursor: pointer;
+
+      .arrow-up {
+        height: 10px;
+        width: 100%;
+      }
+    }
+  }
+
+  .membre.is-expanded {
+    .image-basic {
+      .arrow-up {
+        border-bottom: 8px solid #222;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        height: 0;
+        width: 0;
+        margin: 2px auto 0;
+      }
+    }
+    .image-expand {
+      max-height: 500px;
+      margin-bottom: 10px;
+    }
+  }
+} // .staff
+
+
 
 @media only screen and (max-width: 530px) {
 
   .membre {
     width: 50%;
+
+    .image-expand {
+      width: 200%;
+    }
   }
 
   .membre:nth-of-type(2n+2) .image-expand {
@@ -102,15 +144,17 @@
     clear:left;
   }
 
-  .image-expand {
-    width: 200%;
-  }
+
 
 }
 
 @media only screen and (min-width: 531px) {
   .membre {
     width: 20%;
+
+    .image-expand {
+      width: 500%;
+    }
   }
 
   .membre:nth-of-type(5n+2) .image-expand {
@@ -133,8 +177,6 @@
     clear: left;
   }
 
-  .image-expand {
-    width: 500%;
-  }
+
 
 }

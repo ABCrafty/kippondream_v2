@@ -1,8 +1,16 @@
 div.header-button {
-  button {
-    padding: 1rem 2rem;
-    border-radius: 3px;
-    border: none;
-
+    .header-button {
+      margin-left: 22%;
   }
+}
+
+.blue-button {
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 1px 1px 7px black;
+  cursor: pointer;
+  background: $primaryColor;
+  color: white;
+  text-align: center;
+  padding: 1rem 2rem;
 }
