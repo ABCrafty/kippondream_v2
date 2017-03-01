@@ -1,6 +1,5 @@
 header.header-reader {
   height: 60vh;
-  // background: asset_data_url('vacancesbg.jpg') 100%!important;
 
   .read-menu {
     display: flex;
@@ -43,8 +42,8 @@ header.header-reader {
         padding: 0.2rem 0.4rem;
       }
     }
-  }
-}
+  } // .read-menu
+} // .header-reader
 
 main.main-reader {
   background: #2b2b2b;
@@ -56,25 +55,6 @@ main.main-reader {
     position: relative;
     z-index: 0;
 
-    div.arrow-back, div.arrow-next {
-      position: absolute;
-      height: 100%;
-      z-index: 10000;
-      width: 10%;
-      top: 0;
-      opacity: 0;
-      cursor: pointer;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .fa {
-        color: black;
-        font-size: 4rem;
-      }
-    }
-
     div.arrow-back {
       left: 2%;
     }
@@ -83,14 +63,62 @@ main.main-reader {
       right: 2%;
     }
 
-    div.arrow-back:hover, div.arrow-next:hover {
-      opacity: 0.4;
-      background-color: rgba(255,255,255,1);
+    img {
+      width: 48%;
+      margin: 0 -3px;
+    }
+  } // .pages-reader
+
+  div.pejis-reader {
+    z-index: 0;
+
+    div.img-manga {
+      position: relative;
+
+      div.arrow-back {
+        left: 17.5%;
+      }
+
+      div.arrow-next {
+        right: 17.5%;
+      }
+
+      img {
+        width: 65%;
+      }
+    }
+  } // .pejis-reader
+
+  div.arrow-back, div.arrow-next {
+    position: absolute;
+    height: 100%;
+    z-index: 10000;
+    width: 10%;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .fa {
+      color: black;
+      font-size: 4rem;
     }
   }
 
-  img {
-    width: 48%;
-    margin: 0 -3px;
+  div.arrow-back:hover, div.arrow-next:hover {
+    opacity: 0.4;
+    background-color: rgba(255,255,255,1);
   }
-}
+
+  .next-prev {
+    a {
+      color: white;
+    }
+
+    a:hover {
+      color: darken(white, 40%);
+    }
+  }
+} // .main-reader

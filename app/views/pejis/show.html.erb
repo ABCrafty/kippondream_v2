@@ -1,18 +1,25 @@
-<% @chapter.pejis.each_with_index do |p,i| %>
-  <%= link_to i+1, peji_path(id: i+1, chapter_id: @chapter.chapter_number) %>
-<% end %>
+<div class="pejis-reader">
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @peji.image, size: '500x500' %>
-</p>
 
-<p>
-  <strong>Manga:</strong>
-  <%= @peji.chapter.titre %>
-</p>
+    <% @chapter.pejis.each_with_index do |p,i| %>
+          <%= link_to i+1, peji_path(id: i+1, chapter_id: @chapter.chapter_number) %>
+    <% end %>
 
-<%= params[:id] %>
+  <div class="img-manga">
+    <%= image_tag @peji.image %>
+    <div class="arrow-back">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
 
-<%= link_to '< Précédent', peji_path(id: @peji.previous.scan_number, chapter_id: @chapter.chapter_number) if @peji.previous %> |
-<%= link_to 'Suivant >', peji_path(id: @peji.next.scan_number, chapter_id: @chapter.chapter_number) if @peji.next %>
+    <div class="arrow-next">
+      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </div>
+  </div>
+
+
+  <div class="next-prev">
+    <%= link_to '< Précédent', peji_path(id: @peji.previous.scan_number, chapter_id: @chapter.chapter_number) if @peji.previous %> |
+    <%= link_to 'Suivant >', peji_path(id: @peji.next.scan_number, chapter_id: @chapter.chapter_number) if @peji.next %>
+  </div>
+
+</div>
