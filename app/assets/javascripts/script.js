@@ -32,8 +32,8 @@ $(document).ready(function () {
     $(this).find('br').remove();
   }
 
-  var $animationElements = $('.kd-animate');
-  var $window = $(window);
+  var $animationElements = $('.kd-animate'),
+      $window = $(window);
 
   var scroll = {
       checkView : function () {
@@ -57,6 +57,42 @@ $(document).ready(function () {
           });
       } // attribut checkView
   }; // objet scroll
+
+    var form = {
+        validatePseudo : function () {
+            var regexPseudo = /^([A-Za-z0-9ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ]{2,15})$/,
+                inputPseudo = $('input#pseudo').val();
+
+            if(regexPseudo.test(inputPseudo)) {
+                $(this).css('border', '2px solid green');
+                $(this).siblings('.error-toggle').slideUp('fast');
+                $('input.input-login').prop("disabled",false);
+            }
+
+            else {
+                $(this).css('border', '2px solid red');
+                $(this).siblings('.error-toggle').slideDown('fast');
+                $('input.input-login').prop("disabled",true);
+            }
+        }, // attribut validate
+
+        validatePassword : function () {
+            var regexPassword = /^((?=.*\d)(?=.*[a-z])(?=.*[#_&^*£§,;./:!"'|\(\)\\?+\=\-\_$%]).{8,})$/,
+                inputPassword = $('input#password').val();
+
+            if(regexPassword.test(inputPassword)) {
+                $(this).css('border', '2px solid green');
+                $(this).siblings(".error-toggle").slideUp('fast');
+                $('input.input-login').prop("disabled",false);
+            }
+
+            else {
+                $(this).css('border', '2px solid red');
+                $(this).siblings('.error-toggle').slideDown('fast');
+                $('input.input-login').prop("disabled",true);
+            }
+        }
+    }; // objet formulaire
 
 //bind click events
   var $cell = $('.membre');
@@ -83,5 +119,8 @@ $(document).ready(function () {
 
   $(window).on('scroll resize', scroll.checkView);
   $(window).trigger('scroll');
+    $('input#pseudo').blur(form.validatePseudo);
+    $('input#password').blur(form.validatePassword);
+
 
 }); // fermeture jquery

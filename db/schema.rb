@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215000109) do
+ActiveRecord::Schema.define(version: 20170228000759) do
 
   create_table "admin_carousels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
@@ -24,12 +24,15 @@ ActiveRecord::Schema.define(version: 20161215000109) do
 
   create_table "blog", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "titre"
-    t.text     "contenu",    limit: 65535
+    t.text     "paragraphe1", limit: 65535
     t.string   "slug"
-    t.string   "illu"
+    t.string   "illu1"
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "paragraphe2", limit: 65535
+    t.text     "paragraphe3", limit: 65535
+    t.string   "illu2"
   end
 
   create_table "chapters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -76,6 +79,7 @@ ActiveRecord::Schema.define(version: 20161215000109) do
     t.text     "description",     limit: 65535
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.string   "banniere"
   end
 
   create_table "mangas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -88,6 +92,7 @@ ActiveRecord::Schema.define(version: 20161215000109) do
     t.datetime "date_parution"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "banniere"
   end
 
   create_table "mangas_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -134,7 +139,6 @@ ActiveRecord::Schema.define(version: 20161215000109) do
     t.boolean  "is_femme",                             default: false
     t.boolean  "boolean",                              default: false
     t.string   "avatar"
-    t.string   "banniere"
     t.string   "role"
     t.text     "description",            limit: 65535
     t.string   "reset_password_token"

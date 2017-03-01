@@ -13,6 +13,7 @@
 @import './partials/animation';
 @import './partials/reader';
 @import './partials/article';
+@import './partials/input';
 
 body {
   font-size: 16px;
@@ -407,4 +408,26 @@ main {
       }
     }
   } // .series-container
+
+  .container-connect {
+    background: $primaryColor;
+    padding: 2rem;
+
+    .connect-form {
+      border-radius: 50%;
+      width: 400px;
+      height: 400px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+  }
 } // main
