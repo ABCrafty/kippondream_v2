@@ -26,17 +26,6 @@
       <% end %>
     </p>
 
-    <p>
-      <%= f.label :banniere %>
-      <%= f.file_field :banniere %>
-    </p>
-
-    <p>
-      <% if @user.banniere %>
-          <%= image_tag @user.banniere, size: '200x100' %>
-      <% end %>
-    </p>
-
     <div class="field">
       <%= f.label :description %>
       <%= f.text_area :description %>

@@ -32,6 +32,10 @@ $(document).ready(function () {
     $(this).find('br').remove();
   }
 
+  if($('.membre-presentation').has('p:empty')){
+    $(this).find('p:empty').remove();
+  }
+
   var $animationElements = $('.kd-animate'),
       $window = $(window);
 
