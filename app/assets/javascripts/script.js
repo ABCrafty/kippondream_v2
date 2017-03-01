@@ -121,8 +121,8 @@ $(document).ready(function () {
 
   // exécution des fonctions
 
-  $(window).on('scroll resize', scroll.checkView);
-  $(window).trigger('scroll');
+    $(window).on('scroll resize', scroll.checkView);
+    $(window).trigger('scroll');
     $('input#pseudo').blur(form.validatePseudo);
     $('input#password').blur(form.validatePassword);
 

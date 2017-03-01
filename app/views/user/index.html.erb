@@ -35,3 +35,41 @@
   </div> <!-- .membre -->
   <% end %>
 </section> <!-- .staff -->
+
+<h3>Auteurs</h3>
+
+<section class="auteur">
+  <% @users.each_with_index do |u,i| %>
+      <div class="membre is-collapsed">
+        <div class="image-basic">
+          <h4><%= u.username %></h4>
+          <%= image_tag u.avatar, class: 'membre-img' %>
+
+          <div class="arrow-up"></div>
+        </div>
+        <div class="image-expand">
+          <div class="membre-presentation">
+            <p><%= simple_format(u.description) %></p>
+            <div class="projets-articles">
+              <div class="membre-projets">
+                <h5>Ses projets :</h5>
+                <ul>
+                  <% u.mangas.each do |m| %>
+                      <li><%= link_to m.titre, m %></li>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="articles-recents">
+                <h5>Ses articles récents :</h5>
+                <ul>
+                  <% u.blogs.each do |b| %>
+                      <li><%= link_to b.titre, b %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div> <!-- .membre-presentation -->
+        </div> <!-- .image-expand -->
+      </div> <!-- .membre -->
+  <% end %>
+</section> <!-- .staff -->

@@ -1,5 +1,5 @@
 
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
 // Rajouter des fichiers à partir d'ici
 //= require owl-carousel/owl-carousel/owl.carousel.js

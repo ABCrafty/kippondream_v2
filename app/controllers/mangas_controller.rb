@@ -55,7 +55,6 @@ class MangasController < ApplicationController
     end
 
     def manga_params
-      params.require(:manga).permit(:titre, :description, :apercu, :banniere,
-      :pair, :date_parution, :user_ids =>[])
+      params.require(:manga).permit(:titre, :description, :apercu, :banniere, :pair, :date_parution, :user_ids =>[])
     end
 end
