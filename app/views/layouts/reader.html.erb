@@ -16,7 +16,7 @@
     <p class="alert"><%= alert %></p>
 <% end %>
 
-<header class="header-reader">
+<header class="header-reader", style="background: url('<%= @manga ? @manga.banniere : @magazine.banniere %>') !important;">
   <nav>
     <ul>
       <li><%= link_to 'Magazines', magazines_path %></li>
@@ -36,10 +36,12 @@
 
   <div class="read-menu">
     <div class="read-titre">
-      <h1>Titre</h1>
+      <h1>
+        <%= @manga ? @manga.titre : @magazine.titre %>
+      </h1>
     </div>
     <div class="read-img">
-      <img src="http://placekitten.com/300/400" alt="">
+      <%= @manga ? image_tag(@manga.apercu) : image_tag(@magazine.apercu) %>
     </div>
     <div class="read-select">
       <select name="" id="select-chapitre">
@@ -53,7 +55,6 @@
 </header>
 
 <main class="main-reader">
-  <%= @chapter.inspect %>
   <%= yield %>
 </main>
 

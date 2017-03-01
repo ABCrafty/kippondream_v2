@@ -9,7 +9,7 @@ class PejisController < ApplicationController
   end
 
   def show
-    # @titre = @peji.chapter.titre
+    @titre = @manga.titre
   end
 
   def new
@@ -45,7 +45,8 @@ class PejisController < ApplicationController
   private
 
     def set_peji
-      @chapter = Chapter.find_by(chapter_number: params[:chapter_id])
+      @manga = Manga.find_by(slug: params[:manga_id])
+      @chapter = @manga.chapters.find_by(chapter_number: params[:chapter_id])
       @peji = @chapter.pejis.find_by(scan_number: params[:id])
     end
 
