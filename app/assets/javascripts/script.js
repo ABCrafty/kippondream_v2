@@ -1,11 +1,5 @@
 $(document).ready(function () {
 
-  tinymce.init({
-    selector: 'textarea',
-    inline_styles: false,
-    entity_encoding: 'raw'
-  });
-
   $('div#header-slider').owlCarousel({
       navigation : true, // Show next and prev buttons
       slideSpeed : 800,

@@ -43,13 +43,36 @@
     <div class="read-img">
       <%= @manga ? image_tag(@manga.apercu) : image_tag(@magazine.apercu) %>
     </div>
+
+    <% if @manga %>
+      <div class="read-select">
+        <%= select_tag 'select_chapters',
+          options_for_select(
+            @manga.chapters.collect{
+              |m| [m.titre, m.chapter_number]},
+              selected: params[:chapter_id])
+        %>
+      </div>
+
+      <div class="read-select">
+        <%= select_tag 'select_pages',
+          options_for_select(
+          @chapter.pejis.collect{
+            |c| ['Page '+c.scan_number.to_s, c.scan_number] },
+            selected: params[:id])
+        %>
+      </div>
+
+    <% else %>
     <div class="read-select">
-      <select name="" id="select-chapitre">
-        <option value="1">Chapitre 1 : titre du chapitre</option>
-        <option value="2">Chapitre 2 : titre du chapitre</option>
-        <option value="3">Chapitre 3 : titre du chapitre</option>
-      </select>
+      <%= select_tag 'select_mag',
+        options_for_select(
+        Magazine.all.collect{
+          |m| [m.titre, m.slug] },
+          selected: params[:magazine_id])
+      %>
     </div>
+    <% end %>
 
   </div>
 </header>
@@ -111,6 +134,40 @@
 </footer>
 
 
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- Redirection vers le chapitre / la page quand on clique sur le select -->
+  <% if @manga %>
+  <script>
+      $(function(){
+        $('#select_chapters').bind('change', function () {
+           var url = "/mangas/<%= params[:manga_id] %>/" + $(this).val() + '/1'
+            if (url) {
+                window.location.replace(url);
+            }
+            return false;
+        });
+
+        $('#select_pages').bind('change', function () {
+           var url = "/mangas/<%= params[:manga_id] %>/<%= params[:chapter_id]%>/"+$(this).val()
+            if (url) {
+                window.location.replace(url);
+            }
+            return false;
+        });
+      });
+  </script>
+  <% else %>
+  <script>
+      $(function(){
+        $('#select_mag').bind('change', function () {
+           var url = "/magazines/<%= params[:manga_id] %>/" + $(this).val() + '/pages/1'
+            if (url) {
+                window.location.replace(url);
+            }
+            return false;
+        });
+      });
+    </script >
+  <% end %>
 </body>
 </html>
