@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :password]
+  before_action :check_user, only: [:edit, :password]
 
   def new
     @titre = 'Nouveau membre'
@@ -50,6 +51,12 @@ class UserController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def check_user
+    if current_user.id != params[:id]
+      redirect_to membres_path, alert: 'Propriété privée.'
+    end
   end
 
 end
