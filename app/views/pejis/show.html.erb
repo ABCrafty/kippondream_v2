@@ -1,21 +1,23 @@
 <div class="pejis-reader">
 
-
-    <% @chapter.pejis.each_with_index do |p,i| %>
-          <%= link_to i+1, peji_path(id: i+1, chapter_id: @chapter.chapter_number) %>
-    <% end %>
-
   <div class="img-manga">
     <%= image_tag @peji.image %>
-    <div class="arrow-back">
-      <i class="fa fa-arrow-left" aria-hidden="true"></i>
-    </div>
+    <% if params[:id].to_i > 1 %>
+      <%= link_to peji_path(manga_id: @manga.slug, chapter_id: @chapter.chapter_number, id: params[:id].to_i - 1) do %>
+      <div class="arrow-back">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </div>
+      <% end %>
+    <% end %>
 
-    <div class="arrow-next">
-      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-    </div>
+    <% if params[:id].to_i < @chapter.pejis.size %>
+      <%= link_to peji_path(manga_id: @manga.slug, chapter_id: @chapter.chapter_number, id: params[:id].to_i + 1) do %>
+      <div class="arrow-next">
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </div>
+      <% end %>
+    <% end %>
   </div>
-
 
   <div class="next-prev">
     <%= link_to '< Précédent', peji_path(id: @peji.previous.scan_number, chapter_id: @chapter.chapter_number) if @peji.previous %> |

@@ -2,6 +2,7 @@
 
 <section class="staff">
   <% @users.each_with_index do |u,i| %>
+  <% if u.role == 'Dieu' || u.role == 'Staff' %>
   <div class="membre is-collapsed">
     <div class="image-basic">
       <h4><%= u.username %></h4>
@@ -34,12 +35,14 @@
     </div> <!-- .image-expand -->
   </div> <!-- .membre -->
   <% end %>
+  <% end %>
 </section> <!-- .staff -->
 
 <h3>Auteurs</h3>
 
 <section class="auteur">
   <% @users.each_with_index do |u,i| %>
+  <% if u.role == 'Auteur' %>
       <div class="membre is-collapsed">
         <div class="image-basic">
           <h4><%= u.username %></h4>
@@ -71,5 +74,6 @@
           </div> <!-- .membre-presentation -->
         </div> <!-- .image-expand -->
       </div> <!-- .membre -->
+    <% end %>
   <% end %>
 </section> <!-- .staff -->
