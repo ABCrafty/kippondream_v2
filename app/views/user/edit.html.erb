@@ -1,13 +1,13 @@
-<%= form_for(@user) do |f| %>
+<h1>Editer son profil</h1>
+
+<%= form_for @user, :html => {:class=>'form-admin'} do |f| %>
 
     <p>
-      <%= f.label :username %>
-      <%= f.text_field :username %>
+      <%= f.text_field :username, :placeholder=>'Ton pseudo', :class=>'input-text' %>
     </p>
 
     <p>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, :placeholder=>'Ton email', :class=>'input-text' %>
     </p>
 
     <p>
@@ -27,8 +27,8 @@
     </p>
 
     <div class="field">
-      <%= f.label :description %>
-      <%= f.text_area :description %>
+      <%= f.text_area :description, :class=>'input-text', :placeholder=>"Décris-toi ici, ça va s'afficher dans tes articles
+      et dans ta présentation de la page membre" %>
     </div>
 
     <p>
@@ -41,7 +41,7 @@
       <%= f.select :role, options_for_select(%w[Dieu Staff Auteur], 'Auteur') %>
     </p>
 
-  <%= f.submit %>
+  <%= f.submit "Editer mon profil", class: 'blue-button' %>
 <% end %>
 
 <%= link_to 'Modifier le mot de passe', change_password_path(@user) %>

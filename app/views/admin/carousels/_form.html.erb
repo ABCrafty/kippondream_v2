@@ -1,4 +1,4 @@
-<%= form_for(admin_carousel) do |f| %>
+<%= form_for @admin_carousel, :html => {:class=>'form-admin'} do |f| %>
 
   <div class="field">
     <%= f.label :image %>
@@ -6,21 +6,18 @@
   </div>
 
     <div class="field">
-      <%= f.label :titre %>
-      <%= f.text_field :titre %>
+      <%= f.text_field :titre, :placeholder=>'Le titre de la slide', :class=>'input-text' %>
     </div>
 
     <div class="field">
-      <%= f.label :description %>
-      <%= f.text_field :description, :maxlength => 220 %>
+      <%= f.text_area :description, :maxlength => 220, :placeholder=>'Le texte qui va apparaître dans la slide', :class=>'input-text' %>
     </div>
 
     <div class="field">
-      <%= f.label :lien %>
-      <%= f.text_field :lien %>
+      <%= f.text_field :lien, :placeholder=>'Le lien pour le bouton', :class=>'input-text' %>
     </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Créer la nouvelle slide", class: 'blue-button' %>
   </div>
 <% end %>

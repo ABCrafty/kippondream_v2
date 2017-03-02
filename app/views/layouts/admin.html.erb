@@ -10,6 +10,25 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
 
+<header class="header-admin">
+  <nav>
+    <ul>
+      <li><%= link_to 'Magazines', magazines_path %></li>
+      <li><%= link_to 'Mangas', mangas_path %></li>
+      <li><%= link_to 'Blog', Blog %></li>
+    </ul>
+    <div class="header-logo">
+      <%= link_to image_tag('KD.png',:class=> 'header-logo', alt: 'Logo menu kippon Dream'), root_path, :class => 'index-lien' %>
+
+    </div>
+    <ul>
+      <li><%= link_to 'Membres', '/membres' %></li>
+      <li><%= link_to 'Contact', new_contact_path %></li>
+      <li>Boutique</li>
+    </ul>
+  </nav>
+</header>
+
 <% if notice %>
     <p class="notice"><%= notice %></p>
 <% end %>
@@ -20,22 +39,28 @@
 
 <%= yield %>
 
+<footer>
+  <div class="div1">
+    <% if current_user %>
+        <div class="user-role">
+          <h5>Ton rôle : <%= current_user.role %></h5>
+        </div>
+    <% end %>
+  </div>
+  <div class="div2 user-panel">
+    <% if user_signed_in? %>
+        <li>
+          <%= link_to 'Administration', admin_root_path %> | <%= link_to 'Editer le profil', edit_user_path(current_user) %> <%= link_to('Deconnexion', destroy_user_session_path, :method => :delete) %>
+        </li>
+    <% else %>
+        <li>
+          <%= link_to('Connexion', new_user_session_path)  %>
+        </li>
+    <% end %>
+  </div>
+</footer>
 
-<% if user_signed_in? %>
-    <li>
-      <%= link_to 'Administration', admin_root_path %> | <%= link_to 'Profil', current_user %> <%= link_to('Deconnexion', destroy_user_session_path, :method => :delete) %>
-    </li>
-<% else %>
-    <li>
-      <%= link_to('Connexion', new_user_session_path)  %>
-    </li>
-<% end %>
-
-<% if current_user %>
-    <%= current_user.role %>
-<% end %>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'ckeditor/ckeditor.js' %>
 </body>
 </html>

@@ -126,7 +126,7 @@
     <% if user_signed_in? %>
         <p>
           <%= link_to 'Administration', admin_root_path %> |
-          <%= link_to 'Profil', current_user %>
+          <%= link_to 'Editer le profil', edit_user_path(current_user) %>
           <%= link_to('Deconnexion', destroy_user_session_path, :method => :delete) %>
         </p>
     <% end %>

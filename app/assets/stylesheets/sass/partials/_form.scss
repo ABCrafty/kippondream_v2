@@ -8,3 +8,37 @@
 .field {
   margin: 0.5rem 0;
 }
+
+input {
+  padding: 0.4rem;
+  border-radius: 5px;
+}
+
+.input-text:focus {
+  outline: 0;
+  border: 2px solid $thirdColor;
+}
+
+.input-text, .input-login {
+  width: 250px;
+  border: 2px solid $primaryColor;
+}
+
+input.input-login {
+  width: 260px;
+}
+
+form.form-admin {
+  .input-text {
+    width: 500px;
+  }
+
+  textarea.input-text {
+    height: 200px;
+  }
+
+  input.blue-button {
+    width: 450px;
+    margin: 1rem 25px;
+  }
+}

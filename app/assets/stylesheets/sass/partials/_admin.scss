@@ -1,0 +1,44 @@
+header.header-admin {
+  height: 20vh;
+}
+
+.list-admin {
+  div {
+    display: flex;
+
+    a {
+      display: block;
+      width: 250px;
+      background: darken(white,20%);
+      border: 1px solid $primaryColor;
+      padding: 1rem 2rem;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover {
+      background: darken(white, 40%);
+      color: white;
+      border: 1px solid white;
+    }
+
+    span {
+      padding: 1rem 2rem;
+    }
+  }
+}
+
+.user-role {
+  h5 {
+    padding: 0.6rem;
+  }
+}
+
+.user-panel {
+  li {
+    text-align: right;
+    margin-right: 2rem;
+    padding: 0.6rem;
+  }
+}

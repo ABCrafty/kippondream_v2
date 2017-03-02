@@ -13,16 +13,12 @@
 @import './partials/animation';
 @import './partials/reader';
 @import './partials/article';
-@import './partials/input';
+@import './partials/admin';
 
 body {
   font-size: 16px;
   line-height: 1.2;
 }
-
-
-
-
 
 main {
   .container-webzine {
@@ -31,7 +27,6 @@ main {
     box-shadow: inset 1px 10px 35px black;
     border-top: 2px solid black;
     background: asset_data_url('webzinebg.jpg') 100% 0% no-repeat;
-
 
     .webzine {
       margin: auto;

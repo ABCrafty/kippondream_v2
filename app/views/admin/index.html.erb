@@ -1,12 +1,13 @@
-<h1>Partie admin</h1>
 
-<ul>
 
-  <li><%= link_to 'Carousel', admin_carousels_path %></li>
-  <li><%= link_to 'Modifier présentation', edit_presentation_path(id: 1) %></li>
-  <li><%= link_to 'Magazines', new_magazine_path %></li>
-  <li><%= link_to 'Mangas', new_manga_path %></li>
-  <li><%= link_to 'Articles', Blog %></li>
+<h1>Partie administrative</h1>
 
-  <%= link_to 'New User', new_user_path %>
-</ul>
+<div class="list-admin">
+    <div><%= link_to 'Carousel', admin_carousels_path %> <span>- Créer ou modifier une slide du Carousel des hauts de pages</span></div>
+    <div><%= link_to 'Modifier présentation', edit_presentation_path(id: 1) %><span>- Modifier les présentations de l'accueil et de la page magazines</span></div>
+    <div><%= link_to 'Magazines', new_magazine_path %><span>- Publier un nouveau magazine</span></div>
+    <div><%= link_to 'Mangas', new_manga_path %><span>- Publier un nouveau manga</span></div>
+    <div><%= link_to 'Articles', new_blog_path %><span>- Créer un nouvel article</span></div>
+    <div><%= link_to 'Nouveau membre', new_user_path %><span>- Ajouter un nouveau membre</span></div>
+</div>
+
