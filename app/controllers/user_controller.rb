@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
   before_action :set_user, only: [:show, :edit, :update, :password]
   before_action :check_user, only: [:edit, :password]
 
@@ -54,7 +54,7 @@ class UserController < ApplicationController
   end
 
   def check_user
-    if current_user.id != params[:id]
+    if current_user.id != params[:id].to_i || current_user.role != 'Dieu' || current_user.role != 'Staff'
       redirect_to membres_path, alert: 'Propriété privée.'
     end
   end

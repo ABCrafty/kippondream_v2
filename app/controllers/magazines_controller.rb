@@ -11,6 +11,7 @@ class MagazinesController < ApplicationController
 
   def show
     @titre = @magazine.titre
+    @page_number = @magazine.pages.order("page_number DESC").first
   end
 
   def new
@@ -42,10 +43,21 @@ class MagazinesController < ApplicationController
   def update
     if @magazine.update(magazine_params)
       if params[:images]
-	@page_number = @magazine.pages.order("page_number DESC").first
-
+         @page_number = @magazine.pages.order("page_number DESC").first
+         @page = @magazine.pages.where(page_number: params[:id])
+         @index = 0
         (params[:images] || []).each_with_index do |image, index|
-          @magazine.pages.create(image: image, page_number: @page_number.page_number + index + 1)
+          if index = 0
+            if @page.size == 1
+              @magazine.pages.create(image: image, page_number: @page_number.page_number)
+            end
+          end
+
+          if index.even?
+            @index += 1
+          end
+
+          @magazine.pages.create(image: image, page_number: @page_number.page_number + @index)
         end
       end
       redirect_to @magazine, notice: 'Magazine mis à jour'

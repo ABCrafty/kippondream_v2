@@ -4,6 +4,8 @@
 
   <%= image_tag @magazine.apercu, size: '200x200' %>
 
+  <%= @page_number.inspect %>
+
 <% @magazine.pages.each do |m| %>
 
     <%= link_to magazine_page_path(id: m.page_number, magazine_id: @magazine.slug) do %>

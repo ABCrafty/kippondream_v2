@@ -18,4 +18,15 @@
     </div>
     <% end %>
   <% end %>
+
+  <div class="magazine-links">
+    <% if params[:id].to_i > 1 %>
+      <%= link_to '< Précédent', magazine_page_path(magazine_id: @magazine.slug, id: params[:id].to_i-1) %>
+    <% end %>
+    |
+    <% if params[:id].to_i < @magazine.pages.maximum('page_number') %>
+      <%= link_to 'Suivant >', magazine_page_path(magazine_id: @magazine.slug, id: params[:id].to_i+1) %>
+    <% end %>
+  </div>
+  
 </div>

@@ -18,9 +18,16 @@
     margin-bottom: 20px;
 
     .article-text {
-      h1 a {
-        text-decoration: none;
-        color: black;
+      h1 {
+        a {
+          text-decoration: none;
+          color: black;
+          }
+
+        span {
+          color: red;
+          font-style: italic;
+        }
       }
 
       .article-link {
@@ -140,6 +147,7 @@
     }
 
     .autres-articles {
+
       background: $secondaryColor;
       padding: 0.5rem;
 

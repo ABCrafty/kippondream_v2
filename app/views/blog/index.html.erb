@@ -1,9 +1,15 @@
 <div class="article-index">
   <h1>Le Blog</h1>
   <% @blog.each_with_index do |b,i| %>
+  <% if b.public || !b.public && b.user == current_user || current_user.role == 'Dieu' || current_user.role == 'Staff' %>
     <div class="article-each">
       <div class="article-text <%= i.even? ? 'first' : 'second' %>">
-        <h1><%= link_to b.titre, b %></h1>
+        <h1>
+          <%= link_to b.titre, b %>
+          <% if !b.public && b.user == current_user || current_user.role == 'Dieu' || current_user.role == 'Staff' %>
+            <span class="article-draft">(brouillon)</span>
+          <% end %>
+        </h1>
         <%= strip_tags(b.paragraphe1).truncate_words(50) %>
         <br />
         <%= link_to 'Lire la suite >', b, :class => 'article-link' %>
@@ -12,6 +18,7 @@
         <%= link_to image_tag(b.illu1), b %>
       </div>
     </div>
+  <% end %>
   <% end %>
 
 </div>

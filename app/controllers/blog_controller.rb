@@ -30,9 +30,6 @@ class BlogController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user = current_user
     if @blog.save
-      @blog.paragraphe1.gsub(/<br\s*\/?>/, '')
-      @blog.paragraphe2.gsub(/<br\s*\/?>/, '')
-      @blog.paragraphe3.gsub(/<br\s*\/?>/, '')
       redirect_to @blog, notice: 'Article créé'
     else
       render :new
@@ -41,9 +38,6 @@ class BlogController < ApplicationController
 
   def update
     if @blog.update(blog_params)
-      @blog.paragraphe1.gsub(/<br\s*\/?>/, '')
-      @blog.paragraphe2.gsub(/<br\s*\/?>/, '')
-      @blog.paragraphe3.gsub(/<br\s*\/?>/, '')
       redirect_to @blog, notice: 'Article mis à jour'
     else
       render :edit
@@ -61,6 +55,6 @@ class BlogController < ApplicationController
     end
 
     def blog_params
-      params.require(:blog).permit(:titre, :paragraphe1, :paragraphe2, :paragraphe3, :user, :illu1, :illu2)
+      params.require(:blog).permit(:titre, :public, :paragraphe1, :paragraphe2, :paragraphe3, :user, :illu1, :illu2)
     end
 end

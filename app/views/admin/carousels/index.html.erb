@@ -6,8 +6,8 @@
 <% @admin_carousels.each do |c| %>
 
 <%= image_tag c.image, size: '100x100' %>
-<%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+<%= link_to 'Supprimer', c, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Modifier', edit_admin_carousel_path(c) %>
 <% end %>
 
 
