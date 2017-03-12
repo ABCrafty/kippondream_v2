@@ -1,15 +1,50 @@
-<%= form_for (@contact) do |f| %>
+<div class="contact-container">
+  <div class="page-contact">
+    <div class="contact-form-container">
+      <%= form_for (@contact) do |f| %>
 
-    <%= f.text_field :nom, :placeholder => 'Nom', :class => 'contacts-input' %>
-    <%= f.text_field :email, :placeholder => 'E-mail', :class => 'contacts-input'  %>
-    <%= f.select :sujet, ['Question','Recrutement', 'Evenement'], {prompt: 'De quoi voulez-vous parler ?'}, :class => 'contacts-input'  %>
-    <%= f.text_field :objet, :placeholder => 'Objet', :class => 'contacts-input'  %>
-    <%= f.text_area :message, :placeholder => 'Ecrivez votre message', :class => 'contacts-textarea'  %>
+          <div class="contact-field">
+            <%= f.select :sujet, ['Question','Recrutement', 'Evenement', 'Autre'], {prompt: 'De quoi voulez-vous parler ?'},
+                         :class => 'contact-select input-text'  %>
+          </div>
 
-    <%= button_tag type: 'submit', :class => 'contacts-submit', :name => 'commit', :title => 'Envoyer' do %>
-        Envoyer <i class="fa fa-send" aria-hidden="true"></i>
-    <% end %>
+          <div class="contact-field">
+            <%= f.label :nom %>
+            <%= f.text_field :nom, :placeholder => 'Nom', :class => 'contact-input input-text' %>
+          </div>
 
-<% end %>
+          <div class="contact-field">
+            <%= f.label :email %>
+            <%= f.text_field :email, :placeholder => 'E-mail', :class => 'contact-input input-text'  %>
+          </div>
+
+          <div class="contact-field">
+            <%= f.label :message %>
+            <%= f.text_area :message, :placeholder => 'Ecrivez votre message', :class => 'contact-textarea input-text'  %>
+          </div>
+
+
+          <%= button_tag type: 'submit', :class => 'contact-submit blue-button', :name => 'commit', :title => 'Envoyer' do %>
+              Envoyer <i class="fa fa-send" aria-hidden="true"></i>
+          <% end %>
+
+      <% end %>
+    </div>
+
+    <div class="contact-texte">
+      <p>Vous souhaitez nous contacter ? Vous voulez en savoir plus sur le recrutement dans notre
+        collectif ou les évévements que nous organisons ? Vous êtes au bon endroit, posez vos questions
+        ici nous y répondrons dans les meilleurs délais !</p>
+      <div class="contact-img">
+        <%= image_tag('mascotte2.png', alt: 'mascotte') %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
 
 <!--Classes à modifier bien entendu-->

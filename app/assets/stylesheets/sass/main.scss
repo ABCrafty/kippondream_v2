@@ -2,7 +2,6 @@
 @import './partials/mixins';
 @import './partials/header';
 @import './partials/footer';
-@import './partials/headerSlider';
 @import './partials/buttons';
 @import './partials/menu';
 @import './partials/slider';
@@ -14,6 +13,8 @@
 @import './partials/reader';
 @import './partials/article';
 @import './partials/admin';
+@import './partials/mobile';
+
 
 body {
   font-size: 16px;
@@ -38,7 +39,7 @@ main {
     h1 {
       text-align: center;
     }
-    div.header-button {
+    .header-button {
       text-align: center;
       margin: 0.5rem 0;
       img {
@@ -50,25 +51,24 @@ main {
 
 
 
-  section.actus {
+  .actus {
     display: flex;
     background: $primaryColor;
     width: 100%;
 
 
     .container-actu {
-      width: 75%;
       display: flex;
 
-      div.actu:first-child {
+      .actu:first-child {
         margin: 2rem 1rem 2rem 2rem;
       }
 
-      div.actu:nth-child(3) {
+      .actu:nth-child(3) {
         margin: 2rem 2rem 2rem 1rem;
       }
 
-      div.actu {
+      .actu {
         width: 29%;
         background: white;
         margin: 2rem 1rem;
@@ -101,44 +101,37 @@ main {
           padding: 0.2rem 0;
         }
       } // .actu
+      .actu-lien {
+        width: 25%;
+        background: $secondaryColor;
+
+        p {
+          text-align: center;
+          font-size: 2rem;
+          padding: 0 1rem;
+        }
+        .news-mascotte {
+          img {
+            width: 45%;
+            margin: auto;
+            display: block;
+          }
+        }
+
+        a {
+          display: block;
+          text-align: center;
+          font-size: 2rem;
+          margin: 1rem 0;
+          color: black;
+        }
+      } // .actu-lien
     } // .container-actu
 
-    div.actu-lien {
-      width: 25%;
-      background: $secondaryColor;
 
-      p {
-        text-align: center;
-        font-size: 2rem;
-        padding: 0 1rem;
-      }
-      .news-mascotte {
-        img {
-          width: 45%;
-          margin: auto;
-          display: block;
-        }
-      }
-
-
-      .fa {
-        display: block;
-        font-size: 10rem;
-        text-align: center;
-        margin: 1rem 0;
-      }
-
-      a {
-        display: block;
-        text-align: center;
-        font-size: 2rem;
-        margin: 1rem 0;
-        color: black;
-      }
-    } // .actu-lien
   } // .actus
 
-  section.presentation-asso {
+  .presentation-asso {
     background: asset_data_url('background04.jpg');
     padding: 2rem 0;
 
@@ -176,9 +169,10 @@ main {
   .presentation-mags {
     display: flex;
     background: $primaryColor;
+    padding: 1rem;
 
     .texte-mags {
-      width: 60%;
+      width: 80%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -187,7 +181,6 @@ main {
 
       p {
         margin: 0;
-        line-height: 0.75;
         padding: 1rem;
       }
     }
@@ -196,7 +189,7 @@ main {
       width: 40%;
 
       img {
-        width: 100%;
+        width: 37%;
       }
     }
   } // .presentation-mags
@@ -247,11 +240,13 @@ main {
         .series-num {
           padding: 2rem 0;
           h4 {
+            display: none;
             text-align: center;
             text-transform: uppercase;
           }
 
           ul {
+            display: none;
             list-style-type: none;
             padding: 1rem 2rem;
             margin: 0;
@@ -300,6 +295,11 @@ main {
         text-transform: uppercase;
         font-size: 2rem;
         padding: 0.5rem 0;
+      }
+
+      > p {
+        text-align: center;
+        padding: 0 3rem;
       }
 
       .flex-series {
@@ -425,4 +425,224 @@ main {
     }
 
   }
+
+  .contact-container {
+    background: asset_data_url('bgseries.jpg');
+
+    .page-contact {
+      display: flex;
+      width: 90%;
+      margin: auto;
+      padding: 1rem;
+      background: white;
+      border-left: 1rem solid $secondaryColor;
+      border-right: 1rem solid $primaryColor;
+
+      .contact-form-container {
+        width: 50%;
+      }
+
+      .contact-texte {
+        width: 50%;
+        padding: 0 1rem;
+
+        p {
+          text-align: center;
+        }
+
+        .contact-img {
+          width: 35%;
+          margin: auto;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
 } // main
+
+
+
+//@media screen and (max-width: 1024px) {
+//  body {
+//    font-size: 18px;
+//  }
+//
+//  main {
+//
+//    // accueil
+//
+//    .container-webzine {
+//      height: 40vh;
+//    }
+//
+//    .actus {
+//      .container-actu {
+//        flex-wrap: wrap;
+//
+//        .actu {
+//          width: 45%;
+//        }
+//
+//        .actu:nth-child(3) {
+//          margin: 2rem;
+//        }
+//
+//        .actu.in-view {
+//          transition-delay: 0s;
+//        }
+//
+//        .actu-lien {
+//          width: 48%;
+//        }
+//      }
+//    }
+//
+//    .presentation-asso {
+//      .cadre-asso {
+//        width: 93%;
+//        margin: 4rem 2rem;
+//
+//        .presentation-texte {
+//          width: 100%;
+//          padding: 1rem;
+//        }
+//
+//        .presentation-img {
+//          display: none;
+//        }
+//      }
+//    }
+//
+//    // page magazines
+//
+//    .last-mag {
+//      position: relative;
+//      min-height: 520px;
+//
+//      .couv {
+//        position: absolute;
+//        right: 0;
+//      }
+//
+//      .series-num {
+//        position: absolute;
+//        right: 0;
+//        bottom: 0;
+//      }
+//    }
+//
+//    #mag-carousel {
+//      height: 100%;
+//
+//      .id-mag {
+//        top: 1rem;
+//      }
+//
+//      .mag-couv {
+//        position: absolute;
+//        bottom: -9rem;
+//        width: 32%;
+//
+//        img {
+//          width: 100%;
+//        }
+//      }
+//    }
+//
+//    .mascotte {
+//      width: 20%;
+//
+//      img {
+//        width: 80%;
+//      }
+//    }
+//
+//    // page mangas
+//
+//    .serie {
+//      width: 360px;
+//      display: block;
+//
+//      .container-img {
+//        text-align: center;
+//      }
+//    }
+//
+//    .series-paires {
+//      .container-img {
+//        background: asset_data_url('clecouv.png') 50% no-repeat;
+//      }
+//    }
+//
+//    .series-impaires {
+//      .container-img {
+//        background: asset_data_url('clecouv2.png') 50% no-repeat;
+//      }
+//    }
+//  } // main
+//} // media max1024px
+
+
+
+@media screen and (min-width: 1600px) {
+  body {
+    font-size: 18px;
+  }
+
+  main {
+    //.container-webzine {
+    //  height: 50vh;
+    //}
+    //
+    //.presentation-asso {
+    //  height: 50vh;
+    //  display: flex;
+    //  justify-content: center;
+    //  align-items: center;
+    //
+    //  .cadre-asso {
+    //    margin: 0;
+    //    height: 40vh;
+    //  }
+    //}
+
+    // page magazines
+
+    .last-mag {
+      //padding: 1rem 20rem;
+
+      .couv {
+        img {
+          height: 20vw;
+        }
+      }
+    }
+
+    #mag-carousel {
+      height: 550px;
+
+      .mag-container {
+        .edito-couv {
+          .mag-btn-edito {
+            .mag-liens {
+              width: 25%;
+
+              .id-mag {
+                position: relative;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // page mangas
+
+    .serie {
+      width: 649px !important;
+    }
+  }
+} // media min1600px

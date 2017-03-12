@@ -1,6 +1,4 @@
-header {
-  background: $secondaryColor;
-  nav {
+nav {
     display: flex;
     justify-content: center;
     z-index: 4000;
@@ -46,9 +44,9 @@ header {
       }
     } // ul
 
-    div.header-logo {
+    .header-logo {
       width: 7%;
-      padding: 1.5rem 0.7rem;
+      padding: 2rem 1rem;
       border-radius: 0 0 50% 50%;
       background: black;
       img {
@@ -57,4 +55,3 @@ header {
     }
 
   } // nav
-} //header
