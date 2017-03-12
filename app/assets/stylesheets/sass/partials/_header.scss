@@ -1,7 +1,7 @@
 header {
   height: 64vh;
   position: relative;
-  background: #FFB36D!important;
+  background: $thirdColor;
 
   #header-slider{
     position: absolute;
@@ -70,3 +70,38 @@ header {
     }
   } // #header-slider
 } // header
+
+@media screen and (max-width: 1024px) {
+  header {
+    height: 42vh;
+
+    #header-slider {
+      .item {
+        .img-slide {
+          height: 42vh;
+          img {
+            height: 42vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  header {
+    height: 50vh;
+
+    #header-slider {
+      .item {
+        .img-slide {
+          height: 50vh;
+          img {
+            height: 50vh;
+          }
+        }
+      }
+
+    }
+  }
+}

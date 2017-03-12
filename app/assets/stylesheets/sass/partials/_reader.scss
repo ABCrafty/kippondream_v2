@@ -1,4 +1,4 @@
-header.header-reader {
+.header-reader {
   height: 60vh;
 
   .read-menu {
@@ -29,37 +29,43 @@ header.header-reader {
       }
     }
 
-    .read-select {
+    .select-container {
       display: flex;
       width: 45%;
       margin-bottom: 3rem;
       justify-content: center;
       padding: 1rem;
       background: #2b2b2b;
+      .read-select {
+        width: 65%;
 
-      select {
-        width: 64%;
-        padding: 0.2rem 0.4rem;
+        select {
+          width: 80%;
+          padding: 0.2rem 0.4rem;
+        }
+
+
       }
     }
+
   } // .read-menu
 } // .header-reader
 
-main.main-reader {
+.main-reader {
   background: #2b2b2b;
   text-align: center;
   padding-top: 2rem;
   color: white;
 
-  div.pages-reader {
+  .pages-reader {
     position: relative;
     z-index: 0;
 
-    div.arrow-back {
+    .arrow-back {
       left: 2%;
     }
 
-    div.arrow-next {
+    .arrow-next {
       right: 2%;
     }
 
@@ -69,17 +75,17 @@ main.main-reader {
     }
   } // .pages-reader
 
-  div.pejis-reader {
+  .pejis-reader {
     z-index: 0;
 
-    div.img-manga {
+    .img-manga {
       position: relative;
 
-      div.arrow-back {
+      .arrow-back {
         left: 17.5%;
       }
 
-      div.arrow-next {
+      .arrow-next {
         right: 17.5%;
       }
 
@@ -89,7 +95,7 @@ main.main-reader {
     }
   } // .pejis-reader
 
-  div.arrow-back, div.arrow-next {
+  .arrow-back, .arrow-next {
     position: absolute;
     height: 100%;
     z-index: 10000;
@@ -107,7 +113,7 @@ main.main-reader {
     }
   }
 
-  div.arrow-back:hover, div.arrow-next:hover {
+  .arrow-back:hover, .arrow-next:hover {
     opacity: 0.4;
     background-color: rgba(255,255,255,1);
   }

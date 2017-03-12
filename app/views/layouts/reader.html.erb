@@ -24,7 +24,7 @@
       <li><%= link_to 'Blog', Blog %></li>
     </ul>
     <div class="header-logo">
-      <%= link_to image_tag('KD.png',:class=> 'header-logo', alt: 'Logo menu kippon Dream'), root_path, :class => 'index-lien' %>
+      <%= link_to image_tag('KD.png', alt: 'Logo menu kippon Dream'), root_path, :class => 'index-lien' %>
 
     </div>
     <ul>
@@ -45,23 +45,26 @@
     </div>
 
     <% if @manga %>
-      <div class="read-select">
-        <%= select_tag 'select_chapters',
-          options_for_select(
-            @manga.chapters.collect{
-              |m| [m.titre, m.chapter_number]},
-              selected: params[:chapter_id])
-        %>
-      </div>
+        <div class="select-container">
+          <div class="read-select">
+            <%= select_tag 'select_chapters',
+                           options_for_select(
+                               @manga.chapters.collect{
+                                   |m| [m.titre, m.chapter_number]},
+                               selected: params[:chapter_id])
+            %>
+          </div>
 
-      <div class="read-select">
-        <%= select_tag 'select_pages',
-          options_for_select(
-          @chapter.pejis.collect{
-            |c| ['Page '+c.scan_number.to_s, c.scan_number] },
-            selected: params[:id])
-        %>
-      </div>
+          <div class="read-select">
+            <%= select_tag 'select_pages',
+                           options_for_select(
+                               @chapter.pejis.collect{
+                                   |c| ['Page '+c.scan_number.to_s, c.scan_number] },
+                               selected: params[:id])
+            %>
+          </div>
+        </div>
+
 
     <% else %>
     <div class="read-select">

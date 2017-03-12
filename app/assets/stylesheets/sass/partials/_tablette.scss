@@ -1,0 +1,120 @@
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  main {
+
+    // accueil
+
+    .container-webzine {
+      height: 40vh;
+    }
+
+    .actus {
+      .container-actu {
+        flex-wrap: wrap;
+
+        .actu {
+          width: 45%;
+        }
+
+        .actu:nth-child(3) {
+          margin: 2rem;
+        }
+
+        .actu.in-view {
+          transition-delay: 0s;
+        }
+
+        .actu-lien {
+          width: 48%;
+        }
+      }
+    }
+
+
+    .presentation-asso {
+      .cadre-asso {
+        width: 93%;
+        margin: 4rem 2rem;
+
+        .presentation-texte {
+          width: 100%;
+          padding: 1rem;
+        }
+
+        .presentation-img {
+          display: none;
+        }
+      }
+    }
+
+    // page magazines
+
+    .last-mag {
+      position: relative;
+      min-height: 520px;
+
+      .couv {
+        position: absolute;
+        right: 0;
+      }
+
+      .series-num {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    #mag-carousel {
+      height: 100%;
+
+      .id-mag {
+        top: 1rem;
+      }
+
+      .mag-couv {
+        position: absolute;
+        bottom: -9rem;
+        width: 32%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .mascotte {
+      width: 20%;
+
+      img {
+        width: 80%;
+      }
+    }
+
+    // page mangas
+
+    .serie {
+      width: 360px;
+      display: block;
+
+      .container-img {
+        text-align: center;
+      }
+    }
+
+    .series-paires {
+      .container-img {
+        background: asset_data_url('clecouv.png') 50% no-repeat;
+      }
+    }
+
+    .series-impaires {
+      .container-img {
+        background: asset_data_url('clecouv2.png') 50% no-repeat;
+      }
+    }
+  } // main
+} // media max1024px

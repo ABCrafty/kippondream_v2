@@ -42,3 +42,34 @@ form.form-admin {
     margin: 1rem 25px;
   }
 }
+
+.contact-form-container {
+
+  .contact-field {
+    padding: 1rem;
+
+    label {
+      display: block;
+      padding-bottom: 0.2rem;
+    }
+
+    select {
+      width: 102%;
+      padding: 0.5rem;
+      border-radius: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+    }
+
+    textarea {
+      height: 15rem;
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}

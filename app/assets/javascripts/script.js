@@ -118,7 +118,7 @@ $(document).ready(function () {
     $(window).on('scroll resize', scroll.checkView);
     $(window).trigger('scroll');
     $('input#pseudo').blur(form.validatePseudo);
-    $('input#password').blur(form.validatePassword);
+    $('input#password, input#password-confirm').keyup(form.validatePassword);
 
 
 }); // fermeture jquery
