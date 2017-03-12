@@ -54,7 +54,7 @@ class UserController < ApplicationController
   end
 
   def check_user
-    if current_user.id != params[:id].to_i || current_user.role != 'Dieu' || current_user.role != 'Staff'
+    if current_user.id != params[:id].to_i
       redirect_to membres_path, alert: 'Propriété privée.'
     end
   end
