@@ -38,7 +38,7 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    @page.destroy
+    @magazine.pages.destroy
     redirect_to :back, notice: 'Page was successfully destroyed.'
   end
 
