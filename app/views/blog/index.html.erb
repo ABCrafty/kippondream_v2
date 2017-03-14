@@ -1,7 +1,7 @@
 <div class="article-index">
   <h1>Le Blog</h1>
   <% @blog.each_with_index do |b,i| %>
-  <% if b.public || !b.public && b.user == current_user || current_user.role == 'Dieu' || current_user.role == 'Staff' %>
+  <% if b.public && current_user %>
     <div class="article-each">
       <div class="article-text <%= i.even? ? 'first' : 'second' %>">
         <h1>
