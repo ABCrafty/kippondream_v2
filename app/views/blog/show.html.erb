@@ -46,7 +46,7 @@
         <% end %>
       <% end %>
 
-      <% if @blog.user == current_user || current_user.role == 'Dieu' || current_user.role == 'Staff' %>
+      <% if current_user %>
       <%= link_to 'Modifier', edit_blog_path(@blog), class: 'article-link' %>
       <% end %>
     </div>

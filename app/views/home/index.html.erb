@@ -14,12 +14,14 @@
     <div class="container-actu">
       <!-- Afficher les 3 derniers articles du blog -->
       <% @blogs.last(3).each do |b| %>
+      <% if b.public || current_user %>
         <div class="actu kd-animate">
           <h3><strong><%= b.titre %></strong></h3>
           <%= image_tag b.illu1 %>
           <p><%= truncate(strip_tags(b.paragraphe1), :length => 150, :separator => ' ') %></p>
           <%= link_to 'Lire la suite ', b %>
         </div>
+      <% end %>
       <% end %>
       <div class="actu-lien">
         <p>Pour les autres articles c'est par ici !</p>
