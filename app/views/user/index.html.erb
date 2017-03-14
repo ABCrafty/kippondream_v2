@@ -2,7 +2,7 @@
 
 <section class="staff">
   <% @users.each_with_index do |u,i| %>
-  <% if u.role !== 'Auteur' %>
+  <% if u.role != 'Auteur' %>
   <div class="membre is-collapsed">
     <div class="image-basic">
       <h4><%= u.username %></h4>
