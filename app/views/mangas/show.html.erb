@@ -23,7 +23,9 @@
     <li>
       <%= link_to c.titre, peji_path(manga_id: @manga.slug, chapter_id: c.chapter_number, id: 1) %>
       <% if @manga.users.include? current_user %>
-        (<%= link_to 'Modifier', edit_manga_chapter_path(@manga, c.chapter_number) %>)
+        (<%= link_to 'Modifier', edit_manga_chapter_path(@manga, c.chapter_number) %>
+        |
+        <%= link_to 'Supprimer', manga_chapter_path(@manga, c.chapter_number), :method => :delete, data: {confirm: 'Le chapitre et son contenu seront supprimer, confirmer ?'} %>)
       <% end %>
     </li>
 <% end %>
