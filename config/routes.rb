@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/admin' => 'admin#index', as: :admin_root
 
   #Différentes pages disponibles
-  resources :magazines do
+  resources :magazines, path: 'webzines' do
     resources :pages
   end
 

@@ -1,8 +1,7 @@
-<h3>Staff</h3>
+<h3>Membres & Auteurs</h3>
 
 <section class="staff">
-  <% @users.each_with_index do |u,i| %>
-  <% if u.role != 'Auteur' %>
+  <% @users.each do |u| %>
   <div class="membre is-collapsed">
     <div class="image-basic">
       <h4><%= u.username %></h4>
@@ -35,45 +34,4 @@
     </div> <!-- .image-expand -->
   </div> <!-- .membre -->
   <% end %>
-  <% end %>
-</section> <!-- .staff -->
-
-<h3>Auteurs</h3>
-
-<section class="auteur">
-  <% @users.each_with_index do |u,i| %>
-  <% if u.role == 'Auteur' %>
-      <div class="membre is-collapsed">
-        <div class="image-basic">
-          <h4><%= u.username %></h4>
-          <%= image_tag u.avatar, class: 'membre-img' %>
-
-          <div class="arrow-up"></div>
-        </div>
-        <div class="image-expand">
-          <div class="membre-presentation">
-            <p><%= simple_format(u.description) %></p>
-            <div class="projets-articles">
-              <div class="membre-projets">
-                <h5>Ses projets :</h5>
-                <ul>
-                  <% u.mangas.each do |m| %>
-                      <li><%= link_to m.titre, m %></li>
-                  <% end %>
-                </ul>
-              </div>
-              <div class="articles-recents">
-                <h5>Ses articles récents :</h5>
-                <ul>
-                  <% u.blogs.each do |b| %>
-                      <li><%= link_to b.titre, b %></li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-          </div> <!-- .membre-presentation -->
-        </div> <!-- .image-expand -->
-      </div> <!-- .membre -->
-    <% end %>
-  <% end %>
-</section> <!-- .staff -->
+</section>

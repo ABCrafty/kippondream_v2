@@ -44,19 +44,23 @@
         <div class="mag-btn-edito">
           <div class="mag-liens">
 
-              <h4>Séries dans ce mag :</h4>
-              <ul>
-                <li>Pain</li>
-                <li>Dawn of</li>
-                <li>Infinite Revenge</li>
-                <li>3 coups</li>
-              </ul>
+            <h4>Séries dans ce mag :</h4>
+            <ul>
+              <li>Pain</li>
+              <li>Dawn of</li>
+              <li>Infinite Revenge</li>
+              <li>3 coups</li>
+            </ul>
 
-              <div class="id-mag">
-                <!-- Lien Mangadraft -->
-                <%= link_to image_tag('btnmangadraft.png'), m.link_mangadraft %>
-                <%= link_to image_tag('btnkippon.png'), magazine_page_path(m, 1) %>
-              </div>
+            <div class="id-mag">
+              <!-- Lien Mangadraft -->
+              <%= link_to image_tag('btnmangadraft.png'), m.link_mangadraft %>
+              <%= link_to image_tag('btnkippon.png'), magazine_page_path(m, 1) %>
+              <% if current_user %>
+                <%= link_to 'Modifier', edit_magazine_path(m.slug) %> -
+                <%= link_to 'Supprimer', magazines_path, method: :delete, data: {confirm: 'Le magazine et son contenu seront supprimés, continuer ?'} %>
+              <% end %>
+            </div>
 
           </div>
 

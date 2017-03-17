@@ -26,11 +26,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :pair, "Pair ou impaire ?" %>
-    <%= f.radio_button :pair, true %>
+    <%= f.label :pair, 'Pair ou impaire ?' %>
+    <%= f.radio_button :pair, 0 %>
     <%= label :pair, 'Pair' %>
-    <%= f.radio_button :pair, false %>
+    <%= f.radio_button :pair, 1 %>
     <%= label :pair, 'Impair' %>
+    <%= f.radio_button :pair, 2 %>
+    <%= label :pair, 'Aucun' %>
   </div>
 
   <div class="field">
