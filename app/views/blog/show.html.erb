@@ -26,14 +26,14 @@
       <p>A propos de l'auteur de l'article</p>
       <%= image_tag @blog.user.avatar %>
       <h4><%= @blog.user.username %><span class="auteur-role"><%= @blog.user.role %></span></h4>
-      <%= simple_format(@blog.user.description).truncate_words(30) %>
+      <%= @blog.user.description.truncate_words(40) %>
     </div>
 
     <div class="autres-articles">
       <p>Découvrez aussi :</p>
 
       <% @blogs.last(5).each do |b| %>
-        <%= link_to b, :class => current_page?(b) ? 'hide' : '' do %>
+        <%= link_to b, :class => current_page?(b) ? 'hide' : 'article-lien' do %>
         <div class="article-apercu">
           <div class="apercu-texte">
             <h5><%= b.titre %></h5>
@@ -46,8 +46,8 @@
         <% end %>
       <% end %>
 
-      <% if current_user %>
-      <%= link_to 'Modifier', edit_blog_path(@blog), class: 'article-link' %>
+      <% if current_user.present? %>
+      <%= link_to 'Modifier', edit_blog_path(@blog), class: 'article-link' %> | <%= link_to 'Supprimer', blog_path(@blog), method: :delete, data: {confirm: 'Supprimer l\'article ?'} %>
       <% end %>
     </div>
   </div>
