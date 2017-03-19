@@ -154,40 +154,40 @@
       a {
         text-decoration: none;
         color: #000;
-      }
 
-      .article-apercu {
-        display: flex;
-        width: 95%;
-        margin: 0.5rem auto;
-        background: white;
-        border-radius: 5px;
-        position: relative;
-        min-height: 100px;
+        .article-apercu {
+          display: flex;
+          width: 95%;
+          margin: 0.5rem auto;
+          background: white;
+          border-radius: 5px;
+          position: relative;
+          min-height: 100px;
 
-        .apercu-texte {
-          padding: 0.5rem;
+          .apercu-texte {
+            padding: 0.5rem;
 
-          p {
-            font-size: 0.8rem;
-            text-decoration: none;
-            color: #000;
+            p {
+              font-size: 0.8rem;
+              text-decoration: none;
+              color: #000;
 
+            }
+
+            h5 {
+              width: 75%;
+              text-decoration: none;
+              color: #000;
+            }
           }
 
-          h5 {
-            width: 75%;
-            text-decoration: none;
-            color: #000;
-          }
-        }
-
-        .apercu-img {
-          img {
-            width: auto;
-            height: 100px;
-            position: absolute;
-            right: 0;
+          .apercu-img {
+            img {
+              width: auto;
+              height: 100px;
+              position: absolute;
+              right: 0;
+            }
           }
         }
       }
