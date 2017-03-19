@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   def index
     @titre = 'Accueil'
     @diapos = Admin::Carousel.all
+    @magazine = Magazine.last
     @blogs = Blog.all
     @manga = Manga.all
     @chapters = Chapter.all

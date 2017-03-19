@@ -3,9 +3,7 @@
     <div class="webzine">
       <h1>Le webzine de prépublication de bandes-dessinées</h1>
       <div class="header-button">
-        <a href="https://www.mangadraft.com/magazine/74-kippon-dream">
-           <%= image_tag('lecture_webzine.png', alt: 'bouton lecture magazines') %>
-        </a>
+        <%= link_to image_tag('lecture_webzine.png'), magazine_page_path(@magazine, 1) %>
       </div> <!-- .header-button -->
     </div> <!-- .webzine -->
   </div> <!-- .container-webzine -->
@@ -26,7 +24,7 @@
       <div class="actu-lien">
         <p>Pour les autres articles c'est par ici !</p>
       <span class="icon-stack">
-        <div class="news-mascotte">
+        <div class="news    -mascotte">
           <%= image_tag('mascotte3.png', alt: 'mascotte kd') %>
         </div>
 
