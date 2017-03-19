@@ -47,7 +47,7 @@
       <% end %>
 
       <% if current_user %>
-      <%= link_to 'Modifier', edit_blog_path(@blog), class: 'article-link' %>
+      <%= link_to 'Modifier', edit_blog_path(@blog), class: 'article-link' %> | <%= link_to 'Supprimer', blog_path(@blog), method: :delete, data: {confirm: 'Supprimer l\'article ?'} %>
       <% end %>
     </div>
   </div>
