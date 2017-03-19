@@ -19,7 +19,7 @@
 <header class="header-reader", style="background: url('<%= @manga ? @manga.banniere : @magazine.banniere %>') 100% no-repeat !important;">
   <nav>
     <ul>
-      <li><%= link_to 'Magazines', magazines_path %></li>
+      <li><%= link_to 'Webzines', magazines_path %></li>
       <li><%= link_to 'Mangas', mangas_path %></li>
       <li><%= link_to 'Blog', Blog %></li>
     </ul>
@@ -45,28 +45,28 @@
     </div>
 
     <% if @manga %>
-        <div class="select-container">
-          <div class="read-select">
-            <%= select_tag 'select_chapters',
-                           options_for_select(
-                               @manga.chapters.collect{
-                                   |m| [m.titre, m.chapter_number]},
-                               selected: params[:chapter_id])
-            %>
-          </div>
-
-          <div class="read-select">
-            <%= select_tag 'select_pages',
-                           options_for_select(
-                               @chapter.pejis.collect{
-                                   |c| ['Page '+c.scan_number.to_s, c.scan_number] },
-                               selected: params[:id])
-            %>
-          </div>
+      <div class="select-container">
+        <div class="read-select">
+          <%= select_tag 'select_chapters',
+            options_for_select(
+              @manga.chapters.collect{
+               |m| [m.titre, m.chapter_number]},
+              selected: params[:chapter_id])
+          %>
         </div>
 
+        <div class="read-select">
+          <%= select_tag 'select_pages',
+            options_for_select(
+             @chapter.pejis.collect{
+               |c| ['Page '+c.scan_number.to_s, c.scan_number] },
+             selected: params[:id])
+          %>
+        </div>
+      </div>
 
     <% else %>
+
     <div class="read-select">
       <%= select_tag 'select_mag',
         options_for_select(
@@ -92,7 +92,7 @@
     <div class="footer-content-links">
       <h3>Kippon Dream</h3>
       <ul>
-        <li><%= link_to 'Les magazines', magazines_path %></li>
+        <li><%= link_to 'Les webzines', magazines_path %></li>
         <li><%= link_to 'Les mangas', mangas_path %></li>
         <li><%= link_to 'Le blog', Blog %></li>
         <li><%= link_to 'La team et les membres', root_path %></a></li>
@@ -103,23 +103,16 @@
     <div class="footer-content-links">
       <h3>Partenaires</h3>
       <ul>
-        <li><a href="#">Les magazines</a></li>
-        <li><a href="#">Les magazines</a></li>
-        <li><a href="#">Les magazines</a></li>
-        <li><a href="#">Les magazines</a></li>
-        <li><a href="#">Les magazines</a></li>
-        <li><a href="#">Les magazines</a></li>
+        <li><a href="http://www.mangadraft.com" target="_blank">Mangadraft</a></li>
+        <li><a href="http://www.mangalerie.fr" target="_blank">Mangalerie</a></li>
+        <li><a href="http://projetss-manga.niceboard.org" target="_blank">Projets Manga</a></li>
       </ul>
     </div>
     <div class="footer-content-links">
       <h3>Retrouvez-nous ici aussi</h3>
       <ul>
-        <li><a href="#">Les magazines</a></li>
-        <li><a href="#">Les magazines</a></li>
-        <li><a href="#">Les magazines</a></li>
-        <li><a href="#">Les magazines</a></li>
-        <li><a href="#">Les magazines</a></li>
-        <li><a href="#">Les magazines</a></li>
+        <li><a href="https://www.facebook.com/KipponDream/" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/KipponDream" target="_blank">Twitter</a></li>
       </ul>
     </div>
 
@@ -127,11 +120,11 @@
   <div class="div1"><p>&copy; 2016 - KIPPON DREAM</p></div>
   <div class="div2">
     <% if user_signed_in? %>
-        <p>
-          <%= link_to 'Administration', admin_root_path %> |
-          <%= link_to 'Editer le profil', edit_user_path(current_user) %>
-          <%= link_to('Deconnexion', destroy_user_session_path, :method => :delete) %>
-        </p>
+      <p>
+        <%= link_to 'Administration', admin_root_path %> |
+        <%= link_to 'Editer le profil', edit_user_path(current_user) %>
+        <%= link_to('Deconnexion', destroy_user_session_path, :method => :delete) %>
+      </p>
     <% end %>
   </div>
 </footer>
