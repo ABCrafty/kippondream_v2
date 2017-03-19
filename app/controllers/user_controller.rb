@@ -10,7 +10,7 @@ class UserController < ApplicationController
 
   def index
     @titre = 'Membres'
-    @users = User.all
+    @users = User.order('username ASC')
   end
 
   def edit
