@@ -1,3 +1,10 @@
+.members-title {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1rem;
+  color: $primaryColor;
+}
+
 .staff, .auteur {
   width: 100%;
   max-width: 100%;
@@ -15,6 +22,7 @@
       h4 {
         margin: 0.5rem 0 0.2rem 0 ;
         text-align: center;
+        color: $secondaryColor;
       }
 
       .membre-img {
@@ -54,12 +62,7 @@
           padding: 1rem;
           margin: 1rem 0;
 
-          .membre-projets {
-            padding: 0 1rem;
-            margin: 0 2rem;
-          }
-
-          .articles-recents {
+          .membre-projets, .articles-recents {
             padding: 0 1rem;
             margin: 0 2rem;
 
@@ -70,6 +73,11 @@
               li {
                 a {
                   color: $primaryColor;
+                  text-decoration: none;
+                  &:hover {
+                    color: darken($primaryColor, 20%);
+                    text-decoration: underline;
+                  }
                 }
               }
             }
