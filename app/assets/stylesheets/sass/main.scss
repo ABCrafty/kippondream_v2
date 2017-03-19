@@ -15,9 +15,6 @@
 @import './partials/admin';
 @import './partials/mobile';
 
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-@import url('https://fonts.googleapis.com/css?family=Happy+Monkey');
-
 body {
   font-size: 16px;
   line-height: 1.2;
@@ -54,9 +51,6 @@ main {
       }
     } // .header-button
   } // .container-webzine
-
-
-
 
   .actus {
     display: flex;
@@ -135,7 +129,6 @@ main {
           color: white;
           font-size: 2rem;
           margin: 1rem auto;
-          color: black;
           text-decoration: none;
           width: 60%;
         }

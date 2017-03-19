@@ -161,11 +161,11 @@
           margin: 0.5rem auto;
           background: white;
           border-radius: 5px;
-          position: relative;
           min-height: 100px;
 
           .apercu-texte {
             padding: 0.5rem;
+            width: 60%;
 
             p {
               font-size: 0.8rem;
@@ -175,18 +175,15 @@
             }
 
             h5 {
-              width: 75%;
               text-decoration: none;
               color: #000;
             }
           }
 
           .apercu-img {
+            width: 40%;
             img {
-              width: auto;
-              height: 100px;
-              position: absolute;
-              right: 0;
+              width: 100%;
             }
           }
         }
