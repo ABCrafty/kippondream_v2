@@ -26,7 +26,7 @@
       <p>A propos de l'auteur de l'article</p>
       <%= image_tag @blog.user.avatar %>
       <h4><%= @blog.user.username %><span class="auteur-role"><%= @blog.user.role %></span></h4>
-      <%= simple_format(@blog.user.description).truncate_words(30) %>
+      <%= @blog.user.description.truncate_words(40) %>
     </div>
 
     <div class="autres-articles">
