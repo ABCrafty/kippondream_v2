@@ -61,10 +61,22 @@
   float: left;
   background-color: #f79c00;
   text-align: center;
+
+  &:after {
+    left: 100%;
+    border-top: 50px solid #D25A1E;
+    border-right: 50px solid transparent;
+  }
 }
 .div2 {
   float: right;
   background-color: #3aa6d2;
+
+  &:before {
+    right: 100%;
+    border-bottom: 6vh solid #3aa6d2;
+    border-left: 50px solid transparent;
+  }
 
   p {
     text-align: right;
@@ -77,16 +89,6 @@
   top: 0;
   width: 0;
   height: 0;
-}
-.div1:after {
-  left: 100%;
-  border-top: 50px solid #D25A1E;
-  border-right: 50px solid transparent;
-}
-.div2:before {
-  right: 100%;
-  border-bottom: 51px solid #3aa6d2;
-  border-left: 50px solid transparent;
 }
 
 @media screen and (max-width: 1024px) {
