@@ -7,7 +7,3 @@
 .lecture-kippon:before {
   content: "<%= image_tag('mags/mag_15.jpg', alt: 'kippon dream 15') %>";
 }
-
-a, button {
-  font-family: 'Happy Monkey', cursive;
-}
