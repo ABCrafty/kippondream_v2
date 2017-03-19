@@ -15,10 +15,16 @@
 @import './partials/admin';
 @import './partials/mobile';
 
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Happy+Monkey');
 
 body {
   font-size: 16px;
   line-height: 1.2;
+}
+
+p {
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 main {
