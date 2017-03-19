@@ -28,6 +28,7 @@ main {
     box-shadow: inset 1px 10px 35px black;
     border-top: 2px solid black;
     background: asset_data_url('webzinebg.jpg') 100% 0% no-repeat;
+    background-size: cover;
 
     .webzine {
       margin: auto;
@@ -76,8 +77,12 @@ main {
         border-radius: 4px;
 
         h3 {
-          text-align: center;
           padding: 0 1rem;
+          font-size: 1.2rem;
+          display: flex;
+          min-height: 5rem;
+          align-items: center;
+          justify-content: center;
         }
 
         p {
@@ -121,9 +126,12 @@ main {
         a {
           display: block;
           text-align: center;
+          color: white;
           font-size: 2rem;
-          margin: 1rem 0;
+          margin: 1rem auto;
           color: black;
+          text-decoration: none;
+          width: 60%;
         }
       } // .actu-lien
     } // .container-actu
