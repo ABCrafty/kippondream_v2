@@ -16,7 +16,7 @@
     <p class="alert"><%= alert %></p>
 <% end %>
 
-<header class="header-reader", style="background: url('<%= @manga ? @manga.banniere : @magazine.banniere %>') 100% no-repeat !important;">
+<header class="header-reader", style="background: url('<%= @manga ? @manga.banniere : @magazine.banniere %>') 100% 0% no-repeat; background-size: cover;">
   <nav>
     <ul>
       <li><%= link_to 'Webzines', magazines_path %></li>
@@ -44,8 +44,8 @@
       <%= @manga ? image_tag(@manga.apercu) : image_tag(@magazine.apercu) %>
     </div>
 
+    <div class="select-container">
     <% if @manga %>
-      <div class="select-container">
         <div class="read-select">
           <%= select_tag 'select_chapters',
             options_for_select(

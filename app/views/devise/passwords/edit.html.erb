@@ -9,12 +9,16 @@
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
     <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+    <%= f.password_field :password, :id=>'password', autofocus: true, autocomplete: "off" %>
+    <p class="error-toggle">Mot de passe invalide. Il doit faire au moins 2 caractères et max 15 caractères, contenir au moins un nombre
+      et un caractère spécial (ex: a1B2^c3%)</p>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, :id=>'password-confirm', autocomplete: "off" %>
+    <p class="error-toggle">Mot de passe invalide. Il doit faire au moins 2 caractères et max 15 caractères, contenir au moins un nombre
+      et un caractère spécial (ex: a1B2^c3%)</p>
   </div>
 
   <div class="actions">
