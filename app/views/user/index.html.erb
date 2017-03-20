@@ -5,8 +5,7 @@
   <div class="membre is-collapsed">
     <div class="image-basic">
       <h4><%= u.username %></h4>
-        <%= image_tag u.avatar, class: 'membre-img' %>
-
+      <%= image_tag u.avatar, class: 'membre-img' %>
       <div class="arrow-up"></div>
     </div>
     <div class="image-expand">
@@ -17,7 +16,7 @@
             <h5>Ses projets :</h5>
             <ul>
               <% u.mangas.each do |m| %>
-                  <li><%= link_to m.titre, m %></li>
+                  <li><%= link_to peji_path(manga_id: m.slug, chapter_id: 1, id: 1), title: 'Lire '+m.titre %></li>
               <% end %>
             </ul>
           </div>
@@ -25,7 +24,7 @@
             <h5>Ses articles récents :</h5>
             <ul>
               <% u.blogs.each do |b| %>
-                  <li><%= link_to b.titre, b %></li>
+                  <li><%= link_to b.titre, b, title: 'Lire '+b;titre %></li>
               <% end %>
             </ul>
           </div>

@@ -8,18 +8,18 @@
         <p>Séries paires</p>
 
         <% @pair.each do |p| %>
-        <% if p.chapters.size > 0 %>
-        <div class="serie kd-animate">
-          <div class="container-img">
-            <%= image_tag p.apercu, size: '158x218' %>
-          </div>
-          <div class="container-texte">
-            <h3><%= p.titre %></h3>
-            <p><%= simple_format(p.description) %></p>
-            <%= link_to 'lire la suite', peji_path(manga_id: p, chapter_id: p.chapters.size, id: 1) %>
-          </div>
-        </div> <!-- .serie -->
-        <% end %>
+          <% if p.chapters.size > 0 %>
+          <div class="serie kd-animate">
+            <div class="container-img">
+              <%= image_tag p.apercu, size: '158x218' %>
+            </div>
+            <div class="container-texte">
+              <h3><%= p.titre %></h3>
+              <p><%= simple_format(p.description) %></p>
+              <%= link_to 'lire la suite', peji_path(manga_id: p, chapter_id: p.chapters.size, id: 1), title: 'Lire '+p.titre %>
+            </div>
+          </div> <!-- .serie -->
+          <% end %>
         <% end %>
 
       </div> <!-- .series .series-paires -->
@@ -29,18 +29,18 @@
       <div class="series series-impaires">
         <p>Séries impaires</p>
         <% @impair.each do |i| %>
-        <% if i.chapters.size > 0 %>
-        <div class="serie kd-animate">
-          <div class="container-img">
-            <%= image_tag i.apercu, size: '158x218' %>
-          </div>
-          <div class="container-texte">
-            <h3><%= i.titre %></h3>
-            <p><%= simple_format(i.description) %></p>
-            <%= link_to 'lire la suite', peji_path(manga_id: i, chapter_id: i.chapters.size, id: 1) %>
-          </div>
-        </div> <!-- .serie -->
-        <% end %>
+          <% if i.chapters.size > 0 %>
+          <div class="serie kd-animate">
+            <div class="container-img">
+              <%= image_tag i.apercu, size: '158x218' %>
+            </div>
+            <div class="container-texte">
+              <h3><%= i.titre %></h3>
+              <p><%= simple_format(i.description) %></p>
+              <%= link_to 'lire la suite', peji_path(manga_id: i, chapter_id: i.chapters.size, id: 1), title: 'Lire '+i.titre %>
+            </div>
+          </div> <!-- .serie -->
+          <% end %>
         <% end %>
 
       </div> <!-- .series .series-impaires -->

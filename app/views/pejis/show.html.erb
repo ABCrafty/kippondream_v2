@@ -3,7 +3,7 @@
   <div class="img-manga">
     <%= image_tag @peji.image %>
     <% if params[:id].to_i > 1 %>
-      <%= link_to peji_path(manga_id: @manga.slug, chapter_id: @chapter.chapter_number, id: params[:id].to_i - 1) do %>
+      <%= link_to peji_path(manga_id: @manga.slug, chapter_id: @chapter.chapter_number, id: params[:id].to_i - 1), title: 'Précédent' do %>
       <div class="arrow-back">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
       </div>
@@ -11,7 +11,7 @@
     <% end %>
 
     <% if params[:id].to_i < @chapter.pejis.size %>
-      <%= link_to peji_path(manga_id: @manga.slug, chapter_id: @chapter.chapter_number, id: params[:id].to_i + 1) do %>
+      <%= link_to peji_path(manga_id: @manga.slug, chapter_id: @chapter.chapter_number, id: params[:id].to_i + 1), title: 'Suivant' do %>
       <div class="arrow-next">
         <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </div>
@@ -19,9 +19,11 @@
     <% end %>
   </div>
 
+  <!-- @Todo : Vérifier si les liens précédents et suivants fonctionnent réellement... -->
+
   <div class="next-prev">
-    <%= link_to '< Précédent', peji_path(id: @peji.previous.scan_number, chapter_id: @chapter.chapter_number) if @peji.previous %> |
-    <%= link_to 'Suivant >', peji_path(id: @peji.next.scan_number, chapter_id: @chapter.chapter_number) if @peji.next %>
+    <%= link_to '< Précédent', peji_path(id: @peji.previous.scan_number, chapter_id: @chapter.chapter_number), title: 'Précédent' if @peji.previous %> |
+    <%= link_to 'Suivant >', peji_path(id: @peji.next.scan_number, chapter_id: @chapter.chapter_number), title: 'Suivant' if @peji.next %>
   </div>
 
 </div>
