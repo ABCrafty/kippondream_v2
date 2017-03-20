@@ -24,17 +24,17 @@
   <header>
     <nav>
       <ul>
-        <li><%= link_to 'Webzines', magazines_path %></li>
-        <li><%= link_to 'Mangas', mangas_path %></li>
-        <li><%= link_to 'Blog', Blog %></li>
+        <li><%= link_to 'Webzines', magazines_path, title: 'Webzines' %></li>
+        <li><%= link_to 'Mangas', mangas_path, title: 'Mangas' %></li>
+        <li><%= link_to 'Blog', Blog, title: 'Blog' %></li>
       </ul>
       <div class="header-logo">
-        <%= link_to image_tag('KD.png', alt: 'Logo menu kippon Dream'), root_path, :class => 'index-lien' %>
+        <%= link_to image_tag('KD.png'), root_path, :class => 'index-lien', title: 'Accueil' %>
 
       </div>
       <ul>
-        <li><%= link_to 'Team', '/membres' %></li>
-        <li><%= link_to 'Contact', new_contact_path %></li>
+        <li><%= link_to 'Team', '/membres', title: 'Membres' %></li>
+        <li><%= link_to 'Contact', new_contact_path, title: 'Contact' %></li>
         <li>Boutique</li>
       </ul>
     </nav>
@@ -69,27 +69,26 @@
       <div class="footer-content-links">
         <h3>Kippon Dream</h3>
         <ul>
-          <li><%= link_to 'Les webzines', magazines_path %></li>
-          <li><%= link_to 'Les mangas', mangas_path %></li>
-          <li><%= link_to 'Le blog', Blog %></li>
-          <li><%= link_to 'La team', root_path %></a></li>
-          <li><%= link_to 'Contact', new_contact_path %></li>
-          <li><%= link_to 'La boutique', '#' %></li>
+          <li><%= link_to 'Les webzines', magazines_path, title: 'Webzines' %></li>
+          <li><%= link_to 'Les mangas', mangas_path, title: 'Mangas' %></li>
+          <li><%= link_to 'Le blog', Blog, title: 'Blog' %></li>
+          <li><%= link_to 'La team', '/membres', title: 'L\'équipe' %></a></li>
+          <li><%= link_to 'Contact', new_contact_path, title: 'Contacter' %></li>
         </ul>
       </div>
       <div class="footer-content-links">
         <h3>Partenaires</h3>
         <ul>
-          <li><a href="http://www.mangadraft.com" target="_blank">Mangadraft</a></li>
-          <li><a href="http://www.mangalerie.fr" target="_blank">Mangalerie</a></li>
-          <li><a href="http://projetss-manga.niceboard.org" target="_blank">Projets Manga</a></li>
+          <li><a href="http://www.mangadraft.com" target="_blank" title="Mangadraft">Mangadraft</a></li>
+          <li><a href="http://www.mangalerie.fr" target="_blank" title="Mangalerie">Mangalerie</a></li>
+          <li><a href="http://projets-manga.niceboard.org" target="_blank" title="Projets mangas">Projets Manga</a></li>
         </ul>
       </div>
       <div class="footer-content-links">
         <h3>Retrouvez-nous ici</h3>
         <ul>
-          <li><a href="https://www.facebook.com/KipponDream/" target="_blank">Facebook</a></li>
-          <li><a href="https://twitter.com/KipponDream" target="_blank">Twitter</a></li>
+          <li><a href="https://www.facebook.com/KipponDream/" title="Facebook" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com/KipponDream" title="Twitter" target="_blank">Twitter</a></li>
         </ul>
       </div>
 

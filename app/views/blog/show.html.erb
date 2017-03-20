@@ -33,7 +33,7 @@
       <p>Découvrez aussi :</p>
 
       <% @blogs.last(5).each do |b| %>
-        <%= link_to b, :class => current_page?(b) ? 'hide' : 'article-lien' do %>
+        <%= link_to b, :class => current_page?(b) ? 'hide' : 'article-lien', title: 'Lire '+b.titre do %>
         <div class="article-apercu">
           <div class="apercu-texte">
             <h5><%= b.titre %></h5>
