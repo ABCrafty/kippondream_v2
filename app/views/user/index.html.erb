@@ -16,7 +16,7 @@
             <h5>Ses projets :</h5>
             <ul>
               <% u.mangas.each do |m| %>
-                  <li><%= link_to peji_path(manga_id: m.slug, chapter_id: 1, id: 1), title: 'Lire '+m.titre %></li>
+                  <li><%= link_to m.titre, peji_path(manga_id: m.slug, chapter_id: 1, id: 1), title: 'Lire '+m.titre %></li>
               <% end %>
             </ul>
           </div>
