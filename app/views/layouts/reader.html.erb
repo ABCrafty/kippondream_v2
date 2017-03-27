@@ -146,7 +146,7 @@
         });
 
         $('#select_pages').bind('change', function () {
-           var url = "/mangas/<%= params[:manga_id] %>/<%= params[:chapter_id]%>/"+$(this).val()
+           var url = "/mangas/<%= params[:manga_id] %>/<%= params[:chapter_id]%>/"+$(this).val();
             if (url) {
                 window.location.replace(url);
             }
@@ -158,7 +158,7 @@
   <script>
       $(function(){
         $('#select_mag').bind('change', function () {
-           var url = "/magazines/<%= params[:manga_id] %>/" + $(this).val() + '/pages/1'
+           var url = "webzines/<%= params[:manga_id] %>/" + $(this).val() + '/pages/1';
             if (url) {
                 window.location.replace(url);
             }
