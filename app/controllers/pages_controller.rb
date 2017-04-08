@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!, except: :show
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_page, only: %i{:show :edit :update}
 
   layout 'reader', only: :show
 
@@ -38,7 +38,8 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    @magazine.pages.destroy
+    @page = Page.find(params[:id])
+    @page.destroy
     redirect_to :back, notice: 'Page was successfully destroyed.'
   end
 

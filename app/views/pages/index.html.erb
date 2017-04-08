@@ -13,11 +13,10 @@
   <tbody>
     <% @pages.each do |page| %>
       <tr>
-        <td><%= page.titre %></td>
         <td><%= page.apercu %></td>
         <td><%= link_to 'Show', page %></td>
         <td><%= link_to 'Edit', edit_page_path(page) %></td>
-        <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', magazine_page_path(page), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
