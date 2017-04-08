@@ -41,5 +41,7 @@ Rails.application.routes.draw do
   get '/user/:id/edit_password' => 'user#password', as: :change_password
   resources :user, :controller => 'user'
 
+  get '/mentions-legales', to: 'home#cgu', as: :cgu
+
 
 end
